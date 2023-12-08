@@ -1,0 +1,149 @@
+/* stylelint-disable stylistic/number-leading-zero */
+
+*::selection {
+  color: #fff;
+  background-color: $blue;
+}
+
+.title {
+  font-size: calc(2rem + 3vw);
+  font-weight: 600;
+}
+
+.tagline {
+  font-size: calc(1.2rem + 1.8vw);
+  font-weight: 400;
+  color: $green;
+}
+
+h1 {
+  margin-bottom: 1.5rem;
+  color: $blue;
+}
+
+h2 {
+  color: $green;
+}
+
+.nav-link {
+  position: relative;
+
+  @include media-breakpoint-up(md) {
+    margin: 3px;
+
+    .navbar-nav &::after {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      content: "";
+      background-color: var(--bs-nav-link-hover-color);
+      transition: transform 0.4s ease-out;
+      transform: scale(0);
+    }
+
+    .navbar-nav &:hover {
+      // color: #fff;
+      // background-color: var(--bs-primary);
+      &::after {
+        visibility: visible;
+        transform: scale(1);
+        transform-origin: center;
+      }
+    }
+  }
+}
+
+.card {
+  place-items: center;
+
+  @include media-breakpoint-up(md) {
+    min-block-size: 300px;
+  }
+
+  &:hover {
+    box-shadow: 3px 3px 3px var(--bs-card-border-color);
+    transition: transform 0.3s ease-in-out;
+    transform: scale(1.02);
+  }
+
+  &-img {
+    width: 20%;
+    padding-block: 10px;
+    margin-inline: auto;
+  }
+}
+
+.text-gradient {
+  color: transparent;
+  background-image: linear-gradient(90deg, $blue, $red);
+  background-clip: text;
+}
+
+.scroll-to-top {
+  --size: 50px;
+  --position: 2rem;
+
+  right: var(--position);
+  bottom: var(--position);
+  width: var(--size);
+  height: var(--size);
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.5s ease-in-out;
+  transform: scale(0);
+
+  &.showing {
+    visibility: visible;
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.qualities {
+  > .row {
+    @include media-breakpoint-down(md) {
+      flex-direction: column;
+    }
+
+    &:nth-child(even) {
+      @include media-breakpoint-up(md) {
+        flex-direction: row-reverse;
+      }
+    }
+
+    > .col {
+      margin: auto;
+    }
+  }
+}
+
+.hero-img {
+  margin-bottom: 1rem;
+  @include media-breakpoint-up(md) {
+    float: right;
+    margin-bottom: 1rem;
+    margin-left: 1rem;
+  }
+}
+
+.loading {
+  position: relative;
+  display: block;
+  width: 100px;
+  height: 100px;
+
+  &::after {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    content: "";
+    border: 3px solid transparent;
+    border-top-color: $green;
+    border-radius: 50%;
+    animation: spin 1.5s linear infinite;
+  }
+}

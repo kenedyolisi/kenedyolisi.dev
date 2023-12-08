@@ -1,0 +1,31 @@
+{
+  "dependencies": {
+    "astro": "^4.0.3"
+  },
+  "name": "@example/minimal",
+  "private": true,
+  "scripts": {
+    "astro": "astro",
+    "build": "astro check && astro build",
+    "dev": "astro dev",
+    "lint": "eslint --fix src/**/*.{astro,ts,tsx}",
+    "preview": "astro preview",
+    "start": "astro dev"
+  },
+  "type": "module",
+  "version": "0.0.1",
+  "devDependencies": {
+    "@types/eslint": "^8",
+    "@types/postcss-html": "^1",
+    "@typescript-eslint/parser": "^6.13.2",
+    "eslint": "^8.55.0",
+    "eslint-plugin-astro": "^0.30.0",
+    "eslint-plugin-jsx-a11y": "^6.8.0",
+    "postcss-html": "^1.5.0",
+    "stylelint-config-html": "^1.1.0",
+    "typescript": "^5.3.3"
+  },
+  "peerDependencies": {
+    "stylelint": "*"
+  }
+}

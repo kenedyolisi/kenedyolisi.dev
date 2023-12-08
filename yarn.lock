@@ -653,6 +653,7 @@ __metadata:
     stylelint-config-html: "npm:^1.1.0"
     typescript: "npm:^5.3.3"
   peerDependencies:
+    "@popperjs/core": "*"
     stylelint: "*"
   languageName: unknown
   linkType: soft
@@ -805,6 +806,13 @@ __metadata:
     picocolors: "npm:^1.0.0"
     tslib: "npm:^2.6.0"
   checksum: 7c3e68f6405a1d4c51f418d8d580e71d7bade2683d5db07e8413d8e57f7e389047eda44a2341f77a1b3085895fca7676a9d45e8812a58312524f8c4c65d501be
+  languageName: node
+  linkType: hard
+
+"@popperjs/core@npm:^2.9.2":
+  version: 2.11.8
+  resolution: "@popperjs/core@npm:2.11.8"
+  checksum: 4681e682abc006d25eb380d0cf3efc7557043f53b6aea7a5057d0d1e7df849a00e281cd8ea79c902a35a414d7919621fc2ba293ecec05f413598e0b23d5a1e63
   languageName: node
   linkType: hard
 

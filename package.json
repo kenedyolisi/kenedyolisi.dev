@@ -30,6 +30,7 @@
     "typescript": "^5.3.3"
   },
   "peerDependencies": {
+    "@popperjs/core": "*",
     "stylelint": "*"
   }
 }

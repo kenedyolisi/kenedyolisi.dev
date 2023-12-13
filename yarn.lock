@@ -653,7 +653,6 @@ __metadata:
     stylelint-config-html: "npm:^1.1.0"
     typescript: "npm:^5.3.3"
   peerDependencies:
-    "@popperjs/core": "*"
     stylelint: "*"
   languageName: unknown
   linkType: soft

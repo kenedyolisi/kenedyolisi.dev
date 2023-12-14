@@ -3,11 +3,9 @@
   "private": true,
   "version": "0.0.1",
   "type": "module",
-  "packageManager": "yarn@4.0.2",
   "homepage": "https://kenedyolisi.vercel.app",
   "engines": {
-    "node": ">=18.17.1",
-    "yarn": ">=4.0.2"
+    "node": ">=18.17.1"
   },
   "repository": {
     "type": "git",

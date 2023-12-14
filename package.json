@@ -30,6 +30,7 @@
     "@astrojs/check": "^0.3.2",
     "@types/bootstrap": "^5",
     "@types/eslint": "^8",
+    "@types/node": "^20.10.4",
     "@types/postcss-html": "^1",
     "@typescript-eslint/parser": "^6.14.0",
     "eslint": "^8.55.0",

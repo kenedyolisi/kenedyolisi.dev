@@ -1,5 +1,15 @@
 /* stylelint-disable stylistic/number-leading-zero */
 
+.root {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+
+  main {
+    flex-grow: 1;
+  }
+}
+
 *::selection {
   color: #fff;
   background-color: $blue;

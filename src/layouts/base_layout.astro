@@ -18,6 +18,19 @@ const { pageTitle } = Astro.props;
     <title>{`${siteConfig.author} | ${pageTitle}`}</title>
 
     <link rel="icon" type="image/svg+xml" href="/logo.svg" />
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-MH3D32HR13"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-MH3D32HR13");
+    </script>
   </head>
 
   <body>

@@ -7,70 +7,53 @@ const navLinks = [
   "testimonials",
   "contact",
 ];
+
+const navbarCollapseId = "navbar-collapse";
 ---
 
-<!-- <nav>
-    <ul>
-      {
-        navLinks.map((link) => {
-          return (
-            <li>
-              <a href={link === "home" ? "/" : link} class="nav-links">
-                {link}
-              </a>
-            </li>
-          );
-        })
-      }
-    </ul>
-  </nav> -->
 <a class="visually-hidden-focusable" href="#main-content"
   >Skip to main content</a
 >
 
-<nav class="navbar navbar-expand-lg sticky-top bg-primary" data-bs-theme="dark">
+<nav class="navbar navbar-expand-lg sticky-top">
   <div class="container-fluid">
     <a class="navbar-brand" href="/">Navbar</a>
     <button
       class="navbar-toggler"
       type="button"
       data-bs-toggle="collapse"
-      data-bs-target="#navbarSupportedContent"
-      aria-controls="navbarSupportedContent"
+      data-bs-target={`#${navbarCollapseId}`}
+      aria-controls={navbarCollapseId}
       aria-expanded="false"
       aria-label="Toggle navigation"
     >
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <div class="collapse navbar-collapse" id={navbarCollapseId}>
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         {
           navLinks.map((link) => {
             return (
               <li class="nav-item">
-                {link === "home" ? (
-                  <a class="nav-link active" href="/" aria-current="page">
-                    {link}
-                  </a>
-                ) : (
-                  <a class="nav-link" href={`/${link}`}>
-                    {link}
-                  </a>
-                )}
+                <a
+                  class:list={[
+                    "nav-link",
+                    "text-primary",
+                    // {
+                    //   active:
+                    //     Astro.url.pathname === "/" ||(
+                    //     Astro.url.pathname.startsWith(`/${link}`) && link!=="home")
+                    // },
+                  ]}
+                  href={`/${link === "home" ? "" : link}`}
+                >
+                  {link}
+                </a>
               </li>
             );
           })
         }
       </ul>
-      <form class="d-flex" role="search">
-        <input
-          class="form-control me-2"
-          type="search"
-          placeholder="Search"
-          aria-label="Search"
-        />
-        <button class="btn btn-outline-success" type="submit">Search</button>
-      </form>
     </div>
   </div>
 </nav>

@@ -22,20 +22,20 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@astrojs/check@npm:^0.3.1":
-  version: 0.3.1
-  resolution: "@astrojs/check@npm:0.3.1"
+"@astrojs/check@npm:^0.3.2":
+  version: 0.3.2
+  resolution: "@astrojs/check@npm:0.3.2"
   dependencies:
-    "@astrojs/language-server": "npm:^2.5.2"
-    chokidar: "npm:^3.5.3"
-    fast-glob: "npm:^3.3.1"
-    kleur: "npm:^4.1.5"
-    yargs: "npm:^17.7.2"
+    "@astrojs/language-server": ^2.5.3
+    chokidar: ^3.5.3
+    fast-glob: ^3.3.1
+    kleur: ^4.1.5
+    yargs: ^17.7.2
   peerDependencies:
     typescript: ^5.0.0
   bin:
     astro-check: dist/bin.js
-  checksum: 33b16c7cc02e7d7fc4761544a55fb3f83b6b7e29b0c7124faf172a88dc9f6c255388d20c77ba4d7aa44311104f6a6145a5800b922c20ef16f363f453b5f2790b
+  checksum: 8/ef6f2fc0cd13c48e83162cfd45b588c671c56b4c86c0001530554cd61178e533fddd0b2c96613ce22c287840a86634b97fa171c1db1335ed78b79a8ffbec9b06
   languageName: node
   linkType: hard
 
@@ -53,28 +53,28 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@astrojs/language-server@npm:^2.5.2":
-  version: 2.5.2
-  resolution: "@astrojs/language-server@npm:2.5.2"
+"@astrojs/language-server@npm:^2.5.3":
+  version: 2.5.3
+  resolution: "@astrojs/language-server@npm:2.5.3"
   dependencies:
-    "@astrojs/compiler": "npm:^2.2.2"
-    "@jridgewell/sourcemap-codec": "npm:^1.4.15"
-    "@volar/kit": "npm:~1.10.9"
-    "@volar/language-core": "npm:~1.10.9"
-    "@volar/language-server": "npm:~1.10.9"
-    "@volar/language-service": "npm:~1.10.9"
-    "@volar/source-map": "npm:~1.10.9"
-    "@volar/typescript": "npm:~1.10.9"
-    fast-glob: "npm:^3.2.12"
-    muggle-string: "npm:^0.3.1"
-    volar-service-css: "npm:0.0.16"
-    volar-service-emmet: "npm:0.0.16"
-    volar-service-html: "npm:0.0.16"
-    volar-service-prettier: "npm:0.0.16"
-    volar-service-typescript: "npm:0.0.16"
-    volar-service-typescript-twoslash-queries: "npm:0.0.16"
-    vscode-html-languageservice: "npm:^5.1.0"
-    vscode-uri: "npm:^3.0.8"
+    "@astrojs/compiler": ^2.2.2
+    "@jridgewell/sourcemap-codec": ^1.4.15
+    "@volar/kit": ~1.10.9
+    "@volar/language-core": ~1.10.9
+    "@volar/language-server": ~1.10.9
+    "@volar/language-service": ~1.10.9
+    "@volar/source-map": ~1.10.9
+    "@volar/typescript": ~1.10.9
+    fast-glob: ^3.2.12
+    muggle-string: ^0.3.1
+    volar-service-css: 0.0.16
+    volar-service-emmet: 0.0.16
+    volar-service-html: 0.0.16
+    volar-service-prettier: 0.0.16
+    volar-service-typescript: 0.0.16
+    volar-service-typescript-twoslash-queries: 0.0.16
+    vscode-html-languageservice: ^5.1.0
+    vscode-uri: ^3.0.8
   peerDependencies:
     prettier: ^3.0.0
     prettier-plugin-astro: ">=0.11.0"
@@ -85,7 +85,7 @@ __metadata:
       optional: true
   bin:
     astro-ls: bin/nodeServer.js
-  checksum: b0a4625871164f111713eb5685ac146ab452d6da2c1fa8ef642e0dc470372fcd808dfa35eb227fce4d63a9ce21524679b1f410ac9c169a76b183e0b43bca5c0e
+  checksum: 8/e3bd97c624ff89db52ebb21bb0525e633a233c788beea549307a8bc2c87640807abc3963983c594ad3149c34eb117f90e987e5fb78be2084a20348d4b3370338
   languageName: node
   linkType: hard
 
@@ -636,7 +636,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@example/minimal@workspace:."
   dependencies:
-    "@astrojs/check": ^0.3.1
+    "@astrojs/check": ^0.3.2
     "@types/bootstrap": ^5
     "@types/eslint": ^8
     "@types/postcss-html": ^1

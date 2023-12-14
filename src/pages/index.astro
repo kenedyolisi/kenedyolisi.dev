@@ -3,34 +3,38 @@ import BaseLayout from "@layouts/base_layout.astro";
 import { Picture } from "astro:assets";
 
 import hero from "@images/hero.png";
-const pageTitle = "Home Page";
+import siteConfig from "src/site_config";
 ---
 
-<BaseLayout pageTitle={pageTitle}>
+<BaseLayout pageTitle={siteConfig.slogan}>
   <article>
-    <div class="row">
+    <div
+      class="row flex-column text-center flex-lg-row align-items-lg-center text-lg-start"
+    >
       <div class="col">
-        <h1 class="title lh-1">I am Kenedy Olisi</h1>
-        <p class="lead mt-4 tagline lh-1">
-          I am freelance front-end developer.
+        <h1 class="title lh-1">Hello, my name is Kenedy Olisi</h1>
+        <p class="lead mt-4 tagline lh-1 text-success">
+          I am Front-end Developer currently based in Kenya.
         </p>
         <p>
-          Want to turn your design mockups into&nbsp;
-          <strong class="text-info-emphasis">beautiful</strong>,{" "}
-          <strong class="text-info-emphasis">intuitive</strong>,{" "}
-          <strong class="text-info-emphasis">optimal</strong> websites or web
+          Want to turn your design mockups into{" "}
+          <strong class="text-emphasis text-body-emphasis">beautiful</strong>,{" "}
+          <strong class="text-body-emphasis">intuitive</strong>,{" "}
+          <strong class="text-body-emphasis">optimal</strong> websites or web
           applications that guarantees amazing user-experience? Tap or click on
           the button below to get in touch.
         </p>
         <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
-          <a class="btn btn-outline-primary btn-lg" href="contact"
-            >Let's do this!</a
-          >
+          <p>
+            <a class="btn btn-outline-primary btn-lg" href="contact">
+              Let's do this!
+            </a>
+          </p>
         </div>
       </div>
       <div class="col">
         <Picture
-          class="hero-img"
+          class="object-fit-cover rounded-3"
           src={hero}
           alt="kenedy olisi"
           formats={["avif", "webp"]}

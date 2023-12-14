@@ -2,6 +2,7 @@
 import "@styles/global.scss";
 import Footer from "@components/footer.astro";
 import Header from "@components/header.astro";
+import { ViewTransitions } from "astro:transitions";
 
 const { pageTitle } = Astro.props;
 ---
@@ -11,15 +12,22 @@ const { pageTitle } = Astro.props;
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
+    <ViewTransitions />
+
+    <title>{pageTitle}</title>
 
     <link rel="icon" type="image/svg+xml" href="/logo.svg" />
 
-    <title>{pageTitle}</title>
   </head>
 
   <body>
-    <Header />
-    <main id="main-content"><slot /></main>
-    <Footer />
+    <div class="root">
+      <Header />
+      <main class="container" id="main-content"><slot /></main>
+      <Footer />
+    </div>
+    <script>
+      import "bootstrap/dist/js/bootstrap.bundle";
+    </script>
   </body>
 </html>

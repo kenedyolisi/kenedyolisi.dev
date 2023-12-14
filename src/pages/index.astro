@@ -1,13 +1,41 @@
 ---
 import BaseLayout from "@layouts/base_layout.astro";
+import { Picture } from "astro:assets";
 
-const title = "Home Page";
+import hero from "@images/hero.png";
+const pageTitle = "Home Page";
 ---
 
-<BaseLayout pageTitle = {title}>
- <article>
-      <h1>{title}</h1>
-    </article>
+<BaseLayout pageTitle={pageTitle}>
+  <article>
+    <div class="row">
+      <div class="col">
+        <h1 class="title lh-1">I am Kenedy Olisi</h1>
+        <p class="lead mt-4 tagline lh-1">
+          I am freelance front-end developer.
+        </p>
+        <p>
+          Want to turn your design mockups into&nbsp;
+          <strong class="text-info-emphasis">beautiful</strong>,{" "}
+          <strong class="text-info-emphasis">intuitive</strong>,{" "}
+          <strong class="text-info-emphasis">optimal</strong> websites or web
+          applications that guarantees amazing user-experience? Tap or click on
+          the button below to get in touch.
+        </p>
+        <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+          <a class="btn btn-outline-primary btn-lg" href="contact"
+            >Let's do this!</a
+          >
+        </div>
+      </div>
+      <div class="col">
+        <Picture
+          class="hero-img"
+          src={hero}
+          alt="kenedy olisi"
+          formats={["avif", "webp"]}
+        />
+      </div>
+    </div>
+  </article>
 </BaseLayout>
-   
-

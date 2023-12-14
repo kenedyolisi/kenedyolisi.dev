@@ -3,6 +3,7 @@ import "@styles/global.scss";
 import Footer from "@components/footer.astro";
 import Header from "@components/header.astro";
 import { ViewTransitions } from "astro:transitions";
+import siteConfig from "src/site_config";
 
 const { pageTitle } = Astro.props;
 ---
@@ -14,10 +15,9 @@ const { pageTitle } = Astro.props;
     <meta name="generator" content={Astro.generator} />
     <ViewTransitions />
 
-    <title>{pageTitle}</title>
+    <title>{`${siteConfig.author} | ${pageTitle}`}</title>
 
     <link rel="icon" type="image/svg+xml" href="/logo.svg" />
-
   </head>
 
   <body>

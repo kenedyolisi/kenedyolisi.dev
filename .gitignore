@@ -30,7 +30,7 @@
 # !.yarn/cache
 
 ### Comment when using zero-installs
-### In that case, don't forget to remove `enableGlobalCache` option or set it to false!
+### In that case, don't forget to remove `enableGlobalCache` option or set it to true!
 .pnp.*
 
 ## Yarn Integrity file

@@ -22,7 +22,6 @@
   "dependencies": {
     "@astrojs/react": "^3.0.7",
     "@astrojs/vercel": "^6.1.0",
-    "@types/react-dom": "^18.2.17",
     "@vercel/analytics": "^1.1.1",
     "@vercel/speed-insights": "^1.0.2",
     "astro": "^4.0.4",
@@ -37,6 +36,7 @@
     "@types/node": "^20.10.4",
     "@types/postcss-html": "^1",
     "@types/react": "^18.2.45",
+    "@types/react-dom": "^18.2.17",
     "@typescript-eslint/parser": "^6.14.0",
     "eslint": "^8.55.0",
     "eslint-plugin-astro": "^0.30.0",

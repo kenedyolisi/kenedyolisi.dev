@@ -11,9 +11,6 @@ dependencies:
   '@astrojs/vercel':
     specifier: ^6.1.0
     version: 6.1.0(astro@4.0.4)
-  '@types/react-dom':
-    specifier: ^18.2.17
-    version: 18.2.17
   '@vercel/analytics':
     specifier: ^1.1.1
     version: 1.1.1
@@ -55,6 +52,9 @@ devDependencies:
   '@types/react':
     specifier: ^18.2.45
     version: 18.2.45
+  '@types/react-dom':
+    specifier: ^18.2.17
+    version: 18.2.17
   '@typescript-eslint/parser':
     specifier: ^6.14.0
     version: 6.14.0(eslint@8.55.0)(typescript@5.3.3)
@@ -1073,7 +1073,6 @@ packages:
     resolution: {integrity: sha512-rvrT/M7Df5eykWFxn6MYt5Pem/Dbyc1N8Y0S9Mrkw2WFCRiqUgw9P7ul2NpwsXCSM1DVdENzdG9J5SreqfAIWg==}
     dependencies:
       '@types/react': 18.2.45
-    dev: false
 
   /@types/react@18.2.45:
     resolution: {integrity: sha512-TtAxCNrlrBp8GoeEp1npd5g+d/OejJHFxS3OWmrPBMFaVQMSN0OFySozJio5BHxTuTeug00AVXVAjfDSfk+lUg==}

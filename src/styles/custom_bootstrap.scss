@@ -16,6 +16,7 @@ $blue-dark: rgb(70 140 252);
 $body-bg-dark: rgb(30, 40, 50);
 $body-color: $body-bg-dark;
 // $body-color: $body-bg-dark;
+$navbar-padding-y: 0;
 $min-contrast-ratio: 4.56;
 $enable-caret: false;
 $link-color-dark: $blue-dark;
@@ -52,7 +53,7 @@ $utilities: map-merge(
 
 @import "../../node_modules/bootstrap/scss/reboot";
 @import "../../node_modules/bootstrap/scss/type";
-// @import "../../node_modules/bootstrap/scss/images";
+@import "../../node_modules/bootstrap/scss/images";
 @import "../../node_modules/bootstrap/scss/containers";
 @import "../../node_modules/bootstrap/scss/grid";
 // @import "../../node_modules/bootstrap/scss/tables";
@@ -78,7 +79,7 @@ $utilities: map-merge(
 // @import "../../node_modules/bootstrap/scss/popover";
 // @import "../../node_modules/bootstrap/scss/carousel";
 // @import "../../node_modules/bootstrap/scss/spinners";
-// @import "../../node_modules/bootstrap/scss/offcanvas"; // requires transitions
+@import "../../node_modules/bootstrap/scss/offcanvas"; // requires transitions
 // @import "../../node_modules/bootstrap/scss/placeholders";
 
 // Helpers such as .clearfix, .text-*, .bg-*, .link-*, .focus-ring,

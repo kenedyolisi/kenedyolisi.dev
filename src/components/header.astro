@@ -5,55 +5,88 @@ const navLinks = [
   "services",
   "projects",
   "testimonials",
+  "qualities",
+  "blog",
   "contact",
 ];
 
-const navbarCollapseId = "navbar-collapse";
+const offcanvasId = "offcanvasNavbar";
 ---
 
-<a class="visually-hidden-focusable" href="#main-content"
-  >Skip to main content</a
+<a
+  class="mt-2 mx-auto py-2 px-4 text-white bg-primary rounded-2 visually-hidden-focusable"
+  href="#main-content">Skip to main content</a
 >
 
-<nav class="navbar navbar-expand-lg sticky-top">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="/">Navbar</a>
+<header class="navbar navbar-expand-lg fixed-top">
+  <nav class="container-fluid bg-white" aria-label="site">
+    <a class="navbar-brand" href="/">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 100 100"
+        width={48}
+        height={48}
+      >
+        <path
+          d="M22.934 15L2 50l20.934 35L32 79.948 14.086 50 32 20.052z"
+          fill="#dc324b"></path>
+        <path
+          d="M39.278 62.9l-5.726-10.91q-.576-1.297-.684-1.783h-.09v12.694H25V37.08h7.778v12.28h.09q.342-.972.774-1.8l5.15-10.48h9.218l-7.328 12.316 8.03 13.504zM75 49.92q0 3.89-1.674 6.968-1.675 3.06-4.682 4.771-3.007 1.693-6.734 1.693-3.637 0-6.626-1.639-2.97-1.656-4.627-4.627-1.656-2.989-1.656-6.752 0-3.943 1.674-7.094 1.675-3.15 4.7-4.861 3.024-1.729 6.877-1.729 3.71 0 6.626 1.657 2.935 1.638 4.52 4.699Q75 46.048 75 49.919zm-8.246.216q0-3.187-1.225-5.023-1.224-1.837-3.349-1.837-2.322 0-3.619 1.765-1.296 1.764-1.296 4.987 0 3.15 1.278 4.915 1.297 1.765 3.511 1.765 1.35 0 2.431-.792 1.08-.793 1.675-2.269.594-1.476.594-3.511z"
+          fill="#106cfe"></path>
+        <path
+          d="M77.066 15L98 50 77.066 85 68 79.948 85.914 50 68 20.052z"
+          fill="#0f8750"></path>
+      </svg></a
+    >
+
     <button
       class="navbar-toggler"
+      data-bs-toggle="offcanvas"
+      data-bs-target={`#${offcanvasId}`}
       type="button"
-      data-bs-toggle="collapse"
-      data-bs-target={`#${navbarCollapseId}`}
-      aria-controls={navbarCollapseId}
-      aria-expanded="false"
-      aria-label="Toggle navigation"
+      aria-controls={offcanvasId}
+      aria-label="toggle navigation"
     >
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id={navbarCollapseId}>
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        {
-          navLinks.map((link) => {
-            return (
-              <li class="nav-item">
-                <a
-                  class:list={[
-                    "nav-link",
-                    "text-primary",
-                    // {
-                    //   active:
-                    //     Astro.url.pathname === "/" ||(
-                    //     Astro.url.pathname.startsWith(`/${link}`) && link!=="home")
-                    // },
-                  ]}
-                  href={`/${link === "home" ? "" : link}`}
-                >
-                  {link}
-                </a>
-              </li>
-            );
-          })
-        }
-      </ul>
+
+    <div class="offcanvas offcanvas-end" id={offcanvasId} tabindex="-1">
+      <div class="offcanvas-header">
+        <button
+          class="btn-close ms-auto"
+          data-bs-dismiss="offcanvas"
+          type="button"
+          aria-label="close navbar"></button>
+      </div>
+      <div class="offcanvas-body">
+        <ul class="navbar-nav flex-grow-1">
+          {
+            navLinks.map((link) => {
+              return (
+                <li class="nav-item">
+                  <a
+                    class:list={[
+                      "nav-link",
+                      "text-primary",
+                      "text-capitalize",
+                      // {
+                      //   active:
+                      //     Astro.url.pathname === "/" ||(
+                      //     Astro.url.pathname.startsWith(`/${link}`) && link!=="home")
+                      // },
+                    ]}
+                    href={`/${link === "home" ? "" : link}`}
+                  >
+                    {link}
+                  </a>
+                </li>
+              );
+            })
+          }
+        </ul>
+      </div>
     </div>
-  </div>
-</nav>
+  </nav>
+</header>
+
+<script></script>

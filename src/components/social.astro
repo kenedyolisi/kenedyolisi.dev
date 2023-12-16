@@ -1,4 +1,8 @@
 ---
-const {platform}= Astro.props
+const { platform } = Astro.props;
 ---
-<a href=`https://www.${platform}.com/kenedyolisi`>{platform}</a>
+
+<a
+  class="m-2 d-flex-inline justify-content-center align-items-center text-decoration-none"
+  href=`https://www.${platform}.com/kenedyolisi`><slot /></a
+>

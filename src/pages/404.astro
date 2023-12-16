@@ -1,0 +1,30 @@
+---
+import BaseLayout from "@layouts/base_layout.astro";
+
+const title = "Page Not Found";
+---
+
+<BaseLayout pageTitle={title}>
+  <div
+    class="d-flex justify-content-center align-items-center h-100 text-center"
+  >
+    <div>
+      <h1>{title}</h1>
+      <p>
+        Sorry{" "}
+        <span role="img" aria-label="pensive emoji"> 😔</span>{" "}
+         this page is not available.
+      </p>
+      {
+        process.env.NODE_ENV === "development" ? (
+          <p>
+            Try creating it in <code>src/pages/</code>
+          </p>
+        ) : null
+      }
+      <p>
+        <a class="btn btn-outline-primary" href="/">Go home</a>
+      </p>
+    </div>
+  </div>
+</BaseLayout>

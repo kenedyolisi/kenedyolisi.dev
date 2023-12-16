@@ -4,23 +4,11 @@
   "compilerOptions": {
     "baseUrl": "D:/repos/kenedyolisi.dev",
     "paths": {
-      "@components/*": [
-        "src/components/*"
-      ],
-      "@images/*": [
-        "src/images/*"
-      ],
-      "@layouts/*": [
-        "src/layouts/*"
-      ],
-      "@scripts/*": [
-        "src/scripts/*"
-      ],
-      "@styles/*": [
-        "src/styles/*"
-      ]
-    },
-    "jsx": "react-jsx",
-    "jsxImportSource": "react"
+      "@components/*": ["src/components/*"],
+      "@images/*": ["src/images/*"],
+      "@layouts/*": ["src/layouts/*"],
+      "@scripts/*": ["src/scripts/*"],
+      "@styles/*": ["src/styles/*"]
+    }
   }
 }

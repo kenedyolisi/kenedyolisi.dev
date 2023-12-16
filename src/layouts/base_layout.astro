@@ -1,11 +1,12 @@
 ---
 import "@styles/global.scss";
+
 import Footer from "@components/footer.astro";
 import Header from "@components/header.astro";
+import ScrollTop from "@components/scroll_top.astro";
 import siteConfig from "src/site_config";
 import { injectSpeedInsights } from "@vercel/speed-insights";
 import { ViewTransitions } from "astro:transitions";
-import { ScrollToTop } from "@components/scroll_top.tsx";
 
 const { pageTitle } = Astro.props;
 injectSpeedInsights({});
@@ -28,7 +29,7 @@ injectSpeedInsights({});
       <Header />
       <main class="container flex-grow-1" id="main-content">
         <slot />
-        <ScrollToTop client:visible />
+        <ScrollTop />
       </main>
       <Footer />
     </div>

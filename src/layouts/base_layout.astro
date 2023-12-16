@@ -36,5 +36,21 @@ injectSpeedInsights({});
     <script>
       import "bootstrap/dist/js/bootstrap.bundle";
     </script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-HKMD2TMJCZ"
+    ></script>
+    <script>
+      // @ts-ignore
+      window.dataLayer = window.dataLayer || [];
+
+      function gtag() {
+        // @ts-ignore
+        dataLayer.push(arguments);
+      }
+      // @ts-ignore
+      gtag("js", new Date());
+      // @ts-ignore
+      gtag("config", "G-HKMD2TMJCZ");
+    </script>
   </body>
 </html>

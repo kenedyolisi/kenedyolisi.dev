@@ -1,15 +1,15 @@
 ---
 import BaseLayout from "@layouts/base_layout.astro";
 
-const title = "My Qualities";
+const title = "Why Choose My Services";
 ---
 
 <BaseLayout pageTitle={title}>
-  <article>
-    <h1>{title}</h1>
-    <h2>Why Choose My Services?</h2>
+  <article aria-label={title}>
+    <h1>{title}?</h1>
+
     <div class="qualities">
-      <div class="row">
+      <section class="row">
         <!-- <div class="col col-4">
           <figure>
             <Picture
@@ -30,7 +30,7 @@ const title = "My Qualities";
         </div> -->
 
         <div class="col">
-          <h3 class="text-gradient">Responsive Design</h3>
+          <h2>Responsive Design</h2>
           <p>
             I craft every project with a mobile-first mindset, ensuring a
             seamless user experience across a variety of devices. Responsive
@@ -38,8 +38,8 @@ const title = "My Qualities";
             development philosophy.
           </p>
         </div>
-      </div>
-      <div class="row">
+      </section>
+      <section class="row">
         <!-- <div class="col col-4">
           <figure>
             <Picture
@@ -60,7 +60,7 @@ const title = "My Qualities";
           </figure>
         </div> -->
         <div class="col">
-          <h3 class="text-gradient">Innovative Approach</h3>
+          <h2>Innovative Approach</h2>
 
           <p>
             I bring a fresh and innovative approach to every project, ensuring
@@ -69,8 +69,8 @@ const title = "My Qualities";
             technologies, I strive to deliver cutting-edge solutions.
           </p>
         </div>
-      </div>
-      <div class="row">
+      </section>
+      <section class="row">
         <!-- <div class="col col-4">
           <figure>
             <Picture
@@ -89,7 +89,7 @@ const title = "My Qualities";
           </figure>
         </div> -->
         <div class="col">
-          <h3 class="text-gradient">Tailored Solutions</h3>
+          <h2>Tailored Solutions</h2>
           <p>
             Every project is unique, and I take a client-centric approach to
             ensure that the solutions provided align with your specific
@@ -102,8 +102,8 @@ const title = "My Qualities";
             satisfaction and success of my clients in achieving their goals.
           </p>
         </div>
-      </div>
-      <div class="row">
+      </section>
+      <section class="row">
         <!-- <div class="col col-4">
           <figure>
             <Picture
@@ -122,7 +122,7 @@ const title = "My Qualities";
           </figure>
         </div> -->
         <div class="col">
-          <h3 class="text-gradient">Agile Methodology</h3>
+          <h2>Agile Methodology</h2>
           <p>
             I embrace an agile development approach, allowing me to adapt to
             changing project requirements and deliver high-quality results
@@ -130,8 +130,8 @@ const title = "My Qualities";
             transparency throughout the development lifecycle.
           </p>
         </div>
-      </div>
-      <div class="row">
+      </section>
+      <section class="row">
         <!-- <div class="col col-4">
           <figure>
             <Picture
@@ -150,7 +150,7 @@ const title = "My Qualities";
           </figure>
         </div> -->
         <div class="col">
-          <h3 class="text-gradient">User-Centric Design</h3>
+          <h2>User-Centric Design</h2>
           <p>
             My design philosophy revolves around creating intuitive and
             user-friendly experiences. I prioritize user-centric design
@@ -158,8 +158,8 @@ const title = "My Qualities";
             enjoyable.
           </p>
         </div>
-      </div>
-      <div class="row">
+      </section>
+      <section class="row">
         <!-- <div class="col col-4">
           <figure>
             <Picture
@@ -178,15 +178,15 @@ const title = "My Qualities";
           </figure>
         </div> -->
         <div class="col">
-          <h3 class="text-gradient">Performance Optimization</h3>
+          <h2>Performance Optimization</h2>
           <p>
             I understand the importance of performance. My optimization
             strategies guarantee fast load times, smooth animations, and an
             overall enhanced user experience.
           </p>
         </div>
-      </div>
-      <div class="row">
+      </section>
+      <section class="row">
         <!-- <div class="col col-4">
           <figure>
             <Picture
@@ -205,7 +205,7 @@ const title = "My Qualities";
           </figure>
         </div> -->
         <div class="col">
-          <h3 class="text-gradient">Collaboration and Communication</h3>
+          <h2>Collaboration and Communication</h2>
           <p>
             Effective communication is the key to successful projects. I
             prioritize open and transparent communication with my clients,
@@ -218,8 +218,8 @@ const title = "My Qualities";
             actively involve clients in the decision-making process.
           </p>
         </div>
-      </div>
-      <div class="row">
+      </section>
+      <section class="row">
         <!-- <div class="col col-4">
           <figure>
             <Picture
@@ -238,7 +238,7 @@ const title = "My Qualities";
           </figure>
         </div> -->
         <div class="col">
-          <h3 class="text-gradient">Technology Stack</h3>
+          <h2>Technology Stack</h2>
           <p>
             With expertise in frontend development technologies i.e.{" "}
             <strong>GatsbyJS</strong>, <strong>ReactJS</strong>,{" "}
@@ -248,8 +248,8 @@ const title = "My Qualities";
             will not only be functional but also aesthetically pleasing.
           </p>
         </div>
-      </div>
-      <div class="row">
+      </section>
+      <section class="row">
         <!-- <div class="col col-4">
           <figure>
             <Picture
@@ -268,14 +268,14 @@ const title = "My Qualities";
           </figure>
         </div> -->
         <div class="col">
-          <h3 class="text-gradient">Continuous Learning</h3>
+          <h2>Continuous Learning</h2>
           <p>
             The tech landscape is dynamic, and I thrive on continuous learning.
             Staying updated with the latest trends and technologies allows me to
             provide clients with the most up-to-date solutions.
           </p>
         </div>
-      </div>
+      </section>
     </div>
   </article>
 </BaseLayout>

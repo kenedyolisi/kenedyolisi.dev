@@ -19,7 +19,7 @@ injectSpeedInsights({});
     <meta name="generator" content={Astro.generator} />
     <ViewTransitions />
 
-    <title>{`${siteConfig.author} | ${pageTitle}`}</title>
+    <title>{`${pageTitle} | ${siteConfig.author}`}</title>
 
     <link rel="icon" type="image/svg+xml" href="/logo.svg" />
   </head>
@@ -33,9 +33,6 @@ injectSpeedInsights({});
       </main>
       <Footer />
     </div>
-    <script>
-      import "bootstrap/dist/js/bootstrap.bundle";
-    </script>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-HKMD2TMJCZ"
     ></script>
@@ -51,6 +48,9 @@ injectSpeedInsights({});
       gtag("js", new Date());
       // @ts-ignore
       gtag("config", "G-HKMD2TMJCZ");
+    </script>
+    <script>
+      import "bootstrap/dist/js/bootstrap.bundle";
     </script>
   </body>
 </html>

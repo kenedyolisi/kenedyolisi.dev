@@ -3,13 +3,17 @@
   "private": true,
   "version": "0.0.1",
   "type": "module",
+  "author": "Kenedy Olisi",
   "homepage": "https://kenedyolisi.vercel.app",
   "engines": {
     "node": ">=18.17.1"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/kenedyolisi/kenedyolisi.dev.git"
+    "url": "git+https://github.com/kenedyolisi/kenedyolisi.dev.git"
+  },
+  "bugs": {
+    "url": "https://github.com/kenedyolisi/kenedyolisi.dev/issues"
   },
   "scripts": {
     "astro": "astro",
@@ -35,6 +39,8 @@
     "eslint-plugin-astro": "^0.30.0",
     "eslint-plugin-jsx-a11y": "^6.8.0",
     "postcss-html": "^1.5.0",
+    "prettier": "^3.1.1",
+    "prettier-plugin-astro": "^0.12.2",
     "sass": "^1.69.5",
     "stylelint": "^16.0.2",
     "stylelint-config-html": "^1.1.0",

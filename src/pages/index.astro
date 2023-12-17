@@ -1,9 +1,9 @@
 ---
 import BaseLayout from "@layouts/base_layout.astro";
+import siteConfig from "src/site_config";
 import { Picture } from "astro:assets";
 
-import hero from "@images/hero.png";
-import siteConfig from "src/site_config";
+import heroBg from "@images/hero_bg.png";
 ---
 
 <BaseLayout pageTitle={siteConfig.slogan}>
@@ -32,10 +32,10 @@ import siteConfig from "src/site_config";
           </p>
         </div>
       </div>
-      <div class="col">
+      <div class="col col-lg-4">
         <Picture
-          class="object-fit-cover rounded-3 img-fluid"
-          src={hero}
+          class="img-fluid object-fit-cover rounded-3"
+          src={heroBg}
           alt="kenedy olisi"
           formats={["avif", "webp"]}
         />

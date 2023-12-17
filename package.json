@@ -3,13 +3,17 @@
   "private": true,
   "version": "0.0.1",
   "type": "module",
+  "author": "Kenedy Olisi",
   "homepage": "https://kenedyolisi.vercel.app",
   "engines": {
     "node": ">=18.17.1"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/kenedyolisi/kenedyolisi.dev.git"
+    "url": "git+https://github.com/kenedyolisi/kenedyolisi.dev.git"
+  },
+  "bugs": {
+    "url": "https://github.com/kenedyolisi/kenedyolisi.dev/issues"
   },
   "scripts": {
     "astro": "astro",

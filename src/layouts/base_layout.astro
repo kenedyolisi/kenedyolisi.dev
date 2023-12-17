@@ -5,11 +5,9 @@ import Footer from "@components/footer.astro";
 import Header from "@components/header.astro";
 import ScrollTop from "@components/scroll_top.astro";
 import siteConfig from "src/site_config";
-import { injectSpeedInsights } from "@vercel/speed-insights";
 import { ViewTransitions } from "astro:transitions";
 
 const { pageTitle } = Astro.props;
-injectSpeedInsights({});
 ---
 
 <html lang="en" dir="ltr">
@@ -18,10 +16,33 @@ injectSpeedInsights({});
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     <ViewTransitions />
+    <meta name="theme-color" content="#106cfe" />
+    <meta
+      name="theme-color"
+      media="(prefers-color-scheme: light)"
+      content="#106cfe"
+    />
+    <meta
+      name="theme-color"
+      media="(prefers-color-scheme: dark)"
+      content="#1e2832"
+    />
 
     <title>{`${pageTitle} | ${siteConfig.author}`}</title>
 
     <link rel="icon" type="image/svg+xml" href="/logo.svg" />
+
+    {/* Google tag (gtag.js) */}
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-HKMD2TMJCZ"
+    ></script>
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-HKMD2TMJCZ");
+    </script>
   </head>
 
   <body>
@@ -33,22 +54,7 @@ injectSpeedInsights({});
       </main>
       <Footer />
     </div>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-HKMD2TMJCZ"
-    ></script>
-    <script>
-      // @ts-ignore
-      window.dataLayer = window.dataLayer || [];
 
-      function gtag() {
-        // @ts-ignore
-        dataLayer.push(arguments);
-      }
-      // @ts-ignore
-      gtag("js", new Date());
-      // @ts-ignore
-      gtag("config", "G-HKMD2TMJCZ");
-    </script>
     <script>
       import "bootstrap/dist/js/bootstrap.bundle";
     </script>

@@ -22,7 +22,12 @@
   window.addEventListener("scroll", handleScroll);
 
   const scrollTopBtn = document.getElementById("scroll-to-top");
-  
+  scrollTopBtn?.addEventListener("click", handleClick);
+
+  function handleClick() {
+    scrollTo(0, 0);
+  }
+
   function handleScroll() {
     if (scrollY > 200) {
       scrollTopBtn?.classList.add("showing");

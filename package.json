@@ -24,6 +24,7 @@
     "start": "astro dev"
   },
   "dependencies": {
+    "@astrojs/vercel": "^6.1.0",
     "@vercel/speed-insights": "^1.0.2",
     "astro": "^4.0.4",
     "bootstrap": "^5.3.2"

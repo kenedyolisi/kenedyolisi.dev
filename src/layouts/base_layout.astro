@@ -33,6 +33,18 @@ injectSpeedInsights({});
     <title>{`${pageTitle} | ${siteConfig.author}`}</title>
 
     <link rel="icon" type="image/svg+xml" href="/logo.svg" />
+
+    {/* Google tag (gtag.js) */}
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-HKMD2TMJCZ"
+    ></script>
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-HKMD2TMJCZ");
+    </script>
   </head>
 
   <body>
@@ -44,22 +56,7 @@ injectSpeedInsights({});
       </main>
       <Footer />
     </div>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-HKMD2TMJCZ"
-    ></script>
-    <script>
-      // @ts-ignore
-      window.dataLayer = window.dataLayer || [];
 
-      function gtag() {
-        // @ts-ignore
-        dataLayer.push(arguments);
-      }
-      // @ts-ignore
-      gtag("js", new Date());
-      // @ts-ignore
-      gtag("config", "G-HKMD2TMJCZ");
-    </script>
     <script>
       import "bootstrap/dist/js/bootstrap.bundle";
     </script>

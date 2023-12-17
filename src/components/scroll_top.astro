@@ -20,7 +20,9 @@
 
 <script>
   window.addEventListener("scroll", handleScroll);
+
   const scrollTopBtn = document.getElementById("scroll-to-top");
+  
   function handleScroll() {
     if (scrollY > 200) {
       scrollTopBtn?.classList.add("showing");

@@ -37,6 +37,7 @@
     "@types/eslint": "^8",
     "@types/node": "^20.10.4",
     "@types/postcss-html": "^1",
+    "@types/react": "^18.2.45",
     "@typescript-eslint/parser": "^6.14.0",
     "eslint": "^8.55.0",
     "eslint-plugin-astro": "^0.30.0",

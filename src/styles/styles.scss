@@ -5,16 +5,6 @@
   background-color: $blue;
 }
 
-.title {
-  font-size: calc(2rem + 3vw);
-  font-weight: 600;
-}
-
-.tagline {
-  font-size: calc(1.2rem + 1.8vw);
-  font-weight: 400;
-}
-
 main {
   margin-top: 6rem;
 }
@@ -30,10 +20,17 @@ h2 {
 
 .navbar-nav {
   .nav-link {
-    position: relative;
+    @include media-breakpoint-down(lg) {
+      &:hover,
+      &.active {
+        background-color: $primary;
+        color: #fff !important;
+      }
+    }
 
     @include media-breakpoint-up(lg) {
-      margin: 3px;
+      position: relative;
+      margin-block: 3px;
 
       &:hover {
         // color: #fff;

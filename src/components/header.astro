@@ -1,6 +1,6 @@
 ---
+import ThemeSwitcher from "./theme_switcher.astro";
 const navLinks = [
-  "home",
   "about",
   "services",
   "projects",
@@ -36,8 +36,8 @@ const offcanvasId = "offcanvasNavbar";
         <path
           d="M77.066 15L98 50 77.066 85 68 79.948 85.914 50 68 20.052z"
           fill="#0f8750"></path>
-      </svg></a
-    >
+      </svg>
+    </a>
 
     <button
       class="navbar-toggler p-1"
@@ -51,7 +51,7 @@ const offcanvasId = "offcanvasNavbar";
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 16 16"
         fill="currentColor"
-        width="40"
+        width="35"
       >
         <path
           d="M2 11.258h1.095l.423 1.64.421-1.64h1.092v2.694h-.68v-2.054l-.528 2.054h-.615l-.526-2.054v2.054H2zm3.56 0h2.231v.575H6.395v.429H7.69v.55H6.395v.53h1.437v.61H5.56zm2.726 0h.777l1.015 1.49v-1.49h.785v2.694h-.785l-1.01-1.48v1.48h-.782zm4.883 0H14v1.606q0 .24-.075.453-.074.21-.234.37-.158.159-.332.223-.243.09-.583.09-.197 0-.43-.027-.232-.028-.388-.109-.156-.082-.287-.233-.128-.15-.176-.31-.077-.258-.077-.457v-1.606h.83v1.645q0 .22.122.346.123.123.34.123.215 0 .336-.122.123-.123.123-.347z"
@@ -64,13 +64,32 @@ const offcanvasId = "offcanvasNavbar";
 
     <div class="offcanvas offcanvas-end" id={offcanvasId} tabindex="-1">
       <div class="offcanvas-header">
+        <a class="text-decoration-none text-primary fs-5 fw-semibold" href="/">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 100 100"
+            width={48}
+            height={48}
+          >
+            <path
+              d="M22.934 15L2 50l20.934 35L32 79.948 14.086 50 32 20.052z"
+              fill="#dc324b"></path>
+            <path
+              d="M39.278 62.9l-5.726-10.91q-.576-1.297-.684-1.783h-.09v12.694H25V37.08h7.778v12.28h.09q.342-.972.774-1.8l5.15-10.48h9.218l-7.328 12.316 8.03 13.504zM75 49.92q0 3.89-1.674 6.968-1.675 3.06-4.682 4.771-3.007 1.693-6.734 1.693-3.637 0-6.626-1.639-2.97-1.656-4.627-4.627-1.656-2.989-1.656-6.752 0-3.943 1.674-7.094 1.675-3.15 4.7-4.861 3.024-1.729 6.877-1.729 3.71 0 6.626 1.657 2.935 1.638 4.52 4.699Q75 46.048 75 49.919zm-8.246.216q0-3.187-1.225-5.023-1.224-1.837-3.349-1.837-2.322 0-3.619 1.765-1.296 1.764-1.296 4.987 0 3.15 1.278 4.915 1.297 1.765 3.511 1.765 1.35 0 2.431-.792 1.08-.793 1.675-2.269.594-1.476.594-3.511z"
+              fill="#106cfe"></path>
+            <path
+              d="M77.066 15L98 50 77.066 85 68 79.948 85.914 50 68 20.052z"
+              fill="#0f8750"></path>
+          </svg>
+          <span>Kenedy Olisi</span>
+        </a>
         <button
           class="btn-close ms-auto"
           data-bs-dismiss="offcanvas"
           type="button"
           aria-label="close navbar"></button>
       </div>
-      <div class="offcanvas-body">
+      <div class="offcanvas-body d-lg-flex align-items-lg-center">
         <ul class="navbar-nav flex-grow-1">
           {
             navLinks.map((link) => {
@@ -79,16 +98,14 @@ const offcanvasId = "offcanvasNavbar";
                   <a
                     class:list={[
                       "nav-link",
-                      "ms-3",
-                      "ms-lg-0",
+                      "ps-3",
+                      "ps-lg-0",
+                      "m-1",
                       "text-primary",
                       "text-capitalize",
-                      "fs-5"
-                      // {
-                      //   active:
-                      //     Astro.url.pathname === "/" ||(
-                      //     Astro.url.pathname.startsWith(`/${link}`) && link!=="home")
-                      // },
+                      {
+                        active: Astro.url.pathname.startsWith(`/${link}`),
+                      },
                     ]}
                     href={`/${link === "home" ? "" : link}`}
                   >
@@ -99,6 +116,10 @@ const offcanvasId = "offcanvasNavbar";
             })
           }
         </ul>
+        <div>
+          <hr class="d-lg-none" />
+          <ThemeSwitcher />
+        </div>
       </div>
     </div>
   </nav>

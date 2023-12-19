@@ -4,5 +4,5 @@ const { platform } = Astro.props;
 
 <a
   class="p-1 mx-1 text-decoration-none"
-  href=`https://www.${platform}.com/kenedyolisi`><slot /></a
+  href=`https://www.${platform}.com/${platform==="linkedin"?"in/":""}kenedyolisi`><slot /></a
 >

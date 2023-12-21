@@ -1,5 +1,9 @@
 ---
 import BaseLayout from "@layouts/base_layout.astro";
+import { Image } from "astro:assets";
+
+import landingPage from "@images/kenedyolisi_landing_page.png";
+import nextjsDashboard from "@images/nextjs_dashboard.png";
 
 const title = "Projects";
 ---
@@ -7,5 +11,64 @@ const title = "Projects";
 <BaseLayout pageTitle={title}>
   <article>
     <h1 transition:animate="slide">{title}</h1>
+    <p>🌐 Explore my portfolio for a glimpse of my recent projects.</p>
+
+    <div class="row g-4 flex-column flex-lg-row">
+      <div class="col project text-center border border-2 rounded-2">
+        <figure class="figure">
+          <Image
+            class="figure-image object-fit-cover img-fluid img-trigger"
+            src={landingPage}
+            alt="kenedyolisi landing page"
+          />
+          <figcaption class="figure-caption">
+            kenedyolisi.vercel.app landing page
+          </figcaption>
+        </figure>
+        <a class="btn btn-primary m-3" href="https://kenedyolisi.vercel.app">
+          Go to project</a
+        >
+      </div>
+      {
+        /*
+        
+        <div class="modal fade" id="project-1" tabindex="-1">
+          <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button
+                  class="btn-close ms-auto"
+                  data-bs-dismiss="modal"
+                  type="button"
+                  aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <Image
+                  class="object-fit-cover img-fluid"
+                  src={landingPage}
+                  alt="kenedyolisi landing page"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+ 
+        */
+      }
+
+      <div class="col text-center project">
+        <Image
+          class="object-fit-cover img-fluid"
+          src={nextjsDashboard}
+          alt="nextjs dashboard"
+        />
+        <a
+          class="btn btn-primary"
+          href="https://kenedyolisi-nextjs-dashboard.vercel.app"
+        >
+          Got to project
+        </a>
+      </div>
+    </div>
   </article>
 </BaseLayout>

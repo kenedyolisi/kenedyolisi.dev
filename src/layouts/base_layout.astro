@@ -3,7 +3,7 @@ import "@styles/global.scss";
 
 import Footer from "@components/footer.astro";
 import Header from "@components/header.astro";
-import ScrollTop from "@components/scroll_top.astro";
+import { ScrollTopBtn } from "@components/scroll_top.tsx";
 import siteConfig from "src/site_config";
 import { ViewTransitions } from "astro:transitions";
 
@@ -50,7 +50,7 @@ const { pageTitle } = Astro.props;
       <Header />
       <main class="container flex-grow-1" id="main-content">
         <slot />
-        <ScrollTop />
+        <ScrollTopBtn client:visible/>
       </main>
       <Footer />
     </div>

@@ -1,11 +1,36 @@
 ---
 import BaseLayout from "@layouts/base_layout.astro";
 
-const title = "Services";
+const title = "Services I Provide";
 ---
 
 <BaseLayout pageTitle={title}>
   <article>
-    <h1 transition:animate="slide">{title}</h1>
+    <h1 transition:animate="slide">{title}</h1><p>
+      I'm passionate about creating exceptional web experiences through
+      front-end development. Whether you're looking to build a brand-new website
+      or enhance an existing one, I offer a range of services tailored to meet
+      your needs.
+    </p>
+
+    <div>
+      <h2>Front-end Development</h2>
+      <p>
+        Crafting responsive and user-friendly interfaces using HTML, CSS (SCSS), and JavaScript (TypeScript)
+      </p>
+    </div>
+    <div>
+      <h2>ReactJS Development</h2>
+      <p>
+        Building dynamic and efficient web applications with the ReactJS library.
+      </p>
+    </div>
+    <div>
+      <h2>Bootstrap Integration</h2>
+      <p>
+        Implementing responsive and modern design principles using the Bootstrap
+        framework.
+      </p>
+    </div>
   </article>
 </BaseLayout>

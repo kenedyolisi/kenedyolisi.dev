@@ -9,3 +9,7 @@ Firefox ESR
 iOS >= 12
 Safari >= 12
 not Explorer <= 11
+
+[ssr]
+# Node versions > 18.x.x
+node >= 18.17.1

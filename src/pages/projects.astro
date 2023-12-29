@@ -1,22 +1,9 @@
 ---
+import { getCollection } from "astro:content";
 import BaseLayout from "@layouts/base_layout.astro";
-import { Image } from "astro:assets";
+import ProjectCard from "@components/project_card.astro";
 
-import landingPage from "@images/kenedyolisi_landing_page.png";
-import nextjsDashboard from "@images/nextjs_dashboard.png";
-
-const projects = [
-  {
-    imgSrc: landingPage,
-    description: "kenedyolisi.vercel.app landing page",
-    href: "https://kenedyolisi.vercel.app",
-  },
-  {
-    imgSrc: nextjsDashboard,
-    description: "nextjs dashboard",
-    href: "https://kenedyolisi-nextjs-dashboard.vercel.app",
-  },
-];
+const projects = await getCollection("projects");
 
 const title = "Projects";
 ---
@@ -30,21 +17,11 @@ const title = "Projects";
       {
         projects.map((project) => {
           return (
-            <div class="col text-center border border-2 rounded-2 p-0 mx-lg-3">
-              <figure class="figure">
-                <Image
-                  class="figure-image object-fit-cover img-fluid"
-                  src={project.imgSrc}
-                  alt={project.description}
-                />
-                <figcaption class="figure-caption">
-                  {project.description}
-                </figcaption>
-              </figure>
-              <a class="btn btn-primary m-3" href={project.href}>
-                Go to project
-              </a>
-            </div>
+            <ProjectCard
+              cover={project.data.cover}
+              desc={project.data.description}
+              url={project.data.url}
+            />
           );
         })
       }

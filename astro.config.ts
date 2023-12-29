@@ -3,5 +3,7 @@ import react from "@astrojs/react";
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [react()],
+  integrations: [
+    react(), // Add react integration for react components
+  ],
 });

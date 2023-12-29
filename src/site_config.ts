@@ -1,6 +1,6 @@
 export const siteName = "kenedyolisi.vercel.app";
 
-const siteConfig = {
+export const siteConfig = {
   siteUrl: `https://${siteName}`,
   owner: "Kenedy Olisi",
   slogan: "Front-end Developer",
@@ -15,5 +15,3 @@ const siteConfig = {
   ],
   author: "Kenedy Olisi",
 };
-
-export default siteConfig;

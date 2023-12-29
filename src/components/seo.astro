@@ -1,11 +1,12 @@
 ---
 interface Props {
   pageTitle: string;
+  description: string;
 }
 
-const { pageTitle } = Astro.props;
+const { pageTitle, description } = Astro.props;
 ---
 
-<meta name="description" content="" />
+<meta name="description" content={description} />
 
 <title>{`${pageTitle} | Kenedy Olisi`}</title>

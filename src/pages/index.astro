@@ -2,18 +2,14 @@
 import { Picture } from "astro:assets";
 import { siteConfig } from "src/site_config";
 import BaseLayout from "@layouts/base_layout.astro";
-import SEO from "@components/seo.astro";
 
 import heroBg from "@images/hero_bg.png";
 ---
 
-<BaseLayout pageTitle={siteConfig.slogan}>
-  <SEO
-    slot="seo"
-    description={siteConfig.description}
-    pageTitle={siteConfig.slogan}
-  />
-
+<BaseLayout
+  pageTitle={siteConfig.slogan}
+  pageDescription={siteConfig.description}
+>
   <article>
     <div
       class="row flex-column text-center flex-lg-row align-items-lg-center text-lg-start"

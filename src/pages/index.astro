@@ -1,12 +1,19 @@
 ---
-import BaseLayout from "@layouts/base_layout.astro";
-import siteConfig from "src/site_config";
 import { Picture } from "astro:assets";
+import { siteConfig } from "src/site_config";
+import BaseLayout from "@layouts/base_layout.astro";
+import SEO from "@components/seo.astro";
 
 import heroBg from "@images/hero_bg.png";
 ---
 
 <BaseLayout pageTitle={siteConfig.slogan}>
+  <SEO
+    slot="seo"
+    description={siteConfig.description}
+    pageTitle={siteConfig.slogan}
+  />
+
   <article>
     <div
       class="row flex-column text-center flex-lg-row align-items-lg-center text-lg-start"
@@ -20,8 +27,8 @@ import heroBg from "@images/hero_bg.png";
           I specialize in creating
           <strong>sleek</strong> and
           <strong>user-friendly</strong>
-           web apps that help businesses succeed online. Need to turn
-          your design mockups into{" "}
+           web apps that help businesses succeed online. Need to turn your
+          design mockups into{" "}
           <strong class="fw-semibold">blazing-fast</strong>,{" "}
           <strong class="fw-semibold">scalable</strong>,{" "}
           <strong class="fw-semibold">dynamic</strong>{" "}web application that

@@ -3,9 +3,13 @@ import "@styles/global.scss";
 
 import Footer from "@components/footer.astro";
 import Header from "@components/header.astro";
-import { ScrollTopBtn } from "@components/scroll_top.tsx";
+import { ScrollTopBtn } from "@components/scroll_top";
 import siteConfig from "src/site_config";
 import { ViewTransitions } from "astro:transitions";
+
+interface Props {
+  pageTitle: string;
+}
 
 const { pageTitle } = Astro.props;
 ---
@@ -43,6 +47,7 @@ const { pageTitle } = Astro.props;
       gtag("js", new Date());
       gtag("config", "G-HKMD2TMJCZ");
     </script>
+    {/* End of Google tag */}
   </head>
 
   <body>
@@ -50,7 +55,7 @@ const { pageTitle } = Astro.props;
       <Header />
       <main class="container flex-grow-1" id="main-content">
         <slot />
-        <ScrollTopBtn client:visible/>
+        <ScrollTopBtn client:only="react" />
       </main>
       <Footer />
     </div>

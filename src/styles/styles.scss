@@ -1,4 +1,15 @@
 /* stylelint-disable stylistic/number-leading-zero */
+@mixin linearGradient($stop1, $stop2, $deg: 90) {
+  background-image: linear-gradient($deg + deg, $stop1, $stop2);
+}
+
+.bg-grd-blue {
+  @include linearGradient($blue, $blue-100);
+}
+
+.bg-grd-blue-red {
+  @include linearGradient($blue, $red);
+}
 
 *::selection {
   color: #fff;
@@ -18,12 +29,18 @@ h2 {
   color: $success;
 }
 
+a {
+  &:hover {
+    text-decoration: none;
+  }
+}
+
 .navbar-nav {
   .nav-link {
     @include media-breakpoint-down(lg) {
       &:hover,
       &.active {
-        background-color: $primary;
+        @include linearGradient($blue, $blue-100);
         color: #fff !important;
       }
     }

@@ -1,8 +1,5 @@
 .fade-up {
-  animation-name: fade-up;
-  animation-duration: 2s;
-  animation-fill-mode: forwards;
-  animation-timing-function: ease-out;
+  animation: fade-up 2s forwards ease-in-out;
 }
 
 @keyframes fade-up {
@@ -14,11 +11,15 @@
   }
 }
 
-@keyframes spin {
+.pulse {
+  animation: pulse 2s infinite ease-in-out alternate;
+}
+
+@keyframes pulse {
   from {
-    transform: rotate(0deg);
+    transform: scale(1);
   }
   to {
-    transform: rotate(360deg);
+    transform: scale(1.1);
   }
 }

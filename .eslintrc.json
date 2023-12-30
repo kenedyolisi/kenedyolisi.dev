@@ -5,6 +5,7 @@
   },
   "extends": [
     "eslint:recommended",
+    "plugin:astro/jsx-a11y-recommended",
     // Astro last
     "plugin:astro/recommended"
   ],

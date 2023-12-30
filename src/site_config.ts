@@ -1,8 +1,8 @@
 export const siteName = "kenedyolisi.vercel.app";
 
-const siteConfig = {
+export const siteConfig = {
   siteUrl: `https://${siteName}`,
-  title: "Kenedy Olisi",
+  owner: "Kenedy Olisi",
   slogan: "Front-end Developer",
   description:
     "Front-End Developer based in Kenya creating visually stunning websites for businesses and individuals. I specialize in mobile-first and responsive design, UI/UX, and web optimization. Let's collaborate! 🚀",
@@ -15,5 +15,3 @@ const siteConfig = {
   ],
   author: "Kenedy Olisi",
 };
-
-export default siteConfig;

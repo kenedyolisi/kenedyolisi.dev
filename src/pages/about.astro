@@ -1,37 +1,62 @@
 ---
 import BaseLayout from "@layouts/base_layout.astro";
 
-const pageTitle = "About Me";
+const title = "About Me";
 ---
 
-<BaseLayout pageTitle={pageTitle}>
+<BaseLayout pageTitle={title}>
   <article>
-    <h1 transition:animate="slide">{pageTitle}</h1>
+    <h1 transition:animate="slide">{title}</h1>
 
-    <p>
-      Hello!, I'm Kenedy Olisi, a passionate frontend developer based in Kisumu,
-      Kenya. I specialize in creating beautiful and user-friendly web
-      experiences using technologies like GatsbyJS, ReactJS, and Bootstrap.
-    </p>
-    <p>
-      With a strong foundation in HTML, CSS (SCSS), and JavaScript (TypeScript),
-      I bring creativity and attention to detail to every project I work on. I
-      am dedicated to staying updated with the latest industry trends and
-      delivering high-quality solutions to clients.
-    </p>
-    <p>
-      When I'm not coding, you'll find me enjoying a game of checkers
-      (draughts), watching a movie, listening to my favorite music or tending to
-      my garden. I believe that just as a well-maintained garden flourishes, so
-      do well-designed websites. I also believe in the power of technology to
-      make a positive impact, and I am excited about the prospect of becoming a
-      fullstack developer to broaden my skills and contribute even more to the
-      world of web development.
-    </p>
-    <p>
-      Let's collaborate and bring your web ideas to life! Feel free to{" "}
-      <a href="/projects" class="link-offset-2"> explore my portfolio</a>{" "}
-       to see some of my recent projects.
-    </p>
+    <div class="row flex-column flex-lg-row">
+      <div class="col-3"><h2>Education</h2></div>
+      <div class="col">
+        <p>
+          I acquired my frontend developer skills through self-teaching. I
+          completed and earned a certificate in frontend development from <a
+            href="https://www.freecodecamp.org/kenedyolisi">freecodecamp</a
+          >
+        </p>
+
+        <p>
+          I also took courses for HTML, CSS, JavaScript, Responsive Web Design,
+          and Web Development Fundamentals from <a
+            href="https://sololearn.org/kenedyolisi">Sololearn</a
+          > all of which I completed and earned certifications.
+        </p>
+      </div>
+    </div>
+    <div class="row flex-column flex-lg-row">
+      <div class="col-3">
+        <h2>Skills</h2>
+      </div>
+      <div class="col">
+        <p>
+          With a strong foundation in HTML, CSS (SCSS), JavaScript (TypeScript),
+          and React, I bring creativity and attention to detail to every project
+          I work on. I am dedicated to staying updated with the latest industry
+          trends and delivering high-quality solutions to clients.
+        </p>
+      </div>
+    </div>
+    <div class="row flex-column flex-lg-row">
+      <div class="col-3">
+        <h2>Interests</h2>
+      </div>
+      <div class="col">
+        <p>
+          When I'm not coding, you'll find me enjoying a game of checkers
+          (draughts), watching a movie, listening to my favorite music or
+          tending to my garden. I believe that just as a well-maintained garden
+          flourishes, so do well-designed websites.
+        </p>
+        <p>
+          I also believe in the power of technology to make a positive impact,
+          and I am excited about the prospect of becoming a fullstack developer
+          to broaden my skills and contribute even more to the world of web
+          development.
+        </p>
+      </div>
+    </div>
   </article>
 </BaseLayout>

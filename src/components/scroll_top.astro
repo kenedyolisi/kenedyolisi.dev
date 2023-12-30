@@ -3,7 +3,6 @@
   id="scroll-to-top"
   type="button"
   title="scroll to top"
-  aria-label="scroll to top"
 >
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -19,20 +18,33 @@
 </button>
 
 <script>
+  const scrollTopBtn = document.getElementById(
+    "scroll-to-top"
+  ) as HTMLButtonElement;
+
+  scrollTopBtn?.addEventListener("click", handleClick);
   window.addEventListener("scroll", handleScroll);
 
-  const scrollTopBtn = document.getElementById("scroll-to-top");
-  scrollTopBtn?.addEventListener("click", handleClick);
+  // When user navigates to page, scrollY is 0;
+  let previousScrollY = 0;
+
+  function handleScroll() {
+    // Get the current scroll position
+    const currentScrollY = scrollY;
+
+    if (currentScrollY > previousScrollY || currentScrollY < 200) {
+      // Hide button when user is scrolling down or has not scroll more than 200px
+      scrollTopBtn?.classList.remove("showing");
+    } else {
+      // Show button when user is scrolling up
+      scrollTopBtn?.classList.add("showing");
+    }
+
+    // Update previous scroll position
+    previousScrollY = currentScrollY;
+  }
 
   function handleClick() {
     scrollTo(0, 0);
-  }
-
-  function handleScroll() {
-    if (scrollY > 200) {
-      scrollTopBtn?.classList.add("showing");
-    } else {
-      scrollTopBtn?.classList.remove("showing");
-    }
   }
 </script>

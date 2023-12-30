@@ -1,11 +1,31 @@
 ---
+import { getCollection } from "astro:content";
 import BaseLayout from "@layouts/base_layout.astro";
+import ProjectCard from "@components/project_card.astro";
+
+const projects = await getCollection("projects");
 
 const title = "Projects";
+const description = "Check out my recent projects";
 ---
 
-<BaseLayout pageTitle={title}>
+<BaseLayout pageTitle={title} pageDescription={description}>
   <article>
     <h1 transition:animate="slide">{title}</h1>
+    <p>🌐 Explore my portfolio for a glimpse of my recent projects.</p>
+
+    <div class="row flex-column flex-lg-row g-4">
+      {
+        projects.map((project) => {
+          return (
+            <ProjectCard
+              cover={project.data.cover}
+              desc={project.data.description}
+              url={project.data.url}
+            />
+          );
+        })
+      }
+    </div>
   </article>
 </BaseLayout>

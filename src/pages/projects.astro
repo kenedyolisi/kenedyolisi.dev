@@ -6,9 +6,10 @@ import ProjectCard from "@components/project_card.astro";
 const projects = await getCollection("projects");
 
 const title = "Projects";
+const description = "Check out my recent projects";
 ---
 
-<BaseLayout pageTitle={title}>
+<BaseLayout pageTitle={title} pageDescription={description}>
   <article>
     <h1 transition:animate="slide">{title}</h1>
     <p>🌐 Explore my portfolio for a glimpse of my recent projects.</p>

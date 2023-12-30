@@ -33,7 +33,9 @@ const { pageTitle, pageDescription } = Astro.props;
 
     <ViewTransitions />
 
-    <SEO pageTitle={pageTitle} description={pageDescription} />
+    {pageDescription && <meta name="description" content={pageDescription} />}
+
+    <title>{`${pageTitle} | Kenedy Olisi`}</title>
 
     <link rel="icon" type="image/svg+xml" href="/logo.svg" />
 

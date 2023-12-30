@@ -2,8 +2,7 @@
 import { ViewTransitions } from "astro:transitions";
 import Footer from "@components/footer.astro";
 import Header from "@components/header.astro";
-import ScrollTopBtn from "@components/scroll_top";
-import SEO from "@components/seo.astro";
+import ScrollTopBtn from "@components/scroll_top.astro";
 
 import "@styles/global.scss";
 
@@ -57,7 +56,7 @@ const { pageTitle, pageDescription } = Astro.props;
       <Header />
       <main class="container flex-grow-1" id="main-content">
         <slot />
-        <ScrollTopBtn client:visible />
+        <ScrollTopBtn />
       </main>
       <Footer />
     </div>

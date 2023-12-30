@@ -1,6 +1,8 @@
 ---
 import BaseLayout from "@layouts/base_layout.astro";
 
+export const prerender = true;
+
 const title = "Contact";
 ---
 
@@ -8,7 +10,8 @@ const title = "Contact";
   <article aria-label={title}>
     <h1 transition:animate="slide">Get in Touch</h1>
     <p>
-      Ready to elevate your web presence? Let's discuss your project and turn it into engaging online experiences.
+      Ready to elevate your web presence? Let's discuss your project and turn it
+      into engaging online experiences.
     </p>
     <p>
       Feel free to contact me for inquiries or collaborations through the below

@@ -6,5 +6,5 @@ import vercel from "@astrojs/vercel/serverless";
 export default defineConfig({
   site: siteConfig.siteUrl,
   output: "server",
-  adapter: vercel(),
+  adapter: vercel({ imageService: true }),
 });

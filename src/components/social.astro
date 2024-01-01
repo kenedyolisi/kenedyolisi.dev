@@ -1,8 +1,18 @@
 ---
-const { platform } = Astro.props;
+import { Icon } from "astro-icon/components";
+
+interface Props {
+  platform: string;
+  icon: string;
+}
+const { platform, icon } = Astro.props;
+
+const iconSize = 20;
 ---
 
 <a
   class="p-1 mx-1 text-decoration-none"
-  href=`https://www.${platform}.com/${platform==="linkedin"?"in/":""}kenedyolisi`><slot /></a
+  href=`https://www.${platform}.com/${platform==="linkedin"?"in/":""}kenedyolisi`
 >
+  <Icon name={icon} width={iconSize} height={iconSize} />
+</a>

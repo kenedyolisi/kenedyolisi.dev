@@ -34,7 +34,7 @@
     "@types/eslint": "^8",
     "@types/node": "^20.10.5",
     "@types/postcss-html": "^1",
-    "@typescript-eslint/parser": "^6.14.0",
+    "@typescript-eslint/parser": "^6.16.0",
     "eslint": "^8.55.0",
     "eslint-plugin-astro": "^0.31.0",
     "eslint-plugin-jsx-a11y": "^6.8.0",

@@ -31,6 +31,7 @@
   },
   "devDependencies": {
     "@astrojs/check": "^0.3.4",
+    "@iconify-json/bi": "^1.1.22",
     "@types/bootstrap": "^5",
     "@types/eslint": "^8",
     "@types/node": "^20.10.5",

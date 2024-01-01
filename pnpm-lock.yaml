@@ -6,8 +6,8 @@ settings:
 
 dependencies:
   '@astrojs/vercel':
-    specifier: ^6.1.0
-    version: 6.1.0(astro@4.0.8)
+    specifier: ^6.1.1
+    version: 6.1.1(astro@4.0.8)
   astro:
     specifier: ^4.0.8
     version: 4.0.8(@types/node@20.10.5)(sass@1.69.5)(typescript@5.3.3)
@@ -178,8 +178,8 @@ packages:
       - supports-color
     dev: false
 
-  /@astrojs/vercel@6.1.0(astro@4.0.8):
-    resolution: {integrity: sha512-KcXRn8zjl48jIyBThz7QwLmqfnyqeYOcHUstvb/IVF6LErw//9FGDSG6p+o1bfv25IzbMW2PaYer4EwevSGmGw==}
+  /@astrojs/vercel@6.1.1(astro@4.0.8):
+    resolution: {integrity: sha512-9y+rCO6LBAKP66/N2yogufTqgvy5cW4LDTFwJj1/DlZtKL+qIhEvp6GpkEbihd0BZdIkBxR/4OhMJBKMDx6ppQ==}
     peerDependencies:
       astro: ^4.0.2
     dependencies:

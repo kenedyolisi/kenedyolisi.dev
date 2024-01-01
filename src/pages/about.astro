@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "@layouts/base_layout.astro";
+import LinkExternal from "@icons/link_external.astro";
 
 const title = "About Me";
 ---
@@ -13,16 +14,18 @@ const title = "About Me";
       <div class="col">
         <p>
           I acquired my frontend developer skills through self-teaching. I
-          completed and earned a certificate in frontend development from <a
-            href="https://www.freecodecamp.org/kenedyolisi">freecodecamp</a
-          >
+          completed and earned a certificate in frontend development from
+          <a class="icon-link" href="https://www.freecodecamp.org/kenedyolisi">
+            Freecodecamp <LinkExternal />
+          </a>
         </p>
 
         <p>
           I also took courses for HTML, CSS, JavaScript, Responsive Web Design,
-          and Web Development Fundamentals from <a
-            href="https://sololearn.org/kenedyolisi">Sololearn</a
-          > all of which I completed and earned certifications.
+          and Web Development Fundamentals from
+          <a class="icon-link" href="https://sololearn.org/kenedyolisi">
+            Sololearn <LinkExternal />
+          </a> all of which I completed and earned certifications.
         </p>
       </div>
     </div>

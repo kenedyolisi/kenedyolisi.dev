@@ -22,9 +22,5 @@ export default defineConfig({
       },
     }),
   ],
-  build: {
-    format: "file",
-  },
   site: siteConfig.siteUrl,
-  trailingSlash: "never",
 });

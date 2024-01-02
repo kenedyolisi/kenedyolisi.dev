@@ -24,7 +24,7 @@
     "start": "astro dev"
   },
   "dependencies": {
-    "@astrojs/vercel": "^6.1.0",
+    "@astrojs/vercel": "^6.1.1",
     "astro": "^4.0.8",
     "astro-icon": "^1.0.1",
     "bootstrap": "^5.3.2"
@@ -34,14 +34,14 @@
     "@iconify-json/bi": "^1.1.22",
     "@types/bootstrap": "^5",
     "@types/eslint": "^8",
-    "@types/node": "^20.10.5",
+    "@types/node": "^20.10.6",
     "@types/postcss-html": "^1",
-    "@typescript-eslint/parser": "^6.14.0",
+    "@typescript-eslint/parser": "^6.17.0",
     "eslint": "^8.55.0",
     "eslint-plugin-astro": "^0.31.0",
     "eslint-plugin-jsx-a11y": "^6.8.0",
     "postcss-html": "^1.5.0",
-    "sass": "^1.69.5",
+    "sass": "^1.69.6",
     "stylelint": "^16.1.0",
     "stylelint-config-html": "^1.1.0",
     "stylelint-config-recess-order": "^4.4.0",

@@ -1,19 +1,25 @@
 ---
 import { Icon } from "astro-icon/components";
 
-interface Props {
-  platform: string;
-  icon: string;
-}
-
-const { platform, icon } = Astro.props;
-
-const iconSize = 20;
+const socialLinks = [
+  { platform: "github", icon: "bi:github" },
+  { platform: "linkedin", icon: "bi:linkedin" },
+  { platform: "twitter", icon: "bi:twitter-x" },
+  { platform: "facebook", icon: "bi:facebook" },
+];
 ---
 
-<a
-  class="p-1 mx-1 text-decoration-none"
-  href=`https://${platform}.com/${platform==="linkedin"?"in/":""}kenedyolisi`
->
-  <Icon name={icon} size={iconSize} />
-</a>
+<nav class="flex justify-center md:justify-end gap-4 md:">
+  {
+    socialLinks.map((link) => (
+      <a
+        class="text-primary"
+        href={`https://${link.platform}.com/${
+          link.platform === "linkedin" ? "in/" : ""
+        }kenedyolisi`}
+      >
+        <Icon name={link.icon} size={20} />
+      </a>
+    ))
+  }
+</nav>

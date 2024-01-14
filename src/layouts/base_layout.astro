@@ -1,10 +1,10 @@
 ---
+import "@styles/global.scss";
+
 import { ViewTransitions } from "astro:transitions";
 import Footer from "@components/footer.astro";
 import Header from "@components/header.astro";
 import ScrollTopBtn from "@components/scroll_top.astro";
-
-import "@styles/global.scss";
 
 interface Props {
   pageTitle: string;
@@ -66,7 +66,16 @@ const { pageTitle, pageDescription } = Astro.props;
     </div>
 
     <script>
-      import "bootstrap/dist/js/bootstrap.bundle";
+      // import "bootstrap/js/dist/alert";
+      import "bootstrap/js/dist/button";
+      // import "bootstrap/js/dist/carousel";
+      import "bootstrap/js/dist/dropdown";
+      // import "bootstrap/js/dist/modal";
+      import "bootstrap/js/dist/offcanvas";
+      // import "bootstrap/js/dist/scrollspy";
+      // import "bootstrap/js/dist/tab";
+      // import "bootstrap/js/dist/toast";
+      // import "bootstrap/js/dist/tooltip";
     </script>
   </body>
 </html>

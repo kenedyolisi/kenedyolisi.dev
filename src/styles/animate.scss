@@ -1,24 +1,18 @@
-.fade-up {
-  animation: fade-up 2s forwards ease-in-out;
+.slide-up {
+  animation: slide-up 1s forwards ease-in-out;
 }
 
-@keyframes fade-up {
+@keyframes slide-up {
   from {
-    transform: translateY(100px);
-  }
-  to {
-    transform: translateY(0);
+    transform: translateY(100%);
   }
 }
 
 .pulse {
-  animation: pulse 2s infinite ease-in-out alternate;
+  animation: pulse 1s infinite ease-in-out alternate;
 }
 
 @keyframes pulse {
-  from {
-    transform: scale(1);
-  }
   to {
     transform: scale(1.1);
   }

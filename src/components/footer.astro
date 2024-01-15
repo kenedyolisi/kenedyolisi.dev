@@ -1,28 +1,16 @@
 ---
-import { Icon } from "astro-icon/components";
-import Social from "@components/social.astro";
+import SocialLinks from "@components/social_links.astro";
 ---
 
 <footer class="mt-5 bg-body-tertiary">
   <div class="container">
-    <div
-      class="row flex-column flex-md-row text-center text-md-start py-4 align-items-md-center"
-    >
+    <div class="row flex-column flex-md-row align-items-center py-4 gap-2">
       <div class="col">
         <small>
-          ©{new Date().getFullYear()} Kenedy Olisi. Built with
-          <a class="icon-link" href="https://astro.build/">
-            Astro
-            <Icon name="bi:box-arrow-up-right" />
-          </a>.
+          ©{new Date().getFullYear()} Kenedy Olisi. All rights reserved.
         </small>
       </div>
-      <div class="col mt-4 mt-md-0 text-md-end">
-        <Social platform="github" icon="bi:github" />
-        <Social platform="linkedin" icon="bi:linkedin" />
-        <Social platform="twitter" icon="bi:twitter-x" />
-        <Social platform="facebook" icon="bi:facebook" />
-      </div>
+      <SocialLinks />
     </div>
   </div>
 </footer>

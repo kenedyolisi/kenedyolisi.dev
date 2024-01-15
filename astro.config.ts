@@ -23,6 +23,7 @@ export default defineConfig({
           "twitter-x",
         ],
       },
+      iconDir: "src/images/icons",
     }),
   ],
   site: siteConfig.siteUrl,

@@ -14,9 +14,12 @@ export default defineConfig({
       include: {
         bi: [
           "box-arrow-up-right",
+          "circle-half",
           "facebook",
           "github",
           "linkedin",
+          "moon-fill",
+          "sun-fill",
           "twitter-x",
         ],
       },

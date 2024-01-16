@@ -34,7 +34,7 @@
     "@iconify-json/bi": "^1.1.22",
     "@types/bootstrap": "^5",
     "@types/eslint": "^8",
-    "@types/node": "^20.11.2",
+    "@types/node": "^20.11.3",
     "@types/postcss-html": "^1",
     "@typescript-eslint/parser": "^6.18.1",
     "eslint": "^8.55.0",

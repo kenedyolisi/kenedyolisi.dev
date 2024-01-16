@@ -15,10 +15,14 @@ export default defineConfig({
     icon({
       include: {
         bi: [
+          "arrow-up",
           "box-arrow-up-right",
+          "circle-half",
           "facebook",
           "github",
           "linkedin",
+          "moon-fill",
+          "sun-fill",
           "twitter-x",
         ],
       },

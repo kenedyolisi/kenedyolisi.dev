@@ -1,10 +1,10 @@
 ---
+import "@styles/global.scss";
+
 import { ViewTransitions } from "astro:transitions";
 import Footer from "@components/footer.astro";
 import Header from "@components/header.astro";
 import ScrollTopBtn from "@components/scroll_top.astro";
-
-import "@styles/global.scss";
 
 interface Props {
   pageTitle: string;
@@ -14,7 +14,11 @@ interface Props {
 const { pageTitle, pageDescription } = Astro.props;
 ---
 
-<html lang="en" dir="ltr" class="scroll-smooth">
+<html
+  lang="en"
+  dir="ltr"
+  class="scroll-smooth selection:bg-primary selection:text-white dark:selection:bg-primary-dark"
+>
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />

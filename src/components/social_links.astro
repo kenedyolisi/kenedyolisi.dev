@@ -13,12 +13,12 @@ const socialLinks = [
   {
     socialLinks.map((link) => (
       <a
-        class="text-primary"
+        class="p-2 text-primary"
         href={`https://${link.platform}.com/${
           link.platform === "linkedin" ? "in/" : ""
         }kenedyolisi`}
       >
-        <Icon name={link.icon} size={25} />
+        <Icon name={link.icon} size={20}/>
       </a>
     ))
   }

@@ -13,16 +13,20 @@
 }
 
 @layer base {
+  body {
+    @apply bg-white text-dark dark:bg-dark dark:text-white selection:bg-primary selection:text-white dark:selection:bg-primary-dark
+  }
+
   h1 {
-    @apply text-5xl text-primary dark:text-primary-dark;
+    @apply text-5xl font-bold;
   }
 
   h2 {
-    @apply text-4xl text-success dark:text-success-dark;
+    @apply text-4xl font-semibold;
   }
 
   h3 {
-    @apply text-3xl;
+    @apply text-3xl font-medium;
   }
 
   h4 {
@@ -38,6 +42,23 @@
   }
 
   p {
-    @apply text-base;
+    @apply text-base mb-4;
+  }
+
+  a {
+    @apply text-primary dark:text-primary-dark underline hover:no-underline underline-offset-[5px];
+  }
+}
+
+@layer components {
+  .nav-link {
+    @apply block md:inline-block p-2 capitalize no-underline;
+    // @apply md:after:content-[""] md:after:bg-primary md:after:h-[2px] md:after:block md:after:scale-0;
+    // @apply md:hover:after:scale-100 hover:md:after:animate-scale;
+
+
+    &.active {
+      @apply after:scale-100;
+    }
   }
 }

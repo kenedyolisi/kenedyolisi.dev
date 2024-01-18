@@ -7,11 +7,11 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        sans: ["Inter", ...defaultTheme.fontFamily.sans],
+        sans: ['"Inter"', ...defaultTheme.fontFamily.sans],
       },
 
       screens: {
-        xs: "425px",
+        xs: "512px",
       },
 
       colors: {
@@ -44,9 +44,10 @@ export default {
           from: { transform: "scale(1)", visibility: "visible" },
           to: { transform: "scale(0)", visibility: "hidden" },
         },
+
         "zoom-in": {
           from: { transform: "scale(0)", visibility: "hidden" },
-          to: { trnasform: "scale(1)", visibility: "visible" },
+          to: { transform: "scale(1)", visibility: "visible" },
         },
       },
     },

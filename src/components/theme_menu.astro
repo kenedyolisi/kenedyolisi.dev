@@ -4,9 +4,9 @@ import { Icon } from "astro-icon/components";
 type Theme = "system" | "light" | "dark";
 
 const themes = [
-  { name: "system", icon: "bi:circle-half" },
-  { name: "light", icon: "bi:sun-fill" },
-  { name: "dark", icon: "bi:moon-fill" },
+  { name: "system", icon: "circle_half" },
+  { name: "light", icon: "sun_fill" },
+  { name: "dark", icon: "moon_fill" },
 ];
 ---
 
@@ -16,8 +16,8 @@ const themes = [
     type="button"
     aria-expanded="false"
   >
-    <Icon name="bi:circle-half" /><span>System</span>
-    <Icon name="bi:caret-down-fill" />
+    <Icon name="circle_half" /><span>System</span>
+    <Icon name="caret_down_fill" />
   </button>
   <ul class="inline-flex flex-col p-2 border rounded" role="menu">
     {

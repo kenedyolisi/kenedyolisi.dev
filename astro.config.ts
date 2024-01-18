@@ -10,23 +10,6 @@ export default defineConfig({
   adapter: vercel({
     imageService: true,
   }),
-  integrations: [
-    tailwind({ applyBaseStyles: false }),
-    icon({
-      include: {
-        bi: [
-          "arrow-up",
-          "box-arrow-up-right",
-          "circle-half",
-          "facebook",
-          "github",
-          "linkedin",
-          "moon-fill",
-          "sun-fill",
-          "twitter-x",
-        ],
-      },
-    }),
-  ],
+  integrations: [tailwind({ applyBaseStyles: false }), icon({})],
   site: siteConfig.siteUrl,
 });

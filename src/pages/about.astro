@@ -3,23 +3,24 @@ import { Icon } from "astro-icon/components";
 import BaseLayout from "@layouts/base_layout.astro";
 
 const title = "About Me";
+const description = "Learn more about me here";
 ---
 
-<BaseLayout pageTitle={title}>
+<BaseLayout pageTitle={title} pageDescription={description}>
   <article>
     <h1 transition:animate="slide">{title}</h1>
 
-    <section class="flex flex-col md:flex-row gap-6">
+    <section class="flex flex-col md:flex-row md:gap-6">
       <h2 class="w-1/4 shrink-0">Education</h2>
       <div>
         <p>
           I acquired my frontend developer skills through self-teaching. I
           completed and earned a certificate in frontend development from
           <a
-            class="inline-flex items-center gap-1 underline-offset-3"
+            class="inline-flex items-center gap-1"
             href="https://www.freecodecamp.org/kenedyolisi"
           >
-            Freecodecamp <Icon class="" name="bi:box-arrow-up-right" />
+            Freecodecamp <Icon name="link_external" />
           </a>
         </p>
 
@@ -27,16 +28,16 @@ const title = "About Me";
           I also took courses for HTML, CSS, JavaScript, Responsive Web Design,
           and Web Development Fundamentals from
           <a
-            class="inline-flex items-center gap-1 underline-offset-2"
+            class="inline-flex items-center gap-1"
             href="https://sololearn.org/kenedyolisi"
           >
-            Sololearn <Icon name="bi:box-arrow-up-right" />
+            Sololearn <Icon name="link_external" />
           </a> all of which I completed and earned certifications.
         </p>
       </div>
     </section>
 
-    <section class="flex flex-col md:flex-row gap-6 my-3">
+    <section class="flex flex-col md:flex-row md:gap-6">
       <h2 class="w-1/4 shrink-0">Skills</h2>
 
       <div>
@@ -49,7 +50,7 @@ const title = "About Me";
       </div>
     </section>
 
-    <section class="flex flex-col md:flex-row md:gap-6 my-3">
+    <section class="flex flex-col md:flex-row md:gap-6">
       <h2 class="w-1/4 shrink-0">Interests</h2>
 
       <div>

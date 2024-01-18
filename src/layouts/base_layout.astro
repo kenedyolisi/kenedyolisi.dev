@@ -55,12 +55,10 @@ const { pageTitle, pageDescription } = Astro.props;
     {/* End of Google tag */}
   </head>
 
-  <body
-    class="dark:bg-dark dark:text-white selection:bg-primary dark:selection:bg-primary-dark selection:text-white"
-  >
+  <body>
     <div class="flex flex-col min-h-screen">
       <Header />
-      <main class="flex-grow" id="main-content">
+      <main class="grow mt-20" id="main-content">
         <slot />
         <ScrollTopBtn />
       </main>

@@ -24,6 +24,7 @@
     "start": "astro dev"
   },
   "dependencies": {
+    "@astrojs/react": "^3.0.9",
     "@astrojs/tailwind": "^5.1.0",
     "@astrojs/vercel": "^6.1.4",
     "astro": "^4.1.3",

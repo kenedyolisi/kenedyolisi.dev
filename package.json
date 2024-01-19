@@ -32,7 +32,6 @@
   },
   "devDependencies": {
     "@astrojs/check": "^0.4.1",
-    "@iconify-json/bi": "^1.1.23",
     "@types/eslint": "^8.56.2",
     "@types/node": "^20.11.4",
     "@types/postcss-html": "^1.5.3",

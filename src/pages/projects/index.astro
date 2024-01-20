@@ -1,8 +1,7 @@
 ---
 import { getCollection } from "astro:content";
-import BaseLayout from "@layouts/base_layout.astro";
 import { Image } from "astro:assets";
-import ProjectCard from "@components/project_card.astro";
+import BaseLayout from "@layouts/base_layout.astro";
 
 const projects = await getCollection("projects");
 
@@ -15,25 +14,19 @@ const description = "Check out my recent projects";
     <h1 transition:animate="slide">{title}</h1>
     <p>🌐 Explore my portfolio for a glimpse of my recent projects.</p>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+    <ul class="grid grid-cols-1 md:grid-cols-2 gap-6">
       {
         projects.map((project) => {
+          const { image, description } = project.data;
           return (
-            <div class=" border-2 rounded-lg">
-              <a class="no-underline" href={project.data.url}>
-                <figure class="flex flex-col gap-2 items-center">
-                  <Image
-                    class=""
-                    src={project.data.cover}
-                    alt={project.data.description}
-                  />
-                  <figcaption class="">{project.data.description}</figcaption>
-                </figure>
+            <li class="border-2 rounded-lg">
+              <a class="no-underline" href={`/projects/${project.id}`}>
+                <Image src={image} alt={description} />
               </a>
-            </div>
+            </li>
           );
         })
       }
-    </div>
+    </ul>
   </article>
 </BaseLayout>

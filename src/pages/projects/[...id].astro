@@ -1,0 +1,38 @@
+---
+import { getEntries, getEntry } from "astro:content";
+import BaseLayout from "@layouts/base_layout.astro";
+
+const { id } = Astro.params;
+
+if (id === undefined) {
+  throw new Error("Project id is required");
+}
+
+const project = await getEntry("projects", id);
+
+if (project === undefined) {
+  return Astro.redirect("/404");
+}
+
+const { description } = project.data;
+
+const projectTech = await getEntries(project.data.techStack);
+---
+
+<BaseLayout pageTitle={`${description} | Projects`}>
+  <h1 class="capitalize">{description}</h1>
+  <h2>Tech Stack</h2>
+
+  <ul class="inline-flex gap-3">
+    {
+      projectTech.map((tech) => {
+        const brandColor = tech.data.brandColor;
+        return (
+          <li class={`p-1 rounded-md bg-[${brandColor}] capitalize`}>
+            {tech.id}
+          </li>
+        );
+      })
+    }
+  </ul>
+</BaseLayout>

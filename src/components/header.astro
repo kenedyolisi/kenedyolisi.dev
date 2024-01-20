@@ -12,8 +12,6 @@ const navLinks = [
   "blog",
   "contact",
 ];
-
-const offcanvasId = "offcanvasNavbar";
 ---
 
 <a
@@ -33,7 +31,10 @@ const offcanvasId = "offcanvasNavbar";
     w-full xs:w-[80%] sm:w-[60%] md:w-auto
     py-3 px-5 md:p-0 
     bg-white dark:bg-dark md:bg-transparent
-    shadow-2xl md:shadow-none
+    md:shadow-none
+    translate-x-full
+    md:translate-x-0
+    backdrop-blur
     `}
     id="offcanvas"
   >
@@ -92,10 +93,8 @@ const offcanvasId = "offcanvasNavbar";
   </div>
   <button
     class="h-fit p-2 md:hidden border rounded-md"
-    data-bs-toggle="offcanvas"
-    data-bs-target={`#${offcanvasId}`}
+    data-toggle="offcanvas"
     type="button"
-    aria-controls={offcanvasId}
     aria-label="toggle navigation"
   >
     <Icon name="menu_labelled" size={25} />
@@ -103,15 +102,25 @@ const offcanvasId = "offcanvasNavbar";
 </header>
 
 <script>
-  const navbar = document.querySelector(".navbar");
+  document.addEventListener("astro:page-load", () => {
+    const offcanvas = document.getElementById("offcanvas");
 
-  window.addEventListener("scroll", handleScroll);
+    const toggleOffcanvasBtn = document?.querySelector(
+      "[data-toggle='offcanvas']"
+    );
+    toggleOffcanvasBtn?.addEventListener("click", () => {
+      offcanvas?.classList.toggle("shadow-2xl");
+      offcanvas?.classList.toggle("translate-x-full");
+      offcanvas?.classList.toggle("transition-transform");
+      offcanvas?.classList.toggle("duration-300");
+    });
 
-  function handleScroll() {
-    if (scrollY > 50) {
-      navbar?.classList.add("shadow-sm");
-    } else {
-      navbar?.classList.remove("shadow-sm");
+    const closeButton = offcanvas?.querySelector("[data-dismiss='offcanvas']");
+    closeButton?.addEventListener("click", dismissOffcanvas);
+
+    function dismissOffcanvas() {
+      offcanvas?.classList.add("translate-x-full");
+      offcanvas?.classList.remove("shadow-2xl");
     }
-  }
+  });
 </script>

@@ -3,37 +3,44 @@ import { Icon } from "astro-icon/components";
 import BaseLayout from "@layouts/base_layout.astro";
 
 const title = "About Me";
+const description = "Learn more about me here";
 ---
 
-<BaseLayout pageTitle={title}>
+<BaseLayout pageTitle={title} pageDescription={description}>
   <article>
     <h1 transition:animate="slide">{title}</h1>
 
-    <div class="row flex-column flex-lg-row">
-      <div class="col-3"><h2>Education</h2></div>
-      <div class="col">
+    <section class="flex flex-col md:flex-row md:gap-6">
+      <h2 class="w-1/4 shrink-0">Education</h2>
+      <div>
         <p>
           I acquired my frontend developer skills through self-teaching. I
           completed and earned a certificate in frontend development from
-          <a class="icon-link" href="https://www.freecodecamp.org/kenedyolisi">
-            Freecodecamp <Icon name="bi:box-arrow-up-right" />
+          <a
+            class="inline-flex items-center gap-1"
+            href="https://www.freecodecamp.org/kenedyolisi"
+          >
+            Freecodecamp <Icon name="link_external" />
           </a>
         </p>
 
         <p>
           I also took courses for HTML, CSS, JavaScript, Responsive Web Design,
           and Web Development Fundamentals from
-          <a class="icon-link" href="https://sololearn.org/kenedyolisi">
-            Sololearn <Icon name="bi:box-arrow-up-right" />
+          <a
+            class="inline-flex items-center gap-1"
+            href="https://sololearn.org/kenedyolisi"
+          >
+            Sololearn <Icon name="link_external" />
           </a> all of which I completed and earned certifications.
         </p>
       </div>
-    </div>
-    <div class="row flex-column flex-lg-row">
-      <div class="col-3">
-        <h2>Skills</h2>
-      </div>
-      <div class="col">
+    </section>
+
+    <section class="flex flex-col md:flex-row md:gap-6">
+      <h2 class="w-1/4 shrink-0">Skills</h2>
+
+      <div>
         <p>
           With a strong foundation in HTML, CSS (SCSS), JavaScript (TypeScript),
           and React, I bring creativity and attention to detail to every project
@@ -41,12 +48,12 @@ const title = "About Me";
           trends and delivering high-quality solutions to clients.
         </p>
       </div>
-    </div>
-    <div class="row flex-column flex-lg-row">
-      <div class="col-3">
-        <h2>Interests</h2>
-      </div>
-      <div class="col">
+    </section>
+
+    <section class="flex flex-col md:flex-row md:gap-6">
+      <h2 class="w-1/4 shrink-0">Interests</h2>
+
+      <div>
         <p>
           When I'm not coding, you'll find me enjoying a game of checkers
           (draughts), watching a movie, listening to my favorite music or
@@ -60,6 +67,6 @@ const title = "About Me";
           development.
         </p>
       </div>
-    </div>
+    </section>
   </article>
 </BaseLayout>

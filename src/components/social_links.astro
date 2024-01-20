@@ -1,19 +1,19 @@
 ---
 import { Icon } from "astro-icon/components";
 
-const links = [
-  { platform: "github", icon: "bi:github" },
-  { platform: "linkedin", icon: "bi:linkedin" },
-  { platform: "twitter", icon: "bi:twitter-x" },
-  { platform: "facebook", icon: "bi:facebook" },
+const socialPlatforms = [
+  { platform: "github", icon: "github" },
+  { platform: "linkedin", icon: "linkedin" },
+  { platform: "twitter", icon: "twitter" },
+  { platform: "facebook", icon: "facebook" },
 ];
 ---
 
-<nav class="col d-flex justify-content-md-end gap-2" aria-label="social">
+<nav class="flex justify-center md:justify-end gap-4 md:">
   {
-    links.map((link) => (
+    socialPlatforms.map((link) => (
       <a
-        class="p-1  text-decoration-none"
+        class="p-2 hover:bg-primary dark:hover:bg-primary-dark hover:text-white rounded-md "
         href={`https://${link.platform}.com/${
           link.platform === "linkedin" ? "in/" : ""
         }kenedyolisi`}

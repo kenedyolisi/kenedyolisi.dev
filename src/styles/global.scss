@@ -1,4 +1,64 @@
-@import "./custom_bootstrap";
-@import "./styles";
-@import "./animate";
-@import "./fonts"
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Inter";
+  font-style: oblique 0deg 20deg;
+  font-weight: 100 900;
+  font-stretch: 75% 125%;
+  src: url("/fonts/inter_variable_slnt\,wght.woff2") format("woff2-variations");
+  src: url("/fonts/inter_variable_slnt\,wght.woff2") format("woff2") tech("variations");
+  font-display: swap;
+}
+
+@layer base {
+  body {
+    @apply bg-white text-dark dark:bg-dark dark:text-white selection:bg-primary selection:text-white dark:selection:bg-primary-dark
+  }
+
+  h1 {
+    @apply text-5xl font-bold;
+  }
+
+  h2 {
+    @apply text-4xl font-semibold;
+  }
+
+  h3 {
+    @apply text-3xl font-medium;
+  }
+
+  h4 {
+    @apply text-2xl;
+  }
+
+  h5 {
+    @apply text-xl;
+  }
+
+  h6 {
+    @apply text-lg;
+  }
+
+  p {
+    @apply text-base mb-4;
+  }
+
+  a {
+    @apply text-primary dark:text-primary-dark underline hover:no-underline underline-offset-[5px];
+  }
+}
+
+@layer components {
+  .nav-link {
+    @apply block md:inline-block p-2 capitalize no-underline;
+    // @apply md:after:content-[""] md:after:bg-primary md:after:h-[2px] md:after:block md:after:scale-0;
+    // @apply md:hover:after:scale-100 hover:md:after:animate-scale;
+
+
+    &.active {
+      @apply after:scale-100;
+    }
+  }
+}

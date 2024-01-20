@@ -1,0 +1,55 @@
+---
+import { Icon } from "astro-icon/components";
+
+type Theme = "system" | "light" | "dark";
+
+const themes = [
+  { name: "system", icon: "circle_half" },
+  { name: "light", icon: "sun_fill" },
+  { name: "dark", icon: "moon_fill" },
+];
+---
+
+<div class="inline-flex flex-col gap-2 w-fit md:translate-x-full">
+  <button
+    class="flex items-center gap-2 bg-primary text-white rounded p-3"
+    type="button"
+    aria-expanded="false"
+  >
+    <Icon name="circle_half" />
+    <span class="md:hidden">System</span>
+    <Icon name="caret_down_fill" />
+  </button>
+  <ul class="hidden flex-col p-2 border rounded" role="menu">
+    {
+      themes.map((theme) => {
+        return (
+          <li role="none">
+            <button
+              class="flex items-center gap-2 w-full py-1 px-2 rounded hover:bg-primary hover:text-white "
+              type="button"
+              role="menuitem"
+            >
+              <Icon name={theme.icon} />
+              <span class="capitalize">{theme.name}</span>
+            </button>
+          </li>
+        );
+      })
+    }
+  </ul>
+</div>
+
+<script>
+  const rootElement = document.documentElement;
+
+  document.addEventListener("astro:page-load", () => {});
+
+  document.addEventListener("astro:after-swap", () => {
+    if (localStorage.theme === "dark" || !("theme" in localStorage)) {
+      rootElement.classList.add("dark");
+    } else {
+      rootElement.classList.remove("dark");
+    }
+  });
+</script>

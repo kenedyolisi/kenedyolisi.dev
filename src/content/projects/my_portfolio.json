@@ -1,0 +1,6 @@
+{
+  "image": "src/images/kenedyolisi_landing_page.png",
+  "description": "my portfolio landing page",
+  "url": "https://kenedyolisi.vercel.app",
+  "techStack": ["astro", "tailwindcss"]
+}

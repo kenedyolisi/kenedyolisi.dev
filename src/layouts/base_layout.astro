@@ -14,7 +14,7 @@ interface Props {
 const { pageTitle, pageDescription } = Astro.props;
 ---
 
-<html lang="en" dir="ltr">
+<html lang="en" dir="ltr" class="scroll-smooth">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
@@ -39,7 +39,7 @@ const { pageTitle, pageDescription } = Astro.props;
 
     <link rel="apple-touch-icon" href="/apple_touch_icon.png" />
     <link rel="icon" href="/favicon.ico" sizes="48x48" />
-    <link rel="icon" href="/logo.svg" sizes="any" type="image/svg+xml" />
+    <link rel="icon" href="/favicon.svg" sizes="any" type="image/svg+xml" />
 
     {/* Google tag (gtag.js) */}
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-HKMD2TMJCZ"
@@ -56,26 +56,13 @@ const { pageTitle, pageDescription } = Astro.props;
   </head>
 
   <body>
-    <div class="d-flex flex-column min-vh-100">
+    <div class="flex flex-col min-h-screen">
       <Header />
-      <main class="container flex-grow-1" id="main-content">
+      <main class="grow mt-20 px-5 md:px-10 lg:px-20" id="main-content">
         <slot />
         <ScrollTopBtn />
       </main>
       <Footer />
     </div>
-
-    <script>
-      // import "bootstrap/js/dist/alert";
-      import "bootstrap/js/dist/button";
-      // import "bootstrap/js/dist/carousel";
-      import "bootstrap/js/dist/dropdown";
-      // import "bootstrap/js/dist/modal";
-      import "bootstrap/js/dist/offcanvas";
-      // import "bootstrap/js/dist/scrollspy";
-      // import "bootstrap/js/dist/tab";
-      // import "bootstrap/js/dist/toast";
-      // import "bootstrap/js/dist/tooltip";
-    </script>
   </body>
 </html>

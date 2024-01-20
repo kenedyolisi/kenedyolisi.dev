@@ -1,40 +1,77 @@
 ---
+import { Image } from "astro:assets";
 import BaseLayout from "@layouts/base_layout.astro";
+import bootstrapLogo from "@images/bootstrap_logo.svg";
+import cssLogo from "@images/css_logo.svg";
+import htmlLogo from "@images/html_logo.svg";
+import javaScriptLogo from "@images/javascript_logo.svg";
+import reactLogo from "@images/react_logo.svg";
+import tailwindcssLogo from "@images/tailwindcss_mark.svg";
 
 const title = "Services I Provide";
+const description =
+  "I provide frontend development services using technologies such as HTML, CSS, JavaScript, Bootstrap, TailwindCSS, and React.";
 ---
 
-<BaseLayout pageTitle={title}>
+<BaseLayout pageTitle={title} pageDescription={description}>
   <article>
-    <h1 transition:animate="slide">{title}</h1><p>
+    <h1 transition:animate="slide">{title}</h1>
+    <p>
       I'm passionate about creating exceptional web experiences through
       front-end development. Whether you're looking to build a brand-new website
       or enhance an existing one, I offer a range of services tailored to meet
-      your needs.
+      client needs.
     </p>
+    <div
+      class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 lg:gap-8"
+    >
+      <section class="flex flex-col items-center gap-2 p-2 border rounded-lg">
+        <Image src={htmlLogo} alt="html5 badge" width={50} />
+        <h2 class="text-2xl">HTML Development</h2>
+        <p>Define the meaning and structure of web content.</p>
+      </section>
 
-    <section>
-      <h2>Front-end Development</h2>
-      <p>
-        Crafting responsive and user-friendly interfaces using HTML, CSS (SCSS),
-        and JavaScript (TypeScript)
-      </p>
-    </section>
+      <section class="flex flex-col items-center gap-2 p-2 border rounded-lg">
+        <Image src={cssLogo} alt="css3 logo" width={50} />
+        <h2 class="text-2xl">CSS Development</h2>
+        <p>
+          Describe the presentation of the web content to provide aesthetically
+          pleasing user-interfaces.
+        </p>
+      </section>
 
-    <section>
-      <h2>ReactJS Development</h2>
-      <p>
-        Building dynamic and efficient web applications with the ReactJS
-        library.
-      </p>
-    </section>
-    
-    <section>
-      <h2>Bootstrap Integration</h2>
-      <p>
-        Implementing responsive and modern design principles using the Bootstrap
-        framework.
-      </p>
-    </section>
+      <section class="flex flex-col items-center gap-2 p-2 border rounded-lg">
+        <Image src={javaScriptLogo} alt="javascript logo" width={50} />
+        <h2 class="text-2xl">JavaScript Development</h2>
+        <p>Add interactivity to the web content.</p>
+      </section>
+
+      <section class="flex flex-col items-center gap-2 p-2 border rounded-lg">
+        <Image src={reactLogo} alt="react logo" width={50} />
+        <h2 class="text-2xl">ReactJS Development</h2>
+        <p>
+          Building dynamic and efficient web applications with the ReactJS
+          library.
+        </p>
+      </section>
+
+      <section class="flex flex-col items-center gap-2 p-2 border rounded-lg">
+        <Image src={bootstrapLogo} alt="bootstrap logo" width={50} />
+        <h2 class="text-2xl">Bootstrap Integration</h2>
+        <p>
+          Implementing responsive and modern design principles using the
+          Bootstrap framework.
+        </p>
+      </section>
+
+      <section class="flex flex-col items-center gap-2 p-2 border rounded-lg">
+        <Image src={tailwindcssLogo} alt="tailwindcss logo" width={50} />
+        <h2 class="text-2xl">Tailwind Integration</h2>
+        <p>
+          Rapidly build modern websites using utility-first CSS framework
+          without leaving HTML.
+        </p>
+      </section>
+    </div>
   </article>
 </BaseLayout>

@@ -1,7 +1,6 @@
 import { defineConfig } from "astro/config";
 import { siteConfig } from "./src/site_config";
 import icon from "astro-icon";
-import react from "@astrojs/react";
 import tailwind from "@astrojs/tailwind";
 import vercel from "@astrojs/vercel/serverless";
 
@@ -16,7 +15,6 @@ export default defineConfig({
       applyBaseStyles: false,
     }),
     icon({}),
-    react(),
   ],
   site: siteConfig.siteUrl,
 });

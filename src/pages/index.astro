@@ -11,38 +11,37 @@ import heroBg from "@images/hero_bg.png";
   pageDescription={siteConfig.description}
 >
   <article>
-    <div
-      class="row flex-column text-center flex-lg-row align-items-lg-center text-lg-start"
-    >
-      <div class="col">
-        <h1 class="display-3 fw-bold lh-1">Hello, my name is Kenedy Olisi</h1>
-        <p class="mt-4 fs-3 fw-medium lh-1 text-success">
+    <div class="flex flex-col md:flex-row items-center gap-6">
+      <div class="w-full md:w-2/3 md:shrink-0">
+        <h1 class="">Hi 👋, I am Kenedy Olisi</h1>
+        <p class="text-2xl text-success dark:text-success-dark">
           I am passionate Front-end Developer currently based in Kenya.
         </p>
-        <p class="fs-5">
+        <p class="text-lg">
           I specialize in creating
           <strong>sleek</strong> and
           <strong>user-friendly</strong>
           web apps that help businesses succeed online. Have a design mockup that
-          you need to turn into{" "}
-          <strong class="fw-semibold">blazing-fast</strong>,{" "}
-          <strong class="fw-semibold">scalable</strong>,{" "}
-          <strong class="fw-semibold">dynamic</strong>{" "}web application that
-          guarantees <strong class="fw-semibold">delightful</strong>{
-            " "
-          }user-experience? Let's collaborate and bring your web ideas to life!
+          you need to turn into
+          <strong>blazing-fast</strong>,
+          <strong class="fw-semibold">scalable</strong>
+          <strong class="fw-semibold">dynamic</strong> web application that guarantees
+          <strong class="fw-semibold">delightful</strong> user-experience? Let's
+          collaborate and bring your web ideas to life!
         </p>
-        <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
-          <p>
-            <a class="btn btn-outline-primary btn-lg" href="contact">
-              Connect
-            </a>
-          </p>
-        </div>
+
+        <p class="grid">
+          <a
+            class="max-xs:w-full text-center py-3 px-5 xs:mx-auto bg-primary dark:bg-primary-dark text-white dark:text-white no-underline rounded-md active:scale-95"
+            href="contact"
+          >
+            Connect
+          </a>
+        </p>
       </div>
-      <div class="col col-lg-4">
+      <div class="w-full">
         <Picture
-          class="img-fluid object-fit-cover rounded-3"
+          class="mx-auto rounded-lg"
           src={heroBg}
           alt="kenedy olisi"
           formats={["avif", "webp"]}

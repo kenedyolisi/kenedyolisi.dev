@@ -13,7 +13,7 @@ dependencies:
     version: 6.1.4(astro@4.2.1)
   astro:
     specifier: ^4.2.1
-    version: 4.2.1(@types/node@20.11.4)(sass@1.69.7)(typescript@5.3.3)
+    version: 4.2.1(@types/node@20.11.4)(sass@1.70.0)(typescript@5.3.3)
   astro-icon:
     specifier: ^1.0.2
     version: 1.0.2
@@ -50,8 +50,8 @@ devDependencies:
     specifier: ^1.6.0
     version: 1.6.0
   sass:
-    specifier: ^1.69.7
-    version: 1.69.7
+    specifier: ^1.70.0
+    version: 1.70.0
   stylelint:
     specifier: ^16.1.0
     version: 16.1.0(typescript@5.3.3)
@@ -188,7 +188,7 @@ packages:
       astro: ^3.0.0 || ^4.0.0
       tailwindcss: ^3.0.24
     dependencies:
-      astro: 4.2.1(@types/node@20.11.4)(sass@1.69.7)(typescript@5.3.3)
+      astro: 4.2.1(@types/node@20.11.4)(sass@1.70.0)(typescript@5.3.3)
       autoprefixer: 10.4.16(postcss@8.4.33)
       postcss: 8.4.33
       postcss-load-config: 4.0.2(postcss@8.4.33)
@@ -220,7 +220,7 @@ packages:
       '@astrojs/internal-helpers': 0.2.1
       '@vercel/analytics': 1.1.1
       '@vercel/nft': 0.24.4
-      astro: 4.2.1(@types/node@20.11.4)(sass@1.69.7)(typescript@5.3.3)
+      astro: 4.2.1(@types/node@20.11.4)(sass@1.70.0)(typescript@5.3.3)
       esbuild: 0.19.11
       fast-glob: 3.3.2
       set-cookie-parser: 2.6.0
@@ -1520,7 +1520,7 @@ packages:
       - supports-color
     dev: false
 
-  /astro@4.2.1(@types/node@20.11.4)(sass@1.69.7)(typescript@5.3.3):
+  /astro@4.2.1(@types/node@20.11.4)(sass@1.70.0)(typescript@5.3.3):
     resolution: {integrity: sha512-TcrveW2/lohmljrbTUgcDxajEdF1yK+zBvb7SXroloGix/d4jkegO6GANFgvyy0zprMyajW7qgJEFyhWUX86Vw==}
     engines: {node: '>=18.14.1', npm: '>=6.14.0'}
     hasBin: true
@@ -1583,7 +1583,7 @@ packages:
       tsconfck: 3.0.1(typescript@5.3.3)
       unist-util-visit: 5.0.0
       vfile: 6.0.1
-      vite: 5.0.11(@types/node@20.11.4)(sass@1.69.7)
+      vite: 5.0.11(@types/node@20.11.4)(sass@1.70.0)
       vitefu: 0.2.5(vite@5.0.11)
       which-pm: 2.1.1
       yargs-parser: 21.1.1
@@ -5123,8 +5123,8 @@ packages:
     resolution: {integrity: sha512-YZo3K82SD7Riyi0E1EQPojLz7kpepnSQI9IyPbHHg1XXXevb5dJI7tpyN2ADxGcQbHG7vcyRHk0cbwqcQriUtg==}
     dev: false
 
-  /sass@1.69.7:
-    resolution: {integrity: sha512-rzj2soDeZ8wtE2egyLXgOOHQvaC2iosZrkF6v3EUG+tBwEvhqUCzm0VP3k9gHF9LXbSrRhT5SksoI56Iw8NPnQ==}
+  /sass@1.70.0:
+    resolution: {integrity: sha512-uUxNQ3zAHeAx5nRFskBnrWzDUJrrvpCPD5FNAoRvTi0WwremlheES3tg+56PaVtCs5QDRX5CBLxxKMDJMEa1WQ==}
     engines: {node: '>=14.0.0'}
     hasBin: true
     dependencies:
@@ -5998,7 +5998,7 @@ packages:
       vfile-message: 4.0.2
     dev: false
 
-  /vite@5.0.11(@types/node@20.11.4)(sass@1.69.7):
+  /vite@5.0.11(@types/node@20.11.4)(sass@1.70.0):
     resolution: {integrity: sha512-XBMnDjZcNAw/G1gEiskiM1v6yzM4GE5aMGvhWTlHAYYhxb7S3/V1s3m2LDHa8Vh6yIWYYB0iJwsEaS523c4oYA==}
     engines: {node: ^18.0.0 || >=20.0.0}
     hasBin: true
@@ -6030,7 +6030,7 @@ packages:
       esbuild: 0.19.11
       postcss: 8.4.33
       rollup: 4.9.5
-      sass: 1.69.7
+      sass: 1.70.0
     optionalDependencies:
       fsevents: 2.3.3
     dev: false
@@ -6043,7 +6043,7 @@ packages:
       vite:
         optional: true
     dependencies:
-      vite: 5.0.11(@types/node@20.11.4)(sass@1.69.7)
+      vite: 5.0.11(@types/node@20.11.4)(sass@1.70.0)
     dev: false
 
   /volar-service-css@0.0.17(@volar/language-service@1.11.1):

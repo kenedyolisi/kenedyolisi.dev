@@ -1,6 +1,8 @@
 ---
 import { getEntries, getEntry } from "astro:content";
+import { Picture } from "astro:assets";
 import BaseLayout from "@layouts/base_layout.astro";
+import theme from "tailwindcss/defaultTheme";
 
 const { id } = Astro.params;
 
@@ -14,25 +16,34 @@ if (project === undefined) {
   return Astro.redirect("/404");
 }
 
-const { description } = project.data;
+const { description, image, techStack } = project.data;
 
-const projectTech = await getEntries(project.data.techStack);
+const projectTech = await getEntries(techStack);
 ---
 
 <BaseLayout pageTitle={`${description} | Projects`}>
   <h1 class="capitalize">{description}</h1>
   <h2>Tech Stack</h2>
 
-  <ul class="inline-flex gap-3">
+  <ul class="inline-flex gap-3 my-2">
     {
       projectTech.map((tech) => {
         const brandColor = tech.data.brandColor;
         return (
-          <li class={`p-1 rounded-md bg-[${brandColor}] capitalize`}>
+          <li
+            class={`p-2 rounded-md capitalize text-white `}
+            style={`background-color: ${brandColor}`}
+          >
             {tech.id}
           </li>
         );
       })
     }
   </ul>
+
+  <Picture
+    class="border-2 w-full md:w-3/4 mx-auto rounded-lg"
+    src={image}
+    alt={description}
+  />
 </BaseLayout>

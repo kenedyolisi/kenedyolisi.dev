@@ -16,13 +16,13 @@ if (project === undefined) {
   return Astro.redirect("/404");
 }
 
-const { description, image, techStack } = project.data;
+const {  title, image, techStack } = project.data;
 
 const projectTech = await getEntries(techStack);
 ---
 
-<BaseLayout pageTitle={`${description} | Projects`}>
-  <h1 class="capitalize">{description}</h1>
+<BaseLayout pageTitle={`${title} | Projects`}>
+  <h1 class="capitalize">{title}</h1>
   <h2>Tech Stack</h2>
 
   <ul class="inline-flex gap-3 my-2">
@@ -44,6 +44,6 @@ const projectTech = await getEntries(techStack);
   <Picture
     class="border-2 w-full md:w-3/4 mx-auto rounded-lg"
     src={image}
-    alt={description}
+    alt={title}
   />
 </BaseLayout>

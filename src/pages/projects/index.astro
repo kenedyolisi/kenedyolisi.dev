@@ -17,11 +17,11 @@ const description = "Check out my recent projects";
     <ul class="grid grid-cols-1 md:grid-cols-2 gap-6">
       {
         projects.map((project) => {
-          const { image, description } = project.data;
+          const { image, title } = project.data;
           return (
             <li class="border-2 rounded-lg">
               <a class="no-underline" href={`/projects/${project.id}`}>
-                <Image src={image} alt={description} />
+                <Image src={image} alt={title} />
               </a>
             </li>
           );

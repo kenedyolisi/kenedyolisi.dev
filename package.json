@@ -32,6 +32,7 @@
   },
   "devDependencies": {
     "@astrojs/check": "^0.4.1",
+    "@rollup/plugin-yaml": "^4.1.2",
     "@types/eslint": "^8.56.2",
     "@types/node": "^20.11.5",
     "@types/postcss-html": "^1.5.3",

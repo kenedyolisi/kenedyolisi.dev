@@ -33,7 +33,7 @@
   "devDependencies": {
     "@astrojs/check": "^0.4.1",
     "@types/eslint": "^8.56.2",
-    "@types/node": "^20.11.5",
+    "@types/node": "^20.11.10",
     "@types/postcss-html": "^1.5.3",
     "@typescript-eslint/parser": "^6.19.0",
     "eslint": "^8.56.0",

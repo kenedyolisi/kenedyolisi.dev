@@ -1,0 +1,42 @@
+[
+  {
+    "title": "responsive design",
+    "description": "I craft every project with a mobile-first mindset, ensuring a seamless user experience across a variety of devices. Responsive design is not just a feature, it's a fundamental aspect of my development philosophy.",
+    "icon": "responsive_design"
+  },
+  {
+    "title": "performance optimization",
+    "description": "I understand the importance of performance. By implementing best practices, lazy loading, and code splitting and other optimization strategies I guarantee fast load times, smooth animations, and an overall enhanced user experience.",
+    "icon": "performance"
+  },
+  {
+    "title": "cross-browser compatibility",
+    "description": "I ensure compatibility with various browsers to provide a consistent experience for all users.",
+    "icon": "cross_browser"
+  },
+  {
+    "title": "innovative approach",
+    "description": "I bring a fresh and innovative approach to every project, ensuring that each solution is tailored to meet the unique needs and goals of my clients. By staying updated with the latest industry trends and technologies, I strive to deliver cutting-edge solutions.",
+    "icon": "innovation"
+  },
+  {
+    "title": "client-centric",
+    "description": "Every project is unique, and I take a client-centric approach to ensure that the solutions provided align with your specific objectives. Tailoring my services to your needs is a cornerstone of my development philosophy.",
+    "icon": ""
+  },
+  {
+    "title": "agile methodology",
+    "description": "I embrace an agile development approach, allowing me to adapt to changing project requirements and deliver high-quality results efficiently. This iterative process ensures collaboration and transparency throughout the development lifecycle.",
+    "icon": "agile"
+  },
+  {
+    "title": "collaboration and communication",
+    "description": "Effective communication is the key to successful projects. I prioritize open and transparent communication with my clients, ensuring that every step of the development process is collaborative and aligned with client's vision vision.",
+    "icon": ""
+  },
+  {
+    "title": "continuous learning",
+    "description": "Effective communication is the key to successful projects. I prioritize open and transparent communication with my clients, ensuring that every step of the development process is collaborative and aligned with client's vision vision.",
+    "icon": "global_learning"
+  }
+]

@@ -16,7 +16,7 @@ export default defineConfig({
       applyBaseStyles: false,
     }),
     icon(),
-    partytown(),
+    partytown({ config: { debug: false } }),
   ],
   site: siteConfig.siteUrl,
 });

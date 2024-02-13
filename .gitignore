@@ -121,7 +121,7 @@ typings/
 .nuxt
 dist
 
-## Astro buid / generate output
+## Astro build / generate output
 dist/
 .astro
 

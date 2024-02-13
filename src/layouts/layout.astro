@@ -4,7 +4,7 @@ import "@styles/index.scss";
 import { ViewTransitions } from "astro:transitions";
 import Footer from "@components/footer.astro";
 import Header from "@components/header.astro";
-import ScrollTopBtn from "@components/scroll_top.astro";
+import ScrollTopButton from "@components/scroll_top_button";
 
 interface Props {
   pageTitle: string;
@@ -41,9 +41,10 @@ const { pageTitle, pageDescription } = Astro.props;
     <link rel="icon" href="/favicon.svg" sizes="any" type="image/svg+xml" />
 
     {/* Google tag (gtag.js) */}
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-HKMD2TMJCZ"
-    ></script>
-    <script is:inline>
+    <script
+      type="text/partytown"
+      src="https://www.googletagmanager.com/gtag/js?id=G-HKMD2TMJCZ"></script>
+    <script type="text/partytown">
       window.dataLayer = window.dataLayer || [];
       function gtag() {
         dataLayer.push(arguments);
@@ -59,7 +60,8 @@ const { pageTitle, pageDescription } = Astro.props;
       <Header />
       <main class="grow mt-20 px-5 md:px-10 lg:px-20" id="main-content">
         <slot />
-        <ScrollTopBtn />
+        <!-- <ScrollTopBtn /> -->
+        <ScrollTopButton client:visible />
       </main>
       <Footer />
     </div>

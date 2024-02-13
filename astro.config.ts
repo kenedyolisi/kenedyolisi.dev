@@ -3,6 +3,7 @@ import { siteConfig } from "./src/site_config";
 import icon from "astro-icon";
 import tailwind from "@astrojs/tailwind";
 import vercel from "@astrojs/vercel/serverless";
+import partytown from "@astrojs/partytown";
 
 // https://astro.build/config
 export default defineConfig({
@@ -14,7 +15,8 @@ export default defineConfig({
     tailwind({
       applyBaseStyles: false,
     }),
-    icon({}),
+    icon(),
+    partytown(),
   ],
   site: siteConfig.siteUrl,
 });

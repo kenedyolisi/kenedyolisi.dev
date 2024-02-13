@@ -1,14 +1,14 @@
 ---
-import { Image } from "astro:assets";
-import BaseLayout from "@layouts/base_layout.astro";
 import services from "@data/services.json";
+import Layout from "@layouts/layout.astro";
+import { Image } from "astro:assets";
 
 const title = "Services I Provide";
 const description =
   "I provide frontend development services using technologies such as HTML, CSS, JavaScript, Bootstrap, TailwindCSS, and React.";
 ---
 
-<BaseLayout pageTitle={title} pageDescription={description}>
+<Layout pageTitle={title} pageDescription={description}>
   <article>
     <h1 transition:animate="slide">{title}</h1>
     <p>
@@ -34,4 +34,4 @@ const description =
       }
     </div>
   </article>
-</BaseLayout>
+</Layout>

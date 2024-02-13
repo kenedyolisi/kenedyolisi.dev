@@ -1,10 +1,10 @@
 ---
-import BaseLayout from "@layouts/base_layout.astro";
+import Layout from "@layouts/layout.astro";
 
 const title = "Blog";
 ---
 
-<BaseLayout pageTitle={title}>
+<Layout pageTitle={title}>
   <article>
     <h1>{title}</h1>
     <div class="text-center">
@@ -25,4 +25,4 @@ const title = "Blog";
       </div>
     </div>
   </article>
-</BaseLayout>
+</Layout>

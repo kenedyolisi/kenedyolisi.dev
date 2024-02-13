@@ -1,12 +1,12 @@
 ---
+import Layout from "@layouts/layout.astro";
 import { Icon } from "astro-icon/components";
-import BaseLayout from "@layouts/base_layout.astro";
 
 const title = "About Me";
 const description = "Learn more about me here";
 ---
 
-<BaseLayout pageTitle={title} pageDescription={description}>
+<Layout pageTitle={title} pageDescription={description}>
   <article>
     <h1 transition:animate="slide">{title}</h1>
 
@@ -69,4 +69,4 @@ const description = "Learn more about me here";
       </div>
     </section>
   </article>
-</BaseLayout>
+</Layout>

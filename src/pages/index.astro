@@ -1,12 +1,12 @@
 ---
+import Layout from "@layouts/layout.astro";
 import { Picture } from "astro:assets";
 import { siteConfig } from "src/site_config";
-import BaseLayout from "@layouts/base_layout.astro";
 
 import heroBg from "@images/hero_bg.png";
 ---
 
-<BaseLayout
+<Layout
   pageTitle={siteConfig.slogan}
   pageDescription={siteConfig.description}
 >
@@ -32,7 +32,7 @@ import heroBg from "@images/hero_bg.png";
 
         <p class="grid">
           <a
-            class="max-xs:w-full text-center py-3 px-5 xs:mx-auto bg-primary dark:bg-primary-dark text-white dark:text-white no-underline rounded-md active:scale-95"
+            class="max-xs:w-full text-center py-3 px-5 xs:mx-auto bg-primary hover:bg-primary/80 dark:bg-primary-dark text-white dark:text-white no-underline rounded-md active:scale-95"
             href="contact"
           >
             Connect
@@ -49,4 +49,4 @@ import heroBg from "@images/hero_bg.png";
       </div>
     </div>
   </article>
-</BaseLayout>
+</Layout>

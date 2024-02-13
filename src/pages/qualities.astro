@@ -1,12 +1,12 @@
 ---
-import { Icon } from "astro-icon/components";
-import BaseLayout from "@layouts/base_layout.astro";
 import qualities from "@data/qualities.json";
+import Layout from "@layouts/layout.astro";
+import { Icon } from "astro-icon/components";
 
 const title = "Why Choose My Services";
 ---
 
-<BaseLayout pageTitle={title}>
+<Layout pageTitle={title}>
   <article aria-label={title}>
     <h1 transition:animate="slide">{title}?</h1>
 
@@ -30,4 +30,4 @@ const title = "Why Choose My Services";
       }
     </div>
   </article>
-</BaseLayout>
+</Layout>

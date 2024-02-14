@@ -17,7 +17,7 @@ export default defineConfig({
       applyBaseStyles: false,
     }),
     icon(),
-    partytown({ config: { debug: false } }),
+    partytown({ config: { debug: false, forward: ["datalayer.push"] } }),
     react(),
   ],
   site: siteConfig.siteUrl,

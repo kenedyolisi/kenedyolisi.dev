@@ -12,7 +12,6 @@
       "@data/*": ["src/data/*"]
     },
     "jsx": "react-jsx",
-    "jsxImportSource": "react",
-    "lib": ["dom", "dom.iterable", "esnext"]
+    "jsxImportSource": "react"
   }
 }

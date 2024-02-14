@@ -1,0 +1,26 @@
+<astro-dropdown>
+  <button aria-label="heart">💚</button>
+  x <span>0</span>
+</astro-dropdown>
+
+<script>
+  document.addEventListener("astro:page-load", () => {
+    class Dropdown extends HTMLElement {
+      constructor() {
+        super();
+        let count = 0;
+
+        const heartButton = this.querySelector("button");
+        const countSpan = this.querySelector("span");
+
+        heartButton.addEventListener("click", () => {
+          count++;
+          console.log(this);
+          countSpan.textContent = count.toString();
+        });
+      }
+    }
+
+    customElements.define("astro-dropdown", Dropdown);
+  });
+</script>

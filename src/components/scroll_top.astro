@@ -1,0 +1,45 @@
+---
+import { Icon } from "astro-icon/components";
+---
+
+<button
+  class="fixed right-6 bottom-10 p-4 bg-primary text-white rounded-full invisible"
+  id="scroll-to-top"
+  type="button"
+  title="scroll to top"
+>
+  <Icon name="arrow_up" />
+</button>
+
+<script>
+  const scrollTopBtn = document.getElementById(
+    "scroll-to-top"
+  ) as HTMLButtonElement;
+
+  scrollTopBtn?.addEventListener("click", () => {
+    scrollTo(0, 0);
+  });
+
+  // When user navigates to page, assume that scrollY
+  // is 0 (not always the case but just assume)
+  let previousScrollY = 0;
+
+  window.addEventListener("scroll", () => {
+    // Get the current scroll position
+    const currentScrollY = scrollY;
+
+    if (currentScrollY > previousScrollY || currentScrollY < 200) {
+      // Hide button when user is scrolling down or has not scroll more than
+      // 200px of the screen
+      scrollTopBtn.classList.add("animate-zoom-out", "invisible");
+      scrollTopBtn.classList.remove("animate-zoom-in");
+    } else {
+      // Show button when user is scrolling up
+      scrollTopBtn?.classList.remove("invisible", "animate-zoom-out");
+      scrollTopBtn.classList.add("animate-zoom-in");
+    }
+
+    // Update previous scroll position
+    previousScrollY = currentScrollY;
+  });
+</script>

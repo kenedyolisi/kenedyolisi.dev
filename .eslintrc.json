@@ -6,8 +6,7 @@
   "extends": [
     "eslint:recommended",
     "plugin:astro/jsx-a11y-recommended",
-    // Astro last
-    "plugin:astro/recommended"
+    "plugin:astro/recommended" // Astro last
   ],
   "overrides": [
     {
@@ -30,6 +29,11 @@
     "ecmaVersion": "latest",
     "sourceType": "module"
   },
-  "plugins": [],
-  "rules": {}
+  "plugins": ["react-refresh"],
+  "rules": {
+    "react-refresh/only-export-components": [
+      "warn",
+      { "allowConstantExport": true }
+    ]
+  }
 }

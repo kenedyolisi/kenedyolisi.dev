@@ -1,7 +1,9 @@
 ---
-import { Icon } from "astro-icon/components";
-import Logo from "@components/logo.astro";
 import ThemeMenu from "@components/theme_menu.astro";
+import logo from "@images/logo.svg";
+import Dropdown from "@components/dropdown.astro";
+import { Icon } from "astro-icon/components";
+import { Image } from "astro:assets";
 
 const navLinks = [
   "about",
@@ -22,39 +24,29 @@ const navLinks = [
 <header
   class="fixed top-0 z-10 flex justify-between items-center gap-3 w-full py-3 px-5 bg-white dark:bg-dark"
 >
-  <Logo />
+  <a href="/">
+    <Image src={logo} alt="logo" width={48} format="svg" />
+  </a>
 
   <div
     class={`
     fixed md:static top-0 right-0 bottom-0
     flex flex-col md:flex-row md:flex-grow md:justify-between md:items-center gap-4
-    w-full xs:w-[80%] sm:w-[60%] md:w-auto
+    w-full xs:w-3/5 md:w-auto
     py-3 px-5 md:p-0 
     bg-white dark:bg-dark md:bg-transparent
+    shadow-2xl
     md:shadow-none
     translate-x-full
     md:translate-x-0
-    backdrop-blur
+    transition-transform
+    duration-300
     `}
     id="offcanvas"
   >
     <div class="flex justify-between items-center md:hidden">
       <a href="/" class="">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 100 100"
-          width={48}
-        >
-          <path
-            d="M22.934 15L2 50l20.934 35L32 79.948 14.086 50 32 20.052z"
-            fill="#dc324b"></path>
-          <path
-            d="M39.278 62.9l-5.726-10.91q-.576-1.297-.684-1.783h-.09v12.694H25V37.08h7.778v12.28h.09q.342-.972.774-1.8l5.15-10.48h9.218l-7.328 12.316 8.03 13.504zM75 49.92q0 3.89-1.674 6.968-1.675 3.06-4.682 4.771-3.007 1.693-6.734 1.693-3.637 0-6.626-1.639-2.97-1.656-4.627-4.627-1.656-2.989-1.656-6.752 0-3.943 1.674-7.094 1.675-3.15 4.7-4.861 3.024-1.729 6.877-1.729 3.71 0 6.626 1.657 2.935 1.638 4.52 4.699Q75 46.048 75 49.919zm-8.246.216q0-3.187-1.225-5.023-1.224-1.837-3.349-1.837-2.322 0-3.619 1.765-1.296 1.764-1.296 4.987 0 3.15 1.278 4.915 1.297 1.765 3.511 1.765 1.35 0 2.431-.792 1.08-.793 1.675-2.269.594-1.476.594-3.511z"
-            fill="#106cfe"></path>
-          <path
-            d="M77.066 15L98 50 77.066 85 68 79.948 85.914 50 68 20.052z"
-            fill="#0f8750"></path>
-        </svg>
+        <Image src={logo} alt="logo" width={48} format="svg" />
       </a>
       <button
         class="h-fit p-1 border rounded-md hover:bg-danger dark:hover:bg-danger-dark hover:text-white"
@@ -89,7 +81,8 @@ const navLinks = [
       </ul>
     </nav>
 
-    <ThemeMenu />
+    <ThemeMenu client:only />
+    <!-- <Dropdown/> -->
   </div>
   <button
     class="h-fit p-2 md:hidden border rounded-md"
@@ -97,7 +90,7 @@ const navLinks = [
     type="button"
     aria-label="toggle navigation"
   >
-    <Icon name="menu_labelled" size={25} />
+    <Icon name="menu" size={25} />
   </button>
 </header>
 
@@ -109,18 +102,12 @@ const navLinks = [
       "[data-toggle='offcanvas']"
     );
     toggleOffcanvasBtn?.addEventListener("click", () => {
-      offcanvas?.classList.toggle("shadow-2xl");
       offcanvas?.classList.toggle("translate-x-full");
-      offcanvas?.classList.toggle("transition-transform");
-      offcanvas?.classList.toggle("duration-300");
     });
 
     const closeButton = offcanvas?.querySelector("[data-dismiss='offcanvas']");
-    closeButton?.addEventListener("click", dismissOffcanvas);
-
-    function dismissOffcanvas() {
+    closeButton?.addEventListener("click", () => {
       offcanvas?.classList.add("translate-x-full");
-      offcanvas?.classList.remove("shadow-2xl");
-    }
+    });
   });
 </script>

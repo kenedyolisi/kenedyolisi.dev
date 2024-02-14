@@ -1,37 +1,45 @@
 ---
 import { Icon } from "astro-icon/components";
 
-type Theme = "system" | "light" | "dark";
-
 const themes = [
-  { name: "system", icon: "circle_half" },
-  { name: "light", icon: "sun_fill" },
-  { name: "dark", icon: "moon_fill" },
+  ["system", "circle_half"],
+  ["dark", "moon_fill"],
+  ["light", "sun_fill"],
 ];
 ---
 
-<div class="inline-flex flex-col gap-2 w-fit">
+<div id="theme-switcher">
   <button
-    class="flex items-center gap-2 bg-primary text-white rounded p-3"
+    class="relative inline-flex items-center gap-2 bg-primary text-white rounded p-3"
+    id="theme-toggler"
+    data-toggle="dropdown"
     type="button"
+    aria-controls="theme-menu"
+    aria-haspopup="true"
     aria-expanded="false"
   >
     <Icon name="circle_half" />
     <span class="md:hidden">System</span>
-    <Icon name="caret_down_fill" />
+    <Icon class="transition-transform duration-300" name="caret_down_fill" />
   </button>
-  <ul class="hidden flex-col p-2 border rounded" role="menu">
+  <ul
+    class="absolute md:right-0 hidden p-2 mt-2 border rounded bg-white dark:bg-dark"
+    id="theme-menu"
+    aria-labelledby="theme-toggler"
+    role="menu"
+  >
     {
-      themes.map((theme) => {
+      themes.map(([name, icon]) => {
         return (
-          <li role="none">
+          <li role="presentation">
             <button
-              class="flex items-center gap-2 w-full py-1 px-2 rounded hover:bg-primary hover:text-white "
+              class="inline-flex items-center gap-2 w-full py-1 px-2 rounded hover:bg-primary hover:text-white "
+              data-theme-value={name}
               type="button"
               role="menuitem"
             >
-              <Icon name={theme.icon} />
-              <span class="capitalize">{theme.name}</span>
+              <Icon name={icon} />
+              <span class="capitalize">{name}</span>
             </button>
           </li>
         );
@@ -41,9 +49,61 @@ const themes = [
 </div>
 
 <script>
+  import Dropdown from "@scripts/dropdown";
+
   const rootElement = document.documentElement;
 
-  document.addEventListener("astro:page-load", () => {});
+  document.addEventListener("astro:page-load", () => {
+    const themeSwitcher = new Dropdown(
+      document.getElementById("theme-switcher")!,
+      switchTheme
+    );
+
+    const darkThemeQuery = window.matchMedia("(prefers-color-scheme:dark)");
+
+    const getStoredTheme = () => localStorage.getItem("theme");
+    const setStoredTheme = (theme: string) =>
+      localStorage.setItem("theme", theme);
+
+    const getPreferredTheme = () => {
+      const storedTheme = getStoredTheme();
+      if (storedTheme) {
+        return storedTheme;
+      }
+
+      return darkThemeQuery.matches ? "dark" : "light";
+    };
+
+    setTheme(getPreferredTheme());
+
+    function setTheme(theme: string) {
+      if (theme === "dark" || (theme === "system" && darkThemeQuery.matches)) {
+        rootElement.classList.add("dark");
+      } else {
+        rootElement.classList.remove("dark");
+      }
+    }
+
+    function switchTheme(node: HTMLElement) {
+      const theme = node.dataset.themeValue;
+
+      switch (theme) {
+        case "light":
+          setTheme(theme);
+          setStoredTheme(theme);
+
+          break;
+        case "dark":
+          setTheme(theme);
+          setStoredTheme(theme);
+          break;
+        case "system":
+          localStorage.removeItem("theme");
+          setTheme(getPreferredTheme());
+          break;
+      }
+    }
+  });
 
   document.addEventListener("astro:after-swap", () => {
     if (localStorage.theme === "dark" || !("theme" in localStorage)) {

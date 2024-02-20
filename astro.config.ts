@@ -1,4 +1,5 @@
 import partytown from "@astrojs/partytown";
+import react from "@astrojs/react";
 import tailwind from "@astrojs/tailwind";
 import vercel from "@astrojs/vercel/serverless";
 import icon from "astro-icon";
@@ -12,11 +13,12 @@ export default defineConfig({
     imageService: true,
   }),
   integrations: [
+    react(),
     tailwind({
       applyBaseStyles: false,
     }),
     icon(),
-    partytown({ config: { debug: false, forward: ["datalayer.push"] } })
+    partytown({ config: { debug: false, forward: ["datalayer.push"] } }),
   ],
   site: siteConfig.siteUrl,
 });

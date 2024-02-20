@@ -1,11 +1,18 @@
 ---
 import { Icon } from "astro-icon/components";
+import { theme } from "src/store";
 
-const themes = [
+const t = theme.subscribe((currentTheme) => {
+  return currentTheme;
+});
+
+export type Theme = "system" | "dark" | "light";
+
+const themesIcons: Map<Theme, string> = new Map([
   ["system", "circle_half"],
   ["dark", "moon_fill"],
   ["light", "sun_fill"],
-];
+]);
 ---
 
 <div id="theme-switcher">
@@ -19,7 +26,7 @@ const themes = [
     aria-expanded="false"
   >
     <Icon name="circle_half" />
-    <span class="md:hidden">System</span>
+    <span class="sr-only">System</span>
     <Icon class="transition-transform duration-300" name="caret_down_fill" />
   </button>
   <ul
@@ -29,17 +36,17 @@ const themes = [
     role="menu"
   >
     {
-      themes.map(([name, icon]) => {
+      Array.from(themesIcons.entries()).map(([theme, icon]) => {
         return (
           <li role="presentation">
             <button
               class="inline-flex items-center gap-2 w-full py-1 px-2 rounded hover:bg-primary hover:text-white "
-              data-theme-value={name}
+              data-theme-value={theme}
               type="button"
               role="menuitem"
             >
               <Icon name={icon} />
-              <span class="capitalize">{name}</span>
+              <span class="capitalize">{theme}</span>
             </button>
           </li>
         );

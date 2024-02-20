@@ -28,6 +28,7 @@
     "@astrojs/react": "^3.0.10",
     "@astrojs/tailwind": "^5.1.0",
     "@astrojs/vercel": "^7.3.1",
+    "@tailwindcss/forms": "^0.5.7",
     "astro": "^4.4.0",
     "astro-icon": "^1.1.0",
     "nanostores": "^0.9.5",
@@ -38,7 +39,6 @@
   },
   "devDependencies": {
     "@astrojs/check": "^0.4.1",
-    "@rollup/plugin-yaml": "^4.1.2",
     "@types/eslint": "^8.56.2",
     "@types/postcss-html": "^1.5.3",
     "@types/react": "^18.2.55",
@@ -47,6 +47,7 @@
     "eslint": "^8.56.0",
     "eslint-plugin-astro": "^0.31.4",
     "eslint-plugin-jsx-a11y": "^6.8.0",
+    "eslint-plugin-react-refresh": "^0.4.5",
     "postcss-html": "^1.6.0",
     "sass": "^1.71.0",
     "typescript": "^5.3.3"

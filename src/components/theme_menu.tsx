@@ -1,37 +1,112 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import type { IconType } from "react-icons";
+import {
+  BsCaretDownFill,
+  BsCircleHalf,
+  BsMoonStarsFill,
+  BsSunFill,
+} from "react-icons/bs";
 
-type Theme = "system" | "dark" | "light";
+type Theme = "dark" | "light" | "system";
 
-const themesIcons: Array<[Theme, string]> = [
-  ["system", "circle-half"],
-  ["dark", "moon-fill"],
-  ["light", "sun-fill"],
-];
+const Icon = (Component: IconType) => <Component />;
+
+const themesIcons: Map<Theme, IconType> = new Map([
+  ["dark", BsMoonStarsFill],
+  ["light", BsSunFill],
+  ["system", BsCircleHalf],
+]);
+
+const rootElement = document.documentElement;
+
+document.addEventListener("astro:after-swap", () => {
+  if (localStorage.theme === "dark" || !("theme" in localStorage)) {
+    rootElement.classList.add("dark");
+  } else {
+    rootElement.classList.remove("dark");
+  }
+});
 
 export default function ThemeMenu() {
-  const [currentTheme, setCurrentTheme] = useState("system");
+  const [currentTheme, setCurrentTheme] = useState<Theme>("system");
   const [isOpen, setIsOpen] = useState(false);
 
-  useState(() => {
-    window.addEventListener("storage", setTheme());
+  const themeMenuRef = useRef(null);
+
+  // useEffect(() => {
+  //   function handleStorage() {
+
+  //     if (theme) {
+  //       setTheme(theme);
+  //     }
+  //   }
+
+  //   window.addEventListener("storage", handleStorage);
+
+  //   return () => {
+  //     window.removeEventListener("storage", handleStorage);
+  //   };
+  // }, [currentTheme]);
+
+  useEffect(() => {
+    const darkThemeQuery = window.matchMedia("(prefers-color-scheme: dark)");
+
+    const systemTheme = darkThemeQuery.matches ? "dark" : "light";
+
+    function handleStorage() {
+      if (currentTheme === "system") {
+        setTheme(systemTheme);
+        darkThemeQuery.addEventListener("change", handleStorage);
+      }
+    }
 
     return () => {
-      window.removeEventListener("storage", setTheme());
+      darkThemeQuery.removeEventListener("change", handleStorage);
     };
-  });
+  }, [currentTheme]);
 
-  useState(() => {
-    const darkThemeQuery = window.matchMedia("(prefer-color-scheme: dark)");
+  function toggleThemeMenu() {
+    setIsOpen(!isOpen);
+    themeMenuRef.current.focus();
+  }
 
-    darkThemeQuery.addEventListener("change", setTheme());
-    return () => {
-      darkThemeQuery.removeEventListener("change", setTheme());
-    };
-  });
+  function switchTheme(event: MouseEvent) {
+    const theme: Theme = event.target.closest("button").dataset.themeValue;
 
-  function handleClick() {}
+    switch (theme) {
+      case "dark":
+        localStorage.setItem("theme", theme);
 
-  function toggleThemeMenu() {}
+        break;
+      case "light":
+        localStorage.setItem("theme", theme);
+        break;
+      case "system":
+        localStorage.removeItem("theme");
+        break;
+
+      default:
+        break;
+    }
+    if (theme !== currentTheme) {
+      setCurrentTheme(theme);
+      setTheme(theme);
+    }
+
+    setIsOpen(!isOpen);
+  }
+
+  function setTheme(theme: Theme) {
+    if (
+      theme === "dark" ||
+      (theme === "system" &&
+        window.matchMedia("(prefers-color-scheme: dark)").matches)
+    ) {
+      rootElement.classList.add("dark");
+    } else {
+      rootElement.classList.remove("dark");
+    }
+  }
 
   return (
     <div id="theme-switcher">
@@ -42,31 +117,39 @@ export default function ThemeMenu() {
         type="button"
         aria-controls="theme-menu"
         aria-haspopup="true"
-        aria-expanded="false"
+        aria-expanded={isOpen ? "true" : "false"}
+        onClick={toggleThemeMenu}
       >
-        {/* <Icon name="circle_half" /> */}
-        <span className="md:hidden">{currentTheme}</span>
-        {/* <Icon
-          className="transition-transform duration-300"
-          name="caret_down_fill"
-        /> */}
+        {Icon(themesIcons.get(currentTheme)!)}
+        <span className="sr-only">{currentTheme}</span>
+
+        <BsCaretDownFill
+          className={`transition-transform duration-300 ${
+            isOpen ? "rotate-180" : ""
+          }`}
+        />
       </button>
       <ul
-        className="absolute md:right-0 hidden p-2 mt-2 border rounded bg-white dark:bg-dark"
-        id="theme-menu"
+        className={`absolute md:right-0 p-2 mt-2 border rounded bg-white dark:bg-dark ${
+          !isOpen ? "hidden" : ""
+        }`}
         aria-labelledby="theme-toggler"
         role="menu"
+        ref={themeMenuRef}
       >
-        {themesIcons.map(([theme, icon]) => {
+        {Array.from(themesIcons.entries()).map(([theme]) => {
           return (
-            <li role="presentation">
+            <li key={theme} role="presentation">
               <button
-                className="inline-flex items-center gap-2 w-full py-1 px-2 rounded hover:bg-primary hover:text-white "
-                data-theme-value={name}
+                className={`inline-flex items-center gap-2 w-full py-1 px-2 rounded hover:bg-primary hover:text-white ${
+                  currentTheme === theme ? "bg-primary text-white" : ""
+                }`}
+                data-theme-value={theme}
                 type="button"
                 role="menuitem"
+                onClick={switchTheme}
               >
-                <Icon name={icon} />
+                {Icon(themesIcons.get(theme)!)}
                 <span className="capitalize">{theme}</span>
               </button>
             </li>

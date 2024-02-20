@@ -1,10 +1,11 @@
 ---
 import "@styles/index.scss";
 
-import { ViewTransitions } from "astro:transitions";
 import Footer from "@components/footer.astro";
 import Header from "@components/header.astro";
 import ScrollTopButton from "@components/scroll_top_button";
+import { ViewTransitions } from "astro:transitions";
+import SkipNavLink from "@components/skip_nav_link.astro";
 
 interface Props {
   pageTitle: string;
@@ -57,14 +58,18 @@ const { pageTitle, pageDescription } = Astro.props;
   </head>
 
   <body>
-    <div class="flex flex-col min-h-screen">
+    <SkipNavLink />
+    <div class="flex flex-col min-h-dvh">
       <Header />
-      <main class="grow mt-20 px-5 md:px-10 lg:px-20" id="main-content">
+      <div class="grow">
         <slot />
-        <!-- <ScrollTopBtn /> -->
-        <ScrollTopButton client:visible />
-      </main>
+        <ScrollTopButton client:load />
+      </div>
+
       <Footer />
     </div>
+    <script>
+      document.querySelector("main")?.setAttribute("id", "main-content");
+    </script>
   </body>
 </html>

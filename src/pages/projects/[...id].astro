@@ -18,32 +18,36 @@ if (project === undefined) {
 const { title, image, techStack } = project.data;
 
 const projectTech = await getEntries(techStack);
+
+
 ---
 
 <Layout pageTitle={`${title} | Projects`}>
-  <h1 class="capitalize">{title}</h1>
-  <h2>Tech Stack</h2>
+  <main>
+    <h1 class="capitalize">{title}</h1>
+    <h2>Tech Stack</h2>
 
-  <ul class="inline-flex gap-3 my-2">
-    {
-      projectTech.map((tech) => {
-        const { brandColor } = tech.data;
-        return (
-          <li
-            class={`p-2 rounded-md capitalize text-white `}
-            style={`background-color: ${brandColor}`}
-          >
-            {tech.id}
-          </li>
-        );
-      })
-    }
-  </ul>
+    <ul class="inline-flex gap-3 my-2">
+      {
+        projectTech.map((tech) => {
+          const { brandColor } = tech.data;
+          return (
+            <li
+              class={`p-2 rounded-md capitalize text-white `}
+              style={`background-color: ${brandColor}`}
+            >
+              {tech.id}
+            </li>
+          );
+        })
+      }
+    </ul>
 
-  <Picture
-    class="border-2 w-full md:w-3/4 mx-auto rounded-lg"
-    src={image}
-    alt={title}
-    formats={["webp", "avif"]}
-  />
+    <Picture
+      class="border-2 w-full md:w-3/4 mx-auto rounded-lg"
+      src={image}
+      alt={title}
+      formats={["webp", "avif"]}
+    />
+  </main>
 </Layout>

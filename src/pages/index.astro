@@ -6,14 +6,11 @@ import { siteConfig } from "src/site_config";
 import heroBg from "@images/hero_bg.png";
 ---
 
-<Layout
-  pageTitle={siteConfig.slogan}
-  pageDescription={siteConfig.description}
->
-  <article>
+<Layout pageTitle={siteConfig.slogan} pageDescription={siteConfig.description}>
+  <main>
     <div class="flex flex-col md:flex-row items-center gap-6">
       <div class="w-full md:w-2/3 md:shrink-0">
-        <h1 class="">Hi 👋, I am Kenedy Olisi</h1>
+        <h1 class="">Hi 👋! I am Kenedy Olisi</h1>
         <p class="text-2xl text-success dark:text-success-dark">
           I am passionate Front-end Developer currently based in Kenya.
         </p>
@@ -48,5 +45,5 @@ import heroBg from "@images/hero_bg.png";
         />
       </div>
     </div>
-  </article>
+  </main>
 </Layout>

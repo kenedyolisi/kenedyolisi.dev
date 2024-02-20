@@ -1,0 +1,18 @@
+---
+import icons from "@icons/icons.json";
+
+interface Props {
+  name: keyof typeof icons;
+  width?: string | number;
+}
+
+const { name, width } = Astro.props;
+---
+
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 16 16"
+  fill="CurrentColor"
+  width={width || "1em"}
+  set:html={icons[name]}
+/>

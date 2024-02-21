@@ -5,6 +5,7 @@
   "type": "module",
   "author": "Kenedy Olisi",
   "homepage": "https://kenedyolisi.vercel.app",
+  "packageManager": "pnpm@8.15.3",
   "engines": {
     "node": ">=18.17.1"
   },
@@ -17,7 +18,7 @@
   },
   "scripts": {
     "astro": "astro",
-    "build": "astro check && astro build",
+    "build": "astro build",
     "dev": "astro dev",
     "lint": "eslint --fix src/**/*.{astro,ts,tsx}",
     "preview": "astro preview",

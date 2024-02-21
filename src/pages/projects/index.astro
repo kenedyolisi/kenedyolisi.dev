@@ -2,49 +2,88 @@
 import Layout from "@layouts/layout.astro";
 import { Image } from "astro:assets";
 import { getCollection } from "astro:content";
+import { BsChevronDown, BsFunnel } from "react-icons/bs";
 
-const projects = await getCollection("projects");
+const allProjects = await getCollection("projects");
 
 const title = "Projects";
 const description = "Check out my recent projects";
 
-const techStacks = [
-  ...new Set(
-    projects
-      .map(({ data }) => data.techStack)
-      .flat()
-      .map((tech) => tech.id)
-  ),
+const technologies = [
+  ...new Set(allProjects.map((project) => project.data.technologies).flat()),
 ];
 ---
 
 <Layout pageTitle={title} pageDescription={description}>
-  <article>
-    <h1 transition:animate="slide">{title}</h1>
-    <p>🌐 Explore my portfolio for a glimpse of my recent projects.</p>
-    <button class="">Filter</button>
-    {
-      techStacks.map((tech) => (
+  <div class="flex gap-4 px-8 sm:px-12 md:px-20">
+    <aside
+      class="sticky top-20 overflow-auto min-w-min max-h-screen px-5 space-y-2"
+    >
+      <div class="inline-flex items-center gap-2">
+        <BsFunnel />
+        <span>Filter</span>
+      </div>
+      <div class="flex flex-col gap-4">
+        <button class="flex justify-between items-center" type="button">
+          <span>Technology</span>
+          <BsChevronDown />
+        </button>
         <div>
-          <input class="" id={tech} name={tech} type="checkbox" />
-          <label for={tech}>{tech}</label>
+          <label class="inline-flex items-center gap-2">
+            <input type="checkbox" />
+            Select all
+          </label>
+          <div class="ms-3">
+            {
+              technologies.map((tech) => (
+                <label class="inline-flex items-center gap-2 capitalize ">
+                  <input class="" name={tech} value={tech} type="checkbox" />
+                  {tech}
+                </label>
+              ))
+            }
+          </div>
         </div>
-      ))
-    }
+      </div>
 
-    <ul class="grid grid-cols-1 md:grid-cols-2 gap-6">
-      {
-        projects.map((project) => {
-          const { image, title } = project.data;
-          return (
-            <li class="border-2 rounded-lg">
-              <a class="no-underline" href={`/projects/${project.id}`}>
-                <Image src={image} alt={title} />
-              </a>
-            </li>
-          );
-        })
-      }
-    </ul>
-  </article>
+      <fieldset>
+        <legend>Category</legend>
+        <label>
+          <input class="" id="" name="" type="checkbox" />
+          Select all
+        </label>
+        <div class="ms-3">
+          <label class="inline-flex items-center gap-2">
+            <input id="" name="portfolio" type="checkbox" value="portfolio" />
+            Portfolio
+          </label>
+        </div>
+      </fieldset>
+    </aside>
+    <main class="p-0">
+      <h1 transition:animate="slide">{title}</h1>
+      <p>🌐 Explore my portfolio for a glimpse of my recent projects.</p>
+
+      <ul class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {
+          allProjects.map((project) => {
+            const { image, title } = project.data;
+            return (
+              <li class="border-2 rounded-lg">
+                <a class="no-underline" href={`/projects/${project.id}`}>
+                  <Image src={image} alt={title} />
+                </a>
+              </li>
+            );
+          })
+        }
+      </ul>
+    </main>
+  </div>
 </Layout>
+
+<style>
+  main {
+    margin: 0 !important;
+  }
+</style>

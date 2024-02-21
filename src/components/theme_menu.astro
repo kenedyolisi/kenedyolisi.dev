@@ -1,17 +1,13 @@
 ---
-import { Icon } from "astro-icon/components";
-import { theme } from "src/store";
-
-const t = theme.subscribe((currentTheme) => {
-  return currentTheme;
-});
+import Icon from "@components/icon.astro";
+import type { Icons } from "src/env";
 
 export type Theme = "system" | "dark" | "light";
 
-const themesIcons: Map<Theme, string> = new Map([
-  ["system", "circle_half"],
-  ["dark", "moon_fill"],
-  ["light", "sun_fill"],
+const themesIcons: Map<Theme, Icons> = new Map([
+  ["system", "circle-half"],
+  ["dark", "moon-stars-fill"],
+  ["light", "sun-fill"],
 ]);
 ---
 
@@ -25,9 +21,9 @@ const themesIcons: Map<Theme, string> = new Map([
     aria-haspopup="true"
     aria-expanded="false"
   >
-    <Icon name="circle_half" />
+    <Icon name="circle-half" />
     <span class="sr-only">System</span>
-    <Icon class="transition-transform duration-300" name="caret_down_fill" />
+    <Icon name="caret-down-fill" />
   </button>
   <ul
     class="absolute md:right-0 hidden p-2 mt-2 border rounded bg-white dark:bg-dark"
@@ -56,16 +52,9 @@ const themesIcons: Map<Theme, string> = new Map([
 </div>
 
 <script>
-  import Dropdown from "@scripts/dropdown";
-
   const rootElement = document.documentElement;
 
   document.addEventListener("astro:page-load", () => {
-    const themeSwitcher = new Dropdown(
-      document.getElementById("theme-switcher")!,
-      switchTheme
-    );
-
     const darkThemeQuery = window.matchMedia("(prefers-color-scheme:dark)");
 
     const getStoredTheme = () => localStorage.getItem("theme");

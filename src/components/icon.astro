@@ -1,12 +1,13 @@
 ---
 import icons from "@data/icons.json";
+import type { HTMLAttributes } from "astro/types";
 
-interface Props {
+interface Props extends HTMLAttributes<"svg"> {
   name: keyof typeof icons;
   width?: string | number;
 }
 
-const { name, width } = Astro.props;
+const { name, width, ...props } = Astro.props;
 ---
 
 <svg
@@ -14,5 +15,6 @@ const { name, width } = Astro.props;
   viewBox="0 0 16 16"
   fill="CurrentColor"
   width={width || "1em"}
+  {...props}
   set:html={icons[name]}
 />

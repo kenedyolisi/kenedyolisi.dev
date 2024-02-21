@@ -1,15 +1,15 @@
 ---
-import { Icon } from "astro-icon/components";
+import Icon from "@components/icon.astro";
 
 const socialPlatforms = [
   { platform: "github", icon: "github" },
   { platform: "linkedin", icon: "linkedin" },
-  { platform: "twitter", icon: "twitter" },
+  { platform: "twitter", icon: "twitter-x" },
   { platform: "facebook", icon: "facebook" },
 ];
 ---
 
-<nav class="flex justify-center md:justify-end gap-4 md:">
+<nav class="flex justify-center md:justify-end gap-4">
   {
     socialPlatforms.map((link) => (
       <a
@@ -18,7 +18,7 @@ const socialPlatforms = [
           link.platform === "linkedin" ? "in/" : ""
         }kenedyolisi`}
       >
-        <Icon name={link.icon} size={20} />
+        <Icon name={link.icon} width={20} />
       </a>
     ))
   }

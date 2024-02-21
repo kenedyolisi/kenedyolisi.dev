@@ -1,27 +1,45 @@
 ---
-import { getCollection } from "astro:content";
+import Layout from "@layouts/layout.astro";
 import { Image } from "astro:assets";
-import BaseLayout from "@layouts/base_layout.astro";
+import { getCollection } from "astro:content";
 
 const projects = await getCollection("projects");
 
 const title = "Projects";
 const description = "Check out my recent projects";
+
+const techStacks = [
+  ...new Set(
+    projects
+      .map(({ data }) => data.techStack)
+      .flat()
+      .map((tech) => tech.id)
+  ),
+];
 ---
 
-<BaseLayout pageTitle={title} pageDescription={description}>
+<Layout pageTitle={title} pageDescription={description}>
   <article>
     <h1 transition:animate="slide">{title}</h1>
     <p>🌐 Explore my portfolio for a glimpse of my recent projects.</p>
+    <button class="">Filter</button>
+    {
+      techStacks.map((tech) => (
+        <div>
+          <input class="" id={tech} name={tech} type="checkbox" />
+          <label for={tech}>{tech}</label>
+        </div>
+      ))
+    }
 
     <ul class="grid grid-cols-1 md:grid-cols-2 gap-6">
       {
         projects.map((project) => {
-          const { image, description } = project.data;
+          const { image, title } = project.data;
           return (
             <li class="border-2 rounded-lg">
               <a class="no-underline" href={`/projects/${project.id}`}>
-                <Image src={image} alt={description} />
+                <Image src={image} alt={title} />
               </a>
             </li>
           );
@@ -29,4 +47,4 @@ const description = "Check out my recent projects";
       }
     </ul>
   </article>
-</BaseLayout>
+</Layout>

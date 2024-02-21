@@ -6,7 +6,7 @@ const projects = defineCollection({
   schema: ({ image }) =>
     z.object({
       image: image(),
-      description: z.string(),
+      title: z.string(),
       url: z.string(),
       techStack: z.array(reference("technologies")),
     }),

@@ -1,0 +1,36 @@
+---
+const navLinks = [
+  "about",
+  "services",
+  "projects",
+  // "testimonials",
+  "qualities",
+  "blog",
+  "contact",
+];
+---
+
+<nav>
+  <ul class="flex flex-col md:flex-row gap-1">
+    {
+      navLinks.map((link) => {
+        return (
+          <li class="nav-item">
+            <a
+              class:list={[
+                "nav-link",
+
+                {
+                  active: Astro.url.pathname.startsWith(`/${link}`),
+                },
+              ]}
+              href={`/${link === "home" ? "" : link}`}
+            >
+              {link}
+            </a>
+          </li>
+        );
+      })
+    }
+  </ul>
+</nav>

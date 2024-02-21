@@ -1,6 +1,7 @@
 ---
 image: src/images/nextjs_dashboard.png
-description: nextjs dashboard
-url: https://kenedyolisi-nextjs-dashboard.vercel.app
 techStack:
   - nextjs
+  - react
+title: nextjs dashboard
+url: https://kenedyolisi-nextjs-dashboard.vercel.app

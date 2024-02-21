@@ -1,17 +1,15 @@
 ---
 import Icon from "@components/icon.astro";
-import ThemeMenu from "@components/theme_menu";
-import logo from "@images/logo.svg";
-import { Image } from "astro:assets";
+import Logo from "@components/logo.astro";
 import SiteNav from "@components/site_nav.astro";
+import ThemeMenu from "@components/theme_menu.astro";
+
 ---
 
 <header
-  class="sticky top-0 z-10 flex justify-between items-center gap-3 w-full py-3 px-5 bg-white dark:bg-dark"
+  class="sticky top-0 z-20 flex justify-between items-center gap-3 w-full py-3 px-5 bg-white dark:bg-dark"
 >
-  <a href="/">
-    <Image src={logo} alt="logo" width={48} format="svg" />
-  </a>
+  <Logo />
 
   <div
     class={`
@@ -30,9 +28,7 @@ import SiteNav from "@components/site_nav.astro";
     id="offcanvas"
   >
     <div class="flex justify-between items-center md:hidden">
-      <a href="/" class="">
-        <Image src={logo} alt="logo" width={48} format="svg" />
-      </a>
+      <Logo />
       <button
         class="h-fit p-3 border rounded-md"
         data-dismiss="offcanvas"
@@ -43,7 +39,7 @@ import SiteNav from "@components/site_nav.astro";
     </div>
     <SiteNav />
 
-    <ThemeMenu client:only="react" />
+    <ThemeMenu />
   </div>
   <button
     class="h-fit p-2 md:hidden border rounded-md"

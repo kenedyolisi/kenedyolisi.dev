@@ -5,6 +5,7 @@
   "type": "module",
   "author": "Kenedy Olisi",
   "homepage": "https://kenedyolisi.vercel.app",
+  "packageManager": "pnpm@8.15.3",
   "engines": {
     "node": ">=18.17.1"
   },

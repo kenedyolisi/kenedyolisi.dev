@@ -1,6 +1,6 @@
 ---
 image: src/images/nextjs_dashboard.png
-techStack:
+technologies:
   - nextjs
   - react
 title: nextjs dashboard

@@ -1,6 +1,6 @@
 ---
 image: src/images/kenedyolisi_landing_page.png
-techStack:
+technologies:
   - astro
   - tailwindcss
 title: kenedyolisi landing page

@@ -1,6 +1,6 @@
 ---
 image: src/images/random_quote_machine.png
-techStack:
+technologies:
   - react
   - tailwindcss
 title: random quote machine

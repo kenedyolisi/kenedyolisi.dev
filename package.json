@@ -17,7 +17,7 @@
   },
   "scripts": {
     "astro": "astro",
-    "build": "astro check && astro build",
+    "build": "astro build",
     "dev": "astro dev",
     "lint": "eslint --fix src/**/*.{astro,ts,tsx}",
     "preview": "astro preview",

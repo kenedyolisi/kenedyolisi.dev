@@ -1,9 +1,10 @@
 ---
 import icons from "@data/icons.json";
 import type { HTMLAttributes } from "astro/types";
+import type { Icons } from "src/env";
 
 interface Props extends HTMLAttributes<"svg"> {
-  name: keyof typeof icons;
+  name: Icons;
   width?: string | number;
 }
 

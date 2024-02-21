@@ -1,7 +1,8 @@
 ---
+import technologiesData from "@data/technologies.json";
 import Layout from "@layouts/layout.astro";
 import { Picture } from "astro:assets";
-import { getEntries, getEntry } from "astro:content";
+import { getEntry } from "astro:content";
 
 const { id } = Astro.params;
 
@@ -15,28 +16,26 @@ if (project === undefined) {
   return Astro.redirect("/404");
 }
 
-const { title, image, techStack } = project.data;
-
-const projectTech = await getEntries(techStack);
-
-
+const { title, image, technologies } = project.data;
 ---
 
 <Layout pageTitle={`${title} | Projects`}>
   <main>
     <h1 class="capitalize">{title}</h1>
-    <h2>Tech Stack</h2>
+    <h2>Technologies</h2>
 
     <ul class="inline-flex gap-3 my-2">
       {
-        projectTech.map((tech) => {
-          const { brandColor } = tech.data;
+        technologies.map((technology) => {
+          //@ts-ignore
+          const brandColor = technologiesData[technology].brandColor;
+
           return (
             <li
               class={`p-2 rounded-md capitalize text-white `}
               style={`background-color: ${brandColor}`}
             >
-              {tech.id}
+              {technology}
             </li>
           );
         })

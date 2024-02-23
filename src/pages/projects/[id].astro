@@ -1,8 +1,7 @@
 ---
-import technologiesData from "@data/technologies.json";
+import projects from "@data/projects.ts";
+import technologies from "@data/technologies.json";
 import Layout from "@layouts/layout.astro";
-import { Picture } from "astro:assets";
-import { projects } from "@data/projects.ts";
 
 const { id } = Astro.params;
 
@@ -11,7 +10,7 @@ if (id === undefined) {
 }
 
 const project = projects.find((project) => {
-  const slug = project.title.split(" ").join("-");
+  const slug = project.title.toLowerCase().split(" ").join("-");
   return slug === id ? project : null;
 });
 
@@ -19,26 +18,25 @@ if (project === undefined) {
   return Astro.redirect("/404");
 }
 
-const { title, technologies } = project;
+const { title, techs } = project;
 ---
 
-<Layout pageTitle={`${""} | Projects`}>
+<Layout pageTitle={`${title} | Projects`}>
   <main>
     <h1 class="capitalize">{title}</h1>
     <h2>Technologies</h2>
 
     <ul class="inline-flex gap-3 my-2">
       {
-        technologies.map((technology) => {
-          //@ts-ignore
-          const brandColor = technologiesData[technology].brandColor;
+        techs.map((tech) => {
+          const brandColor = technologies[tech].brandColor;
 
           return (
             <li
               class={`p-2 rounded-md capitalize text-white `}
               style={`background-color: ${brandColor}`}
             >
-              {technology}
+              {tech}
             </li>
           );
         })

@@ -1,17 +1,12 @@
 ---
 import Icon from "@components/icon.astro";
+import projects from "@data/projects";
 import Layout from "@layouts/layout.astro";
-import { Image } from "astro:assets";
-import { getCollection } from "astro:content";
-
-const allProjects = await getCollection("projects");
 
 const title = "Projects";
 const description = "Check out my recent projects";
 
-const technologies = [
-  ...new Set(allProjects.map((project) => project.data.technologies).flat()),
-];
+const technologies = [...new Set(projects.map(({ techs }) => techs).flat())];
 ---
 
 <Layout pageTitle={title} pageDescription={description}>
@@ -92,12 +87,14 @@ const technologies = [
 
       <ul class="grid grid-cols-1 md:grid-cols-2 gap-6">
         {
-          allProjects.map((project) => {
-            const { image, title } = project.data;
+          projects.map(({ title }) => {
+            const slug = title.toLowerCase().split(" ").join("-");
+
             return (
               <li class="border-2 rounded-lg">
-                <a class="no-underline" href={`/projects/${project.id}`}>
-                  <Image src={image} alt={title} />
+                <a class="no-underline" href={`/projects/${slug}`}>
+                  {/* <Image src={image} alt={title} /> */}
+                  {title}
                 </a>
               </li>
             );

@@ -1,7 +1,0 @@
----
-image: src/images/kenedyolisi_landing_page.png
-techStack:
-  - astro
-  - tailwindcss
-title: kenedyolisi landing page
-url: https://kenedyolisi.vercel.app

@@ -1,0 +1,72 @@
+---
+import Icon from "@components/icon.astro";
+import Logo from "@components/logo.astro";
+import SiteNav from "@components/site_nav.astro";
+import ThemeMenu from "@components/theme_menu.astro";
+
+---
+
+<header
+  class="sticky top-0 z-20 flex justify-between items-center gap-3 w-full py-3 px-5 bg-white dark:bg-dark"
+>
+  <Logo />
+
+  <div
+    class={`
+    fixed md:static top-0 right-0 bottom-0
+    flex flex-col md:flex-row md:flex-grow md:justify-between md:items-center gap-4
+    w-full xs:w-3/5 md:w-auto
+    py-3 px-5 md:p-0
+    border-l md:border-none
+    bg-white dark:bg-dark md:bg-transparent
+    md:shadow-none
+    translate-x-full   
+    md:translate-x-0
+    transition-transform
+    duration-300 focus:not:translate-x-full
+    `}
+    id="offcanvas"
+  >
+    <div class="flex justify-between items-center md:hidden">
+      <Logo />
+      <button
+        class="h-fit p-3 border rounded-md"
+        data-dismiss="offcanvas"
+        type="button"
+      >
+        <Icon name="x" />
+      </button>
+    </div>
+    <SiteNav />
+
+    <ThemeMenu />
+  </div>
+  <button
+    class="h-fit p-2 md:hidden border rounded-md"
+    data-toggle="offcanvas"
+    type="button"
+    aria-label="toggle navigation"
+  >
+    <Icon name="menu-labelled" width={25} />
+  </button>
+</header>
+
+<script>
+  document.addEventListener("astro:page-load", () => {
+    const offcanvas = document.getElementById("offcanvas");
+
+    const toggleOffcanvasBtn = document?.querySelector(
+      "[data-toggle='offcanvas']"
+    );
+    toggleOffcanvasBtn?.addEventListener("click", () => {
+      offcanvas?.classList.toggle("translate-x-full");
+      closeButton?.focus();
+    });
+
+    const closeButton = offcanvas?.querySelector("[data-dismiss='offcanvas']");
+    closeButton?.addEventListener("click", () => {
+      offcanvas?.classList.add("translate-x-full");
+      toggleOffcanvasBtn?.focus();
+    });
+  });
+</script>

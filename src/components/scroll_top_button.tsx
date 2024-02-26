@@ -33,7 +33,7 @@ export default function scrollTopButton() {
 
   return (
     <button
-      className={`fixed right-6 bottom-10 p-3 bg-primary text-white rounded-full ${
+      className={`fixed right-6 bottom-10 p-3 bg-primary dark:bg-primary-dark text-white rounded-full ${
         show ? "visible animate-zoom-in" : "invisible animate-zoom-out"
       }`}
       type="button"

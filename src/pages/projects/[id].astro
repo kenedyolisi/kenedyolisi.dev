@@ -1,7 +1,10 @@
 ---
-import projects from "@data/projects.ts";
+import { images } from "@data/index";
+import projects from "@data/projects";
 import technologies from "@data/technologies.json";
 import Layout from "@layouts/layout.astro";
+import { Picture } from "astro:assets";
+import { capitalizeStr } from "src/utils";
 
 const { id } = Astro.params;
 
@@ -10,18 +13,17 @@ if (id === undefined) {
 }
 
 const project = projects.find((project) => {
-  const slug = project.title.toLowerCase().split(" ").join("-");
-  return slug === id ? project : null;
+  return project.id === id ? project : null;
 });
 
 if (project === undefined) {
   return Astro.redirect("/404");
 }
 
-const { title, techs } = project;
+const { title, techs, image } = project;
 ---
 
-<Layout pageTitle={`${title} | Projects`}>
+<Layout pageTitle={`${capitalizeStr(title)} | Projects`}>
   <main>
     <h1 class="capitalize">{title}</h1>
     <h2>Technologies</h2>
@@ -43,15 +45,11 @@ const { title, techs } = project;
       }
     </ul>
 
-    {
-      /* 
     <Picture
       class="border-2 w-full md:w-3/4 mx-auto rounded-lg"
-      src={image}
+      src={images[image]()}
       alt={title}
       formats={["webp", "avif"]}
     />
-    */
-    }
   </main>
 </Layout>

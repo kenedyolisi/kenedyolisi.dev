@@ -1,6 +1,7 @@
 ---
 import "@styles/global.scss";
 
+import Icon from "@components/icon.astro";
 import PageFooter from "@components/page_footer.astro";
 import PageHeader from "@components/page_header.astro";
 import ScrollTopButton from "@components/scroll_top_button";
@@ -63,7 +64,9 @@ const { pageTitle, pageDescription } = Astro.props;
       <PageHeader />
       <div class="grow">
         <slot />
-        <ScrollTopButton client:load/>
+        <ScrollTopButton client:load>
+          <Icon name="arrow-up" slot="icon" />
+        </ScrollTopButton>
       </div>
 
       <PageFooter />

@@ -1,7 +1,6 @@
 import { useEffect, useRef, useState } from "react";
-import { BsArrowUp } from "react-icons/bs";
 
-export default function scrollTopButton() {
+export default function scrollTopButton(props) {
   const [show, setShow] = useState(false);
   const prevScrollY = useRef(0);
 
@@ -40,7 +39,7 @@ export default function scrollTopButton() {
       title="scroll to top"
       onClick={handleClick}
     >
-      <BsArrowUp />
+      {props.icon}
     </button>
   );
 }

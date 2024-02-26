@@ -2,8 +2,7 @@
 import Icon from "@components/icon.astro";
 import Logo from "@components/logo.astro";
 import SiteNav from "@components/site_nav.astro";
-import ThemeMenu from "@components/theme_menu.astro";
-
+import ThemeMenu from "@components/theme_menu";
 ---
 
 <header
@@ -39,7 +38,7 @@ import ThemeMenu from "@components/theme_menu.astro";
     </div>
     <SiteNav />
 
-    <ThemeMenu />
+    <ThemeMenu client:only="react" />
   </div>
   <button
     class="h-fit p-2 md:hidden border rounded-md"

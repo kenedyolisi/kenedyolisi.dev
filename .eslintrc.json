@@ -6,6 +6,7 @@
   "extends": [
     "eslint:recommended",
     "plugin:astro/jsx-a11y-recommended",
+    "plugin:astro/jsx-a11y-strict",
     "plugin:astro/recommended" // Astro last
   ],
   "overrides": [

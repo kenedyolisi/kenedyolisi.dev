@@ -1,7 +1,9 @@
 ---
 import Icon from "@components/icon.astro";
+import { images } from "@data/index";
 import projects from "@data/projects";
 import Layout from "@layouts/layout.astro";
+import { Image } from "astro:assets";
 
 const title = "Projects";
 const description = "Check out my recent projects";
@@ -87,13 +89,11 @@ const technologies = [...new Set(projects.map(({ techs }) => techs).flat())];
 
       <ul class="grid grid-cols-1 md:grid-cols-2 gap-6">
         {
-          projects.map(({ title }) => {
-            const slug = title.toLowerCase().split(" ").join("-");
-
+          projects.map(({ id, image }) => {
             return (
               <li class="border-2 rounded-lg">
-                <a class="no-underline" href={`/projects/${slug}`}>
-                  {/* <Image src={image} alt={title} /> */}
+                <a class="no-underline" href={`/projects/${id}`}>
+                  <Image src={images[image]()} alt={title} />
                   {title}
                 </a>
               </li>

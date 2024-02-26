@@ -1,7 +1,7 @@
 import partytown from "@astrojs/partytown";
+import react from "@astrojs/react";
 import tailwind from "@astrojs/tailwind";
 import vercel from "@astrojs/vercel/serverless";
-import react from "@astrojs/react";
 import { defineConfig } from "astro/config";
 import { siteConfig } from "./src/site_config";
 

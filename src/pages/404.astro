@@ -1,6 +1,7 @@
 ---
 import Layout from "@layouts/layout.astro";
 
+const isDev = import.meta.env.DEV;
 const title = "Page Not Found";
 ---
 
@@ -11,12 +12,12 @@ const title = "Page Not Found";
     <div>
       <h1>{title}</h1>
       <p>
-        Sorry{" "}
-        <span role="img" aria-label="pensive emoji"> 😔</span>{" "}
-         this page is not available.
+        Sorry
+        <span role="img" aria-label="pensive emoji"> 😔</span>
+        this page is not available.
       </p>
       {
-        process.env.NODE_ENV === "development" ? (
+        isDev ? (
           <p>
             Try creating it in <code>src/pages/</code>
           </p>

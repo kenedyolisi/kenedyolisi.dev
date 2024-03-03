@@ -39,7 +39,7 @@
     "tailwindcss": "^3.4.1"
   },
   "devDependencies": {
-    "@astrojs/check": "^0.4.1",
+    "@astrojs/check": "^0.5.5",
     "@types/eslint": "^8.56.2",
     "@types/postcss-html": "^1.5.3",
     "@types/react": "^18.2.55",

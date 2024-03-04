@@ -1,0 +1,20 @@
+---
+import { Image } from "astro:assets";
+import { images } from "@data/images";
+
+interface Props {
+  projectTitle: string;
+  projectImage: string;
+  projectId: string;
+}
+
+const { projectTitle, projectImage, projectId } = Astro.props;
+---
+
+<a href={`/projects/${projectId}`}>
+  <figure>
+    <Image src={images[projectImage]()} alt={projectTitle} />
+    <figcaption>{projectTitle}</figcaption>
+  </figure>
+</a>
+@data/local_images

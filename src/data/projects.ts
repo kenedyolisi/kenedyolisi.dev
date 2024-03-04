@@ -1,14 +1,14 @@
-import technologies from "@data/technologies.json";
+import type { TechKey } from "src/env";
 
 interface Project {
   id: string;
   title: string;
-  techs: (keyof typeof technologies)[];
+  techs: TechKey[];
   url: string;
   image: string;
 }
 
-const projects: Project[] = [
+export default [
   {
     id: "d652a935-3caf-5015-9e62-628dab47c87c",
     title: "kenedyolisi landing page",
@@ -23,6 +23,4 @@ const projects: Project[] = [
     title: "random quote machine",
     url: "https://kenedyolisi.gihub.io/random-quote-machine",
   },
-];
-
-export default projects;
+] satisfies Project[];

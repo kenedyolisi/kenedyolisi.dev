@@ -1,10 +1,10 @@
 ---
 import icons from "@data/icons.json";
 import type { HTMLAttributes } from "astro/types";
-import type { Icons } from "src/env";
+import type { IconKey } from "src/env";
 
 interface Props extends HTMLAttributes<"svg"> {
-  name: Icons;
+  name: IconKey;
   width?: string | number;
 }
 
@@ -15,7 +15,6 @@ const { name, width, ...props } = Astro.props;
   xmlns="http://www.w3.org/2000/svg"
   viewBox="0 0 16 16"
   fill="CurrentColor"
-  stroke="CurrentColor"
   width={width || "1em"}
   {...props}
   set:html={icons[name]}

@@ -17,13 +17,6 @@ const projects: Project[] = [
     image: "/src/images/kenedyolisi_landing_page.png",
   },
   {
-    id: "ba246edd-fe23-5886-a885-985914ed3790",
-    title: "nextjs dashboard",
-    techs: ["nextjs", "react"],
-    image: "/src/images/nextjs_dashboard.png",
-    url: "https://kenedyolisi-nextjs-dashboard.vercel.app",
-  },
-  {
     id: "5f2bf98c-3af2-574c-a7aa-3882e7144fd2",
     image: "/src/images/random_quote_machine.png",
     techs: ["react", "tailwindcss"],

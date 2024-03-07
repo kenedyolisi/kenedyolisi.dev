@@ -13,16 +13,16 @@ dependencies:
     version: 3.0.10(@types/react-dom@18.2.19)(@types/react@18.2.61)(react-dom@18.2.0)(react@18.2.0)(vite@5.1.4)
   '@astrojs/tailwind':
     specifier: ^5.1.0
-    version: 5.1.0(astro@4.4.10)(tailwindcss@3.4.1)
+    version: 5.1.0(astro@4.4.13)(tailwindcss@3.4.1)
   '@astrojs/vercel':
     specifier: ^7.3.5
-    version: 7.3.5(astro@4.4.10)
+    version: 7.3.5(astro@4.4.13)
   '@tailwindcss/forms':
     specifier: ^0.5.7
     version: 0.5.7(tailwindcss@3.4.1)
   astro:
-    specifier: ^4.4.10
-    version: 4.4.10(sass@1.71.1)(typescript@5.3.3)
+    specifier: ^4.4.13
+    version: 4.4.13(sass@1.71.1)(typescript@5.3.3)
   astro-icon:
     specifier: ^1.1.0
     version: 1.1.0
@@ -225,13 +225,13 @@ packages:
       - vite
     dev: false
 
-  /@astrojs/tailwind@5.1.0(astro@4.4.10)(tailwindcss@3.4.1):
+  /@astrojs/tailwind@5.1.0(astro@4.4.13)(tailwindcss@3.4.1):
     resolution: {integrity: sha512-BJoCDKuWhU9FT2qYg+fr6Nfb3qP4ShtyjXGHKA/4mHN94z7BGcmauQK23iy+YH5qWvTnhqkd6mQPQ1yTZTe9Ig==}
     peerDependencies:
       astro: ^3.0.0 || ^4.0.0
       tailwindcss: ^3.0.24
     dependencies:
-      astro: 4.4.10(sass@1.71.1)(typescript@5.3.3)
+      astro: 4.4.13(sass@1.71.1)(typescript@5.3.3)
       autoprefixer: 10.4.17(postcss@8.4.35)
       postcss: 8.4.35
       postcss-load-config: 4.0.2(postcss@8.4.35)
@@ -255,7 +255,7 @@ packages:
       - supports-color
     dev: false
 
-  /@astrojs/vercel@7.3.5(astro@4.4.10):
+  /@astrojs/vercel@7.3.5(astro@4.4.13):
     resolution: {integrity: sha512-fWfWu1jHDKJnNp2qJfX+EjDtM7uV6od+D2UHvIwfGu12YFmqggwmuukntvB/X+b/E/AVBA8geftHobpoBJEY0g==}
     peerDependencies:
       astro: ^4.2.0
@@ -263,7 +263,7 @@ packages:
       '@astrojs/internal-helpers': 0.2.1
       '@vercel/analytics': 1.1.3
       '@vercel/nft': 0.26.4
-      astro: 4.4.10(sass@1.71.1)(typescript@5.3.3)
+      astro: 4.4.13(sass@1.71.1)(typescript@5.3.3)
       esbuild: 0.19.12
       fast-glob: 3.3.2
       set-cookie-parser: 2.6.0
@@ -1621,8 +1621,8 @@ packages:
       - supports-color
     dev: false
 
-  /astro@4.4.10(sass@1.71.1)(typescript@5.3.3):
-    resolution: {integrity: sha512-8ASYlHPNKJg7F+1mlQts7nU1jZPQGE2xluB4fcdAUvH33BYLEBz/bCxJwLOmfC8Ai2gzs/wTwofwDzqbwjx6Ug==}
+  /astro@4.4.13(sass@1.71.1)(typescript@5.3.3):
+    resolution: {integrity: sha512-kx2k2DJd9Os15zJBo8fK01/2F7/4wH6sAKmlBHlkGHIFm6CKSSzWCK/IWQ0DybNWtthK9A3HDZ4VYWv0BJDOBg==}
     engines: {node: '>=18.14.1', npm: '>=6.14.0'}
     hasBin: true
     dependencies:

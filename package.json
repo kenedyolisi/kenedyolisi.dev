@@ -30,7 +30,7 @@
     "@astrojs/tailwind": "^5.1.0",
     "@astrojs/vercel": "^7.3.3",
     "@tailwindcss/forms": "^0.5.7",
-    "astro": "^4.4.9",
+    "astro": "^4.4.10",
     "astro-icon": "^1.1.0",
     "nanostores": "^0.10.0",
     "react": "^18.2.0",

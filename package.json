@@ -33,24 +33,19 @@
     "astro": "^4.4.13",
     "astro-icon": "^1.1.0",
     "nanostores": "^0.10.0",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-icons": "^5.0.1",
     "tailwindcss": "^3.4.1"
   },
   "devDependencies": {
     "@astrojs/check": "^0.5.6",
     "@types/eslint": "^8.56.5",
     "@types/postcss-html": "^1.5.3",
-    "@types/react": "^18.2.61",
-    "@types/react-dom": "^18.2.19",
-    "@typescript-eslint/parser": "^7.1.0",
+    "@typescript-eslint/parser": "^7.1.1",
     "eslint": "^8.57.0",
     "eslint-plugin-astro": "^0.31.4",
     "eslint-plugin-jsx-a11y": "^6.8.0",
     "eslint-plugin-react-refresh": "^0.4.5",
     "postcss-html": "^1.6.0",
     "sass": "^1.71.1",
-    "typescript": "^5.3.3"
+    "typescript": "^5.4.2"
   }
 }

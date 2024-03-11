@@ -3,6 +3,7 @@ import tailwind from "@astrojs/tailwind";
 import vercel from "@astrojs/vercel/serverless";
 import { defineConfig } from "astro/config";
 import { siteConfig } from "./src/site_config";
+import react from "@astrojs/react";
 
 // https://astro.build/config
 export default defineConfig({
@@ -11,6 +12,7 @@ export default defineConfig({
     imageService: true,
   }),
   integrations: [
+    react(),
     tailwind({
       applyBaseStyles: false,
     }),

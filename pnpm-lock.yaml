@@ -61,6 +61,12 @@ devDependencies:
   postcss-html:
     specifier: ^1.6.0
     version: 1.6.0
+  react:
+    specifier: ^18.2.0
+    version: 18.2.0
+  react-dom:
+    specifier: ^18.2.0
+    version: 18.2.0(react@18.2.0)
   sass:
     specifier: ^1.71.1
     version: 1.71.1

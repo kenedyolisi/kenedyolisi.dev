@@ -1,6 +1,6 @@
 ---
-import Icon from "@components/icon.astro";
 import Layout from "@layouts/layout.astro";
+import { BsEnvelope, BsTelephone, BsWhatsapp } from "react-icons/bs";
 
 const title = "Contact";
 ---
@@ -22,7 +22,7 @@ const title = "Contact";
         href="mailto:kenedyolisi@gmail.com"
         aria-label="send kenedy olisi an email"
       >
-        <Icon name="envelope" />
+        <BsEnvelope />
         kenedyolisi@gmail.com
       </a>
     </p>
@@ -32,7 +32,7 @@ const title = "Contact";
         href="https://api.whatsapp.com/send?phone=254714221501"
         aria-label="chat with kenedy olisi on whatsapp"
       >
-        <Icon name="whatsapp" />
+        <BsWhatsapp />
         +254 714 221 501
       </a>
     </p>
@@ -42,7 +42,7 @@ const title = "Contact";
         href="tel:+254714221501"
         aria-label="call kenedy olisi"
       >
-        <Icon name="phone-alt" />
+        <BsTelephone />
         +254 714 221 501
       </a>
     </p>

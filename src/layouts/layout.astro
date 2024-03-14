@@ -3,7 +3,7 @@ import "@styles/global.scss";
 
 import PageFooter from "@components/page_footer.astro";
 import PageHeader from "@components/page_header.astro";
-import ScrollTopButton from "@components/scroll_top_button.astro";
+import ScrollTopButton from "@components/scroll_top_button";
 import SkipNavLink from "@components/skip_nav_link.astro";
 import { ViewTransitions } from "astro:transitions";
 
@@ -88,7 +88,7 @@ const { pageTitle, pageDescription } = Astro.props;
 
       <div class="grow">
         <slot />
-        <ScrollTopButton />
+        <ScrollTopButton client:load />
       </div>
 
       <PageFooter />

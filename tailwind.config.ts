@@ -14,6 +14,11 @@ export default {
         xs: "512px",
       },
 
+      container: {
+        center: true,
+        padding: "2rem",
+      },
+
       colors: {
         primary: {
           DEFAULT: "#106cfe",

@@ -38,7 +38,7 @@ import ThemeMenu from "@components/theme_menu";
     </div>
     <SiteNav />
 
-    <ThemeMenu client:only="react" />
+    <ThemeMenu client:load />
   </div>
   <button
     class="h-fit p-2 md:hidden border rounded-md"
@@ -49,6 +49,16 @@ import ThemeMenu from "@components/theme_menu";
     <Icon name="menu-labelled" width={25} />
   </button>
 </header>
+
+<style is:global>
+  :root {
+    --header-height: 70px;
+  }
+
+  header {
+    height: var(--header-height);
+  }
+</style>
 
 <script>
   document.addEventListener("astro:page-load", () => {

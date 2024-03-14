@@ -1,3 +1,4 @@
+import { useEffect, useRef, useState } from "react";
 import type { IconType } from "react-icons";
 import {
   BsCaretDownFill,
@@ -5,8 +6,8 @@ import {
   BsMoonStarsFill,
   BsSunFill,
 } from "react-icons/bs";
-import type { Theme } from "src/env";
-import { useEffect, useRef, useState } from "react";
+
+type Theme = "dark" | "light" | "system";
 
 const getThemeIcon = (Icon: IconType) => <Icon />;
 
@@ -41,7 +42,7 @@ export default function ThemeMenu() {
     isOpen && menuRef.current.focus();
   }
 
-  function handleClick(event: MouseEvent) {
+  function handleClick(event: Event) {
     const theme = event.target.getAttribute("data-theme") as Theme;
 
     setActiveTheme(theme);
@@ -53,7 +54,6 @@ export default function ThemeMenu() {
     } else {
       localStorage.removeItem("theme");
     }
-    console.log(window.matchMedia("(prefers-color-scheme: dark)").matches);
   }
 
   function setTheme(theme: Theme) {

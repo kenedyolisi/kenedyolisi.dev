@@ -1,10 +1,9 @@
 ---
 import "@styles/global.scss";
 
-import Icon from "@components/icon.astro";
 import PageFooter from "@components/page_footer.astro";
 import PageHeader from "@components/page_header.astro";
-import ScrollTopButton from "@components/scroll_top_button";
+import ScrollTopButton from "@components/scroll_top_button.astro";
 import SkipNavLink from "@components/skip_nav_link.astro";
 import { ViewTransitions } from "astro:transitions";
 
@@ -42,6 +41,30 @@ const { pageTitle, pageDescription } = Astro.props;
     <link rel="icon" href="/favicon.ico" sizes="48x48" />
     <link rel="icon" href="/favicon.svg" sizes="any" type="image/svg+xml" />
 
+    <script is:inline>
+      if (
+        localStorage.getItem("theme") === "dark" ||
+        (!("theme" in localStorage) &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches)
+      ) {
+        document.documentElement.classList.add("dark");
+      } else {
+        document.documentElement.classList.remove("dark");
+      }
+    </script>
+    <script>
+      document.addEventListener("astro:after-swap", () => {
+        if (
+          localStorage.getItem("theme") === "dark" ||
+          (!("theme" in localStorage) &&
+            window.matchMedia("(prefers-color-scheme: dark)").matches)
+        ) {
+          document.documentElement.classList.add("dark");
+        } else {
+          document.documentElement.classList.remove("dark");
+        }
+      });
+    </script>
     {/* Google tag (gtag.js) */}
     <script
       type="text/partytown"
@@ -62,11 +85,10 @@ const { pageTitle, pageDescription } = Astro.props;
     <SkipNavLink />
     <div class="flex flex-col min-h-dvh">
       <PageHeader />
+
       <div class="grow">
         <slot />
-        <ScrollTopButton client:load>
-          <Icon name="arrow-up" slot="icon" />
-        </ScrollTopButton>
+        <ScrollTopButton />
       </div>
 
       <PageFooter />

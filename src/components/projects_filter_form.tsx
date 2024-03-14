@@ -5,10 +5,14 @@ export default function ProjectsFilterForm() {
   const technologies = [
     ...new Set(projectsData.map(({ techs }) => techs).flat()),
   ];
+  
+  const categories = [
+    ...new Set(projectsData.map(({ categories }) => categories).flat()),
+  ];
 
   return (
-    <form>
-      <details className="space-y-3" open>
+    <form className="space-y-3">
+      <details className="space-y-2" open>
         <summary className="flex justify-between items-center cursor-pointer">
           <strong>Technology</strong>
 
@@ -21,13 +25,23 @@ export default function ProjectsFilterForm() {
               className="inline-flex items-center gap-2 py-2 px-4 capitalize hover:bg-gray-300 dark:hover:bg-gray-600 rounded-lg cursor-pointer"
               key={tech}
             >
-              <input
-                className=""
-                name="technologies"
-                value={tech}
-                type="checkbox"
-              />
+              <input name="technologies" value={tech} type="checkbox" />
               {tech}
+            </label>
+          ))}
+        </div>
+      </details>
+
+      <details className="" open>
+        <summary className="flex justify-between items-center cursor-pointer">
+          <strong>Categories</strong>
+          <FaChevronRight className="transition-transform duration-300" />
+        </summary>
+        <div className="flex flex-col space-y-1">
+          {categories.map((category) => (
+            <label className="inline-flex items-center gap-2 py-2 px-4 capitalize hover:bg-gray-300 dark:hover:bg-gray-600 rounded-lg cursor-pointer">
+              <input name="categories" value={category} type="checkbox" />
+              {category}
             </label>
           ))}
         </div>

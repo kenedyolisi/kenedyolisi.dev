@@ -1,24 +1,30 @@
+import db from "@astrojs/db";
 import partytown from "@astrojs/partytown";
+import react from "@astrojs/react";
 import svelte from "@astrojs/svelte";
 import tailwind from "@astrojs/tailwind";
 import vercel from "@astrojs/vercel/serverless";
 import { defineConfig } from "astro/config";
 import { siteConfig } from "./src/site_config";
-import react from "@astrojs/react";
 
 // https://astro.build/config
 export default defineConfig({
   output: "server",
   adapter: vercel({
-    imageService: true,
+    imageService: true
   }),
   integrations: [
+    db(),
     react(),
     svelte(),
     tailwind({
-      applyBaseStyles: false,
+      applyBaseStyles: false
+    }), partytown({
+      config: {
+        debug: false,
+        forward: ["datalayer.push"]
+      }
     }),
-    partytown({ config: { debug: false, forward: ["datalayer.push"] } }),
   ],
-  site: siteConfig.siteUrl,
+  site: siteConfig.siteUrl
 });

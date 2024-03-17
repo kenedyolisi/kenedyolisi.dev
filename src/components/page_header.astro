@@ -1,6 +1,6 @@
 ---
 import Logo from "@components/logo.astro";
-import SiteNav from "@components/site_nav.astro";
+import SiteNav from "@components/site_nav.svelte";
 import ThemeMenu from "@components/theme_menu";
 import { BsXLg } from "react-icons/bs";
 ---
@@ -36,7 +36,7 @@ import { BsXLg } from "react-icons/bs";
         <BsXLg />
       </button>
     </div>
-    <SiteNav />
+    <SiteNav client:load />
 
     <ThemeMenu client:load />
   </div>

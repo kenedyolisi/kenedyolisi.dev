@@ -1,4 +1,5 @@
 import db from "@astrojs/db";
+import mdx from "@astrojs/mdx";
 import partytown from "@astrojs/partytown";
 import react from "@astrojs/react";
 import svelte from "@astrojs/svelte";
@@ -11,20 +12,22 @@ import { siteConfig } from "./src/site_config";
 export default defineConfig({
   output: "server",
   adapter: vercel({
-    imageService: true
+    imageService: true,
   }),
   integrations: [
     db(),
+    mdx(),
     react(),
     svelte(),
     tailwind({
-      applyBaseStyles: false
-    }), partytown({
+      applyBaseStyles: false,
+    }),
+    partytown({
       config: {
         debug: false,
-        forward: ["datalayer.push"]
-      }
+        forward: ["datalayer.push"],
+      },
     }),
   ],
-  site: siteConfig.siteUrl
+  site: siteConfig.siteUrl,
 });

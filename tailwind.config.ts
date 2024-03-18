@@ -40,10 +40,6 @@ export default {
 
       animation: {
         "translate-in": "translate-in ease-in-out",
-
-        "zoom-out": "zoom-out 300ms ease-out",
-
-        "zoom-in": "zoom-in 300ms ease-in",
       },
 
       keyframes: {
@@ -55,16 +51,6 @@ export default {
         "translate-out": {
           from: { transform: "translateX(0%)" },
           to: { transform: "translateX(100%)" },
-        },
-
-        "zoom-out": {
-          from: { transform: "scale(1)", visibility: "visible" },
-          to: { transform: "scale(0)", visibility: "hidden" },
-        },
-
-        "zoom-in": {
-          from: { transform: "scale(0)", visibility: "hidden" },
-          to: { transform: "scale(1)", visibility: "visible" },
         },
       },
     },

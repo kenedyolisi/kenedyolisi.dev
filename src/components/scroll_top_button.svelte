@@ -1,6 +1,5 @@
 <script>
-  import Icon from "@iconify/svelte";
-  import { fade, scale } from "svelte/transition";
+  import { scale } from "svelte/transition";
 
   let prevY = 0;
   let show = false;
@@ -27,7 +26,6 @@
       scrollTo({ top: 0, behavior: "smooth" });
     }}
   >
-    <!-- <Icon icon="bi:arrow-up" color="white" width={24} /> -->
-    Top
+    <span class="icon icon-arrow-up"></span>
   </button>
 {/if}

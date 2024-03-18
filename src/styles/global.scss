@@ -8,13 +8,14 @@
   font-weight: 100 900;
   font-stretch: 75% 125%;
   src: url("/fonts/inter_variable_slnt\,wght.woff2") format("woff2-variations");
-  src: url("/fonts/inter_variable_slnt\,wght.woff2") format("woff2") tech("variations");
+  src: url("/fonts/inter_variable_slnt\,wght.woff2") format("woff2")
+    tech("variations");
   font-display: swap;
 }
 
 @layer base {
   body {
-    @apply bg-white text-dark dark:bg-dark dark:text-gray-100 selection:bg-primary selection:text-white dark:selection:bg-primary-dark
+    @apply bg-white text-dark dark:bg-dark dark:text-gray-100 selection:bg-primary selection:text-white dark:selection:bg-primary-dark;
   }
 
   h1 {
@@ -28,22 +29,5 @@
 
   a {
     @apply text-primary dark:text-primary-dark underline hover:no-underline underline-offset-[5px];
-  }
-
-  details[open] summary svg {
-    @apply rotate-90;
-  }
-}
-
-@layer components {
-  .nav-link {
-    @apply block md:inline-block p-2 capitalize no-underline;
-    // @apply md:after:content-[""] md:after:bg-primary md:after:h-[2px] md:after:block md:after:scale-0;
-    // @apply md:hover:after:scale-100 md:hover:after:animate-scale;
-
-
-    &.active {
-      @apply after:scale-100;
-    }
   }
 }

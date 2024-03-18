@@ -21,7 +21,11 @@
 
   h1 {
     font-size: clamp(1.5rem, 3vw + 1rem, 3rem);
-    @apply font-bold mb-8;
+    @apply font-bold mb-4;
+  }
+
+  h2 {
+    font-size: clamp(1rem, 2.5vw + 1rem, 2rem);
   }
 
   p {

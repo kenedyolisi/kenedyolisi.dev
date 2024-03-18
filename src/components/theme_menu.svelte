@@ -29,13 +29,16 @@
     }}
   >
     {#each themes as theme (theme)}
-      <label class="inline-flex justify-between items-center gap-2 capitalize hover:bg-gray-300">
+      <label
+        class="inline-flex justify-between items-center gap-1 p-2 rounded-lg cursor-pointer capitalize hover:bg-gray-300"
+      >
         {theme}
         <input
           name="theme"
           value={theme}
           type="radio"
           bind:group={activeTheme}
+          on:change={() => (isOpen = false)}
         />
       </label>
     {/each}

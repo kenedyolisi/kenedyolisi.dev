@@ -1,6 +1,5 @@
 ---
 import Layout from "@layouts/layout.astro";
-import { RxExternalLink } from "react-icons/rx";
 
 const title = "About Me";
 const description = "Learn more about me here";
@@ -11,36 +10,39 @@ const description = "Learn more about me here";
     <h1 transition:animate="slide">{title}</h1>
 
     <section class="flex flex-col md:flex-row md:gap-6">
-      <h2 class="w-1/4 shrink-0">Education</h2>
+      <h2>Education</h2>
       <div>
         <p>
           I acquired my frontend developer skills through self-teaching. I
           completed and earned a certificate in frontend development from
           <a
-            class="inline-flex items-center gap-2"
+            class="inline-flex items-center gap-1"
             href="https://www.freecodecamp.org/kenedyolisi"
+            target="_blank"
+            rel="noreferrer"
           >
-            <span> Freecodecamp</span>
-            <RxExternalLink />
+            Freecodecamp
+            <span class="icon icon-link-external"></span>
           </a>
         </p>
-
         <p>
           I also took courses for HTML, CSS, JavaScript, Responsive Web Design,
           and Web Development Fundamentals from
           <a
-            class="inline-flex items-center gap-2"
+            class="inline-flex items-center gap-1"
             href="https://sololearn.org/kenedyolisi"
+            target="_blank"
+            rel="noreferrer"
           >
-            <span>Sololearn</span>
-            <RxExternalLink />
-          </a> all of which I completed and earned certifications.
+            Sololearn<span class="icon icon-link-external"></span>
+          </a>
+          all of which I completed and earned certifications.
         </p>
       </div>
     </section>
 
     <section class="flex flex-col md:flex-row md:gap-6">
-      <h2 class="w-1/4 shrink-0">Skills</h2>
+      <h2>Skills</h2>
 
       <div>
         <p>
@@ -53,7 +55,7 @@ const description = "Learn more about me here";
     </section>
 
     <section class="flex flex-col md:flex-row md:gap-6">
-      <h2 class="w-1/4 shrink-0">Interests</h2>
+      <h2>Interests</h2>
 
       <div>
         <p>
@@ -72,3 +74,9 @@ const description = "Learn more about me here";
     </section>
   </main>
 </Layout>
+
+<style>
+  section h2 {
+    @apply w-1/4 shrink-0 text-3xl text-success dark:text-success-dark font-medium;
+  }
+</style>

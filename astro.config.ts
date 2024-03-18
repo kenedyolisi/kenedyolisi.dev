@@ -1,7 +1,6 @@
 import db from "@astrojs/db";
 import mdx from "@astrojs/mdx";
 import partytown from "@astrojs/partytown";
-import react from "@astrojs/react";
 import svelte from "@astrojs/svelte";
 import tailwind from "@astrojs/tailwind";
 import vercel from "@astrojs/vercel/serverless";
@@ -17,7 +16,6 @@ export default defineConfig({
   integrations: [
     db(),
     mdx(),
-    react(),
     svelte(),
     tailwind({
       applyBaseStyles: false,

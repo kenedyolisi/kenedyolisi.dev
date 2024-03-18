@@ -21,8 +21,6 @@
     py-3 px-5 md:p-0
     border-l md:border-none
     bg-white dark:bg-dark md:bg-transparent
-    md:shadow-none
-    
     md:translate-x-0
     transition-transform
     duration-300 focus:not:translate-x-full

@@ -1,11 +1,10 @@
 ---
-import ProjectsFilterForm from "@components/projects_filter_form";
-import ProjectsList from "@components/projects_list";
-import projectsData from "@data/projects";
+import ProjectsFilterForm from "@components/projects_filter_form.svelte";
+import ProjectsList from "@components/projects_list.svelte";
+import projectsData, { type Project } from "@data/projects";
 import Layout from "@layouts/layout.astro";
-import { BsFunnelFill } from "react-icons/bs";
 
-let projects;
+let projects: Project[];
 
 const techCriteria = Astro.url.searchParams.getAll("technologies");
 const categoryCriteria = Astro.url.searchParams.getAll("categories");
@@ -13,7 +12,7 @@ const categoryCriteria = Astro.url.searchParams.getAll("categories");
 const criteria = [...techCriteria, ...categoryCriteria];
 
 if (criteria.length > 0) {
-  projects = projectsData.filter((project) =>
+  projects = projectsData.filter((project: Project) =>
     criteria.some(
       (criterion) =>
         project.techs.includes(criterion) ||
@@ -28,19 +27,12 @@ if (criteria.length > 0) {
 <Layout pageTitle="Projects" pageDescription="Check out my recent projects">
   <div class="container flex flex-col md:flex-row px-8 sm:px-12 md:px-20">
     <aside class="min-w-60 space-y-2">
-      <button
-        class="inline-flex items-center gap-1 p-2 border rounded-lg"
-        type="button"
-      >
-        <BsFunnelFill />
-        Filter
-      </button>
       <ProjectsFilterForm client:load transition:persist />
     </aside>
     <main>
       <h1>Projects</h1>
       <p>🌐 Explore my recent projects.</p>
-      <ProjectsList projects={projects} client:load />
+      <ProjectsList {projects} client:load />
     </main>
   </div>
 </Layout>

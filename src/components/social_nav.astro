@@ -1,23 +1,19 @@
 ---
-import type { IconType } from "react-icons";
-import { BsFacebook, BsGithub, BsLinkedin, BsTwitterX } from "react-icons/bs";
-
 interface SocialLink {
   platform: string;
-  Icon: IconType;
 }
 
 const socialPlatforms: SocialLink[] = [
-  { platform: "github", Icon: BsGithub },
-  { platform: "linkedin", Icon: BsLinkedin },
-  { platform: "twitter", Icon: BsTwitterX },
-  { platform: "facebook", Icon: BsFacebook },
+  { platform: "github" },
+  { platform: "linkedin" },
+  { platform: "twitter" },
+  { platform: "facebook" },
 ];
 ---
 
 <nav class="flex justify-center md:justify-end gap-4">
   {
-    socialPlatforms.map(({ platform, Icon }) => (
+    socialPlatforms.map(({ platform }) => (
       <a
         class="p-2 hover:bg-primary dark:hover:bg-primary-dark hover:text-white rounded-md "
         href={`https://${platform}.com/${
@@ -25,7 +21,7 @@ const socialPlatforms: SocialLink[] = [
         }kenedyolisi`}
         aria-label={platform}
       >
-        <Icon size={20} />
+        <span class={`icon icon-${platform}`} />
       </a>
     ))
   }

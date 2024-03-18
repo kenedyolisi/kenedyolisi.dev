@@ -1,14 +1,17 @@
----
-import Logo from "@components/logo.astro";
-import SiteNav from "@components/site_nav.svelte";
-import ThemeMenu from "@components/theme_menu";
-import { BsXLg } from "react-icons/bs";
----
+<script>
+  import Logo from "@components/logo.svelte";
+  import Icon from "@iconify/svelte";
+  import SiteNav from "@components/site_nav.svelte";
+  import ThemeMenu from "@components/theme_menu.svelte";
+  import { clickOutside } from "src/utils";
+
+  let isOpen = false;
+</script>
 
 <header
   class="sticky top-0 z-20 flex justify-between items-center gap-3 w-full py-3 px-5 bg-white dark:bg-dark"
 >
-  <Logo />
+  <a href="/"><Logo /></a>
 
   <div
     class={`
@@ -19,32 +22,33 @@ import { BsXLg } from "react-icons/bs";
     border-l md:border-none
     bg-white dark:bg-dark md:bg-transparent
     md:shadow-none
-    translate-x-full   
+    
     md:translate-x-0
     transition-transform
     duration-300 focus:not:translate-x-full
+    ${isOpen ? "translate-x-0" : "translate-x-full"}
     `}
-    id="offcanvas"
+    use:clickOutside
+    on:outclick={() => (isOpen = false)}
   >
     <div class="flex justify-between items-center md:hidden">
-      <Logo />
+      <a href="/"><Logo /></a>
       <button
-        class="h-fit p-3 border rounded-md"
-        data-dismiss="offcanvas"
-        type="button"
+        class="h-fit p-3 border ronded-md"
+        on:click={() => (isOpen = false)}
       >
-        <BsXLg />
+        <Icon icon="bi:x-lg" width={16} class="text-dark" />
       </button>
     </div>
-    <SiteNav client:load />
-
-    <ThemeMenu client:load />
+    <SiteNav />
+    <hr class="md:hidden" />
+    <ThemeMenu />
   </div>
+
   <button
     class="h-fit p-2 md:hidden border rounded-md"
-    data-toggle="offcanvas"
     type="button"
-    aria-label="toggle navigation"
+    on:click={() => (isOpen = !isOpen)}
   >
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -57,37 +61,8 @@ import { BsXLg } from "react-icons/bs";
       ></path>
       <path
         d="M1.333 0h13.334A1.33 1.33 0 0116 1.333a1.33 1.33 0 01-1.333 1.334H1.333A1.33 1.33 0 010 1.333 1.33 1.33 0 011.333 0zm0 6.172h13.334A1.33 1.33 0 0116 7.505a1.33 1.33 0 01-1.333 1.334H1.333A1.33 1.33 0 010 7.505a1.33 1.33 0 011.333-1.333z"
-        fill-rule="evenodd"></path>
+        fill-rule="evenodd"
+      ></path>
     </svg>
   </button>
 </header>
-
-<style is:global>
-  :root {
-    --header-height: 70px;
-  }
-
-  header {
-    height: var(--header-height);
-  }
-</style>
-
-<script>
-  document.addEventListener("astro:page-load", () => {
-    const offcanvas = document.getElementById("offcanvas");
-
-    const toggleOffcanvasBtn = document?.querySelector(
-      "[data-toggle='offcanvas']"
-    );
-    toggleOffcanvasBtn?.addEventListener("click", () => {
-      offcanvas?.classList.toggle("translate-x-full");
-      closeButton?.focus();
-    });
-
-    const closeButton = offcanvas?.querySelector("[data-dismiss='offcanvas']");
-    closeButton?.addEventListener("click", () => {
-      offcanvas?.classList.add("translate-x-full");
-      toggleOffcanvasBtn?.focus();
-    });
-  });
-</script>

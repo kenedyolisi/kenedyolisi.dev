@@ -2,8 +2,8 @@
 import "@styles/global.scss";
 
 import PageFooter from "@components/page_footer.astro";
-import PageHeader from "@components/page_header.astro";
-import ScrollTopButton from "@components/scroll_top_button";
+import PageHeader from "@components/page_header.svelte";
+import ScrollTopButton from "@components/scroll_top_button.svelte";
 import SkipNavLink from "@components/skip_nav_link.astro";
 import { ViewTransitions } from "astro:transitions";
 
@@ -84,7 +84,7 @@ const { pageTitle, pageDescription } = Astro.props;
   <body>
     <SkipNavLink />
     <div class="flex flex-col min-h-dvh">
-      <PageHeader />
+      <PageHeader client:load />
 
       <div class="grow">
         <slot />

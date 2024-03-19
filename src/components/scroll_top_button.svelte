@@ -18,7 +18,7 @@
 
 {#if show}
   <button
-    class="fixed right-6 bottom-10 p-3 rounded-full bg-primary text-white"
+    class="fixed right-6 bottom-10 h-12 leading-4 p-4 rounded-full bg-primary dark:bg-dark text-white"
     title="scroll to top"
     type="button"
     transition:scale={{ duration: 300 }}

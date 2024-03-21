@@ -1,5 +1,9 @@
 export const isBrowser = typeof window !== "undefined";
 
+/**
+ * Converts first letter of every word in a string to uppercase.
+ *
+ */
 export function capitalizeStr(str: string) {
   return str
     .split(" ")
@@ -10,7 +14,7 @@ export function capitalizeStr(str: string) {
 export function clickOutside(node: Element) {
   const handleClick = (event: MouseEvent) => {
     if (!node.contains(event.target)) {
-      node.dispatchEvent(new CustomEvent("outclick"));
+      node.dispatchEvent(new CustomEvent("clickout"));
     }
   };
 

@@ -1,8 +1,9 @@
 .icon {
   display: inline-block;
-  width: 16px;
-  height: 16px;
+  @apply min-w-4 min-h-4 align-middle;
   mask-size: 100% 100%;
+  mask-repeat: no-repeat;
+  mask-position: center;
   background-color: currentColor;
 }
 
@@ -48,4 +49,20 @@
 
 .icon-sun {
   mask-image: url(/src/icons/sun.svg);
+}
+
+.icon-caret-down {
+  mask-image: url(/src/icons/caret_down.svg);
+}
+
+.icon-whatsapp {
+  mask-image: url(/src/icons/whatsapp.svg);
+}
+
+.icon-envelope {
+  mask-image: url(/src/icons/envelope.svg);
+}
+
+.icon-telephone {
+  mask-image: url(/src/icons/telephone.svg);
 }

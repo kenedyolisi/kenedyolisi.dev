@@ -84,7 +84,7 @@ const { pageTitle, pageDescription } = Astro.props;
   <body>
     <SkipNavLink />
     <div class="flex flex-col min-h-dvh">
-      <PageHeader client:load />
+      <PageHeader client:only="svelte" />
 
       <div class="grow">
         <slot />

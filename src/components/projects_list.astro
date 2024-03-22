@@ -8,6 +8,6 @@ interface Props {
 const { projects } = Astro.props;
 ---
 
-<ul class="grid gap-5 grid-cols-1 md:grid-cols-2">
+<ul class="grid gap-5 grid-cols-1 lg:grid-cols-2">
   {projects.map((project) => <Project {project} />)}
 </ul>

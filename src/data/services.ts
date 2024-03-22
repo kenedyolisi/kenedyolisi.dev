@@ -25,10 +25,10 @@ export default [
     },
   },
   {
-    title: "ReactJS Development",
+    title: "Svelte Development",
     description:
-      "Building dynamic and efficient web applications with the ReactJS library.",
-    image: { src: "src/images/react_logo.svg", alt: "react logo" },
+      "Build dynamic, efficient and fast web applications with the Svelte framework.",
+    image: { src: "src/images/svelte_logo.svg", alt: "svelte logo" },
   },
   {
     title: "Bootstrap Integration",

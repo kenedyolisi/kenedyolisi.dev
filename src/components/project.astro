@@ -1,0 +1,19 @@
+---
+import { Picture } from "astro:assets";
+import { type Project } from "@data/projects";
+import { images } from "@data/images";
+
+interface Props {
+  project: Project;
+}
+const { project } = Astro.props;
+const { image, title } = project;
+---
+
+<li class="border rounded-lg">
+  <Picture
+    class="rounded-t-lg aspect-video"
+    src={images[image]()}
+    alt={title}
+  />
+</li>

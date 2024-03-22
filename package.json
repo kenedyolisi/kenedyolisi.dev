@@ -25,8 +25,6 @@
     "start": "astro dev"
   },
   "dependencies": {
-    "@astrojs/db": "^0.8.6",
-    "@astrojs/mdx": "^2.2.0",
     "@astrojs/partytown": "^2.0.4",
     "@astrojs/svelte": "^5.2.0",
     "@astrojs/tailwind": "^5.1.0",

@@ -1,5 +1,3 @@
-import db from "@astrojs/db";
-import mdx from "@astrojs/mdx";
 import partytown from "@astrojs/partytown";
 import svelte from "@astrojs/svelte";
 import tailwind from "@astrojs/tailwind";
@@ -14,8 +12,6 @@ export default defineConfig({
     imageService: true,
   }),
   integrations: [
-    db(),
-    mdx(),
     svelte(),
     tailwind({
       applyBaseStyles: false,

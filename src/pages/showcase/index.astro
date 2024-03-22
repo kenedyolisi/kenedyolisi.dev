@@ -1,0 +1,38 @@
+---
+import ProjectsFilterForm from "@components/projects_filter_form.svelte";
+import ProjectsList from "@components/projects_list.astro";
+import projectsData, { type Project } from "@data/projects";
+import Layout from "@layouts/layout.astro";
+
+let projects: Project[];
+
+const techCriteria = Astro.url.searchParams.getAll("technologies");
+const categoryCriteria = Astro.url.searchParams.getAll("categories");
+
+const criteria = [...techCriteria, ...categoryCriteria];
+
+if (criteria.length > 0) {
+  projects = projectsData.filter((project: Project) =>
+    criteria.some(
+      (criterion) =>
+        project.techs.includes(criterion) ||
+        project.categories.includes(criterion)
+    )
+  );
+} else {
+  projects = projectsData;
+}
+---
+
+<Layout pageTitle="Projects" pageDescription="Check out my recent projects">
+  <div class="container flex flex-col gap-4 md:flex-row px-8 sm:px-12 md:px-20">
+    <aside class="min-w-60 space-y-2">
+      <ProjectsFilterForm transition:persist client:load />
+    </aside>
+    <main>
+      <h1>Projects</h1>
+      <p>🌐 Explore my recent projects.</p>
+      <ProjectsList {projects} />
+    </main>
+  </div>
+</Layout>

@@ -1,13 +1,11 @@
 ---
-import Icon from "@components/icon.astro";
 import Layout from "@layouts/layout.astro";
-
-const title = "Contact";
 ---
 
-<Layout pageTitle={title}>
-  <main>
+<Layout pageTitle="Contact">
+  <main class="container">
     <h1 transition:animate="slide">Get in Touch</h1>
+
     <p>
       Ready to elevate your web presence? Let's discuss your project and turn it
       into engaging online experiences.
@@ -22,7 +20,7 @@ const title = "Contact";
         href="mailto:kenedyolisi@gmail.com"
         aria-label="send kenedy olisi an email"
       >
-        <Icon name="envelope" />
+        <span class="icon icon-envelope"></span>
         kenedyolisi@gmail.com
       </a>
     </p>
@@ -32,7 +30,7 @@ const title = "Contact";
         href="https://api.whatsapp.com/send?phone=254714221501"
         aria-label="chat with kenedy olisi on whatsapp"
       >
-        <Icon name="whatsapp" />
+        <span class="icon icon-whatsapp"></span>
         +254 714 221 501
       </a>
     </p>
@@ -42,7 +40,7 @@ const title = "Contact";
         href="tel:+254714221501"
         aria-label="call kenedy olisi"
       >
-        <Icon name="phone-alt" />
+        <span class="icon icon-telephone"></span>
         +254 714 221 501
       </a>
     </p>

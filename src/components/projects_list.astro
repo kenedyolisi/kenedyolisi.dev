@@ -1,0 +1,13 @@
+---
+import Project from "@components/project.astro";
+import { type Project as IProject } from "@data/projects";
+
+interface Props {
+  projects: IProject[];
+}
+const { projects } = Astro.props;
+---
+
+<ul class="grid gap-5 grid-cols-1 lg:grid-cols-2">
+  {projects.map((project) => <Project {project} />)}
+</ul>

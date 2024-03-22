@@ -1,4 +1,5 @@
 import partytown from "@astrojs/partytown";
+import svelte from "@astrojs/svelte";
 import tailwind from "@astrojs/tailwind";
 import vercel from "@astrojs/vercel/serverless";
 import { defineConfig } from "astro/config";
@@ -11,10 +12,16 @@ export default defineConfig({
     imageService: true,
   }),
   integrations: [
+    svelte(),
     tailwind({
       applyBaseStyles: false,
     }),
-    partytown({ config: { debug: false, forward: ["datalayer.push"] } }),
+    partytown({
+      config: {
+        debug: false,
+        forward: ["datalayer.push"],
+      },
+    }),
   ],
   site: siteConfig.siteUrl,
 });

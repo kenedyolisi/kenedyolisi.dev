@@ -1,6 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import "icons.scss";
 
 @font-face {
   font-family: "Inter";
@@ -8,41 +9,23 @@
   font-weight: 100 900;
   font-stretch: 75% 125%;
   src: url("/fonts/inter_variable_slnt\,wght.woff2") format("woff2-variations");
-  src: url("/fonts/inter_variable_slnt\,wght.woff2") format("woff2") tech("variations");
+  src: url("/fonts/inter_variable_slnt\,wght.woff2") format("woff2")
+    tech("variations");
   font-display: swap;
 }
 
 @layer base {
   body {
-    @apply bg-white text-dark dark:bg-dark dark:text-gray-100 selection:bg-primary selection:text-white dark:selection:bg-primary-dark
-  }
-
-  main {
-    @apply px-8 sm:px-12 md:px-20
+    @apply bg-white text-dark dark:bg-dark dark:text-gray-100 selection:bg-primary selection:text-white dark:selection:bg-primary-dark;
   }
 
   h1 {
-    @apply text-5xl font-bold mb-8;
+    font-size: clamp(1.5rem, 3vw + 1rem, 3rem);
+    @apply font-bold mb-4;
   }
 
   h2 {
-    @apply text-4xl font-semibold;
-  }
-
-  h3 {
-    @apply text-3xl font-medium;
-  }
-
-  h4 {
-    @apply text-2xl;
-  }
-
-  h5 {
-    @apply text-xl;
-  }
-
-  h6 {
-    @apply text-lg;
+    font-size: clamp(1rem, 2.5vw + 1rem, 2rem);
   }
 
   p {
@@ -50,19 +33,6 @@
   }
 
   a {
-    @apply text-primary dark:text-primary-dark underline hover:no-underline underline-offset-[5px];
-  }
-}
-
-@layer components {
-  .nav-link {
-    @apply block md:inline-block p-2 capitalize no-underline;
-    // @apply md:after:content-[""] md:after:bg-primary md:after:h-[2px] md:after:block md:after:scale-0;
-    // @apply md:hover:after:scale-100 hover:md:after:animate-scale;
-
-
-    &.active {
-      @apply after:scale-100;
-    }
+    @apply text-primary dark:text-primary-dark underline  hover:no-underline underline-offset-[5px] decoration-primary dark:decoration-primary-dark;
   }
 }

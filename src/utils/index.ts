@@ -11,7 +11,7 @@ export function capitalizeStr(str: string) {
     .join(" ");
 }
 
-export function clickOutside(node: Element) {
+export function clickOut(node: Element) {
   const handleClick = (event: MouseEvent) => {
     if (!node.contains(event.target)) {
       node.dispatchEvent(new CustomEvent("clickout"));

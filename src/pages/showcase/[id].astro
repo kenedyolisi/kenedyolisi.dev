@@ -4,7 +4,6 @@ import projects from "@data/projects";
 import technologies from "@data/technologies.json";
 import Layout from "@layouts/layout.astro";
 import { Picture } from "astro:assets";
-import { FaArrowRight } from "react-icons/fa";
 import { capitalizeStr } from "src/utils";
 
 const { id } = Astro.params;
@@ -59,9 +58,6 @@ const { title, techs, image } = project;
         href={project.url}
       >
         Visit site
-        <FaArrowRight
-          className="group-hover:translate-x-2 transition-transform duration-300"
-        />
       </a>
     </div>
   </main>

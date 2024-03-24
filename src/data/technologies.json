@@ -2,6 +2,5 @@
   "astro": { "brandColor": "#7611a6" },
   "react": { "brandColor": "#087ea4" },
   "nextjs": { "brandColor": "#000" },
-  "tailwindcss": { "brandColor": "#38bdf8" },
-  "svelte": { "brandColor": "#ff3e00" }
+  "tailwindcss": { "brandColor": "#38bdf8" }
 }

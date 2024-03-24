@@ -2,7 +2,7 @@
   const navLinks = [
     "about",
     "services",
-    "showcase",
+    "projects",
     // "testimonials",
     "blog",
     "contact",
@@ -13,9 +13,9 @@
   {#each navLinks as navLink, index (index)}
     <a
       class={`
-      block md:inline-block p-2 capitalize no-underline
+      block md:inline-block p-2 capitalize decoration-2 hover:underline ${location.pathname === `/${navLink}` ? "underline" : "no-underline"}
       `}
-      href={`/${navLink === "home" ? "" : navLink}`}
+      href={`/${navLink}`}
     >
       {navLink}
     </a>

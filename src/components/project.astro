@@ -1,19 +1,23 @@
 ---
-import { Picture } from "astro:assets";
-import { type Project } from "@data/projects";
 import { images } from "@data/images";
+import { type Project } from "@data/projects";
+import slugify from "@sindresorhus/slugify";
+import { Picture } from "astro:assets";
 
 interface Props {
   project: Project;
 }
 const { project } = Astro.props;
 const { image, title } = project;
+const slug = slugify(title);
 ---
 
 <li class="border rounded-lg">
-  <Picture
-    class="rounded-t-lg aspect-video"
-    src={images[image]()}
-    alt={title}
-  />
+  <a href={`/projects/${slug}`}>
+    <Picture
+      class="rounded-t-lg aspect-video"
+      src={images[image]()}
+      alt={title}
+    />
+  </a>
 </li>

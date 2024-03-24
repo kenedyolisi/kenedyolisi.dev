@@ -60,6 +60,6 @@
     type="button"
     on:click={() => (isOpen = !isOpen)}
   >
-    <span class="icon icon-menu"></span>
+    <span class="icon icon-menu w-6 h-6"></span>
   </button>
 </header>

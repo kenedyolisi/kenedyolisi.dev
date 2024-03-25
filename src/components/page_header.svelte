@@ -1,5 +1,5 @@
 <script lang="ts">
-  import Logo from "@components/logo.svelte";
+  import Logo from "@components/logo.astro";
   import SiteNav from "@components/site_nav.svelte";
   import ThemeMenu from "@components/theme_menu.svelte";
   import { clickOut } from "src/utils";

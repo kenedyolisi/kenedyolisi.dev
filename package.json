@@ -42,7 +42,7 @@
     "eslint-plugin-astro": "^0.31.4",
     "eslint-plugin-jsx-a11y": "^6.8.0",
     "postcss-html": "^1.6.0",
-    "sass": "^1.72.0",
+    "sass": "^1.74.1",
     "typescript": "^5.4.3"
   }
 }

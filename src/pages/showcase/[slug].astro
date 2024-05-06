@@ -3,9 +3,8 @@ import { images } from "@data/images";
 import projects from "@data/projects";
 import technologies from "@data/technologies.json";
 import Layout from "@layouts/layout.astro";
-import slugify from "@sindresorhus/slugify";
 import { Picture } from "astro:assets";
-import { capitalizeStr } from "src/utils";
+import { capitalizeStr, slugify } from "src/utils";
 
 const { slug } = Astro.params;
 

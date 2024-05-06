@@ -2,7 +2,7 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 @import "icons";
-@import "font";
+@import "fonts";
 
 @layer base {
   h1 {

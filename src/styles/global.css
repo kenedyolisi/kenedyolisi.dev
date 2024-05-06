@@ -1,14 +1,10 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-@import "icons.scss";
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+@import "icons";
 @import "font";
 
 @layer base {
-  body {
-    @apply bg-white text-dark dark:bg-dark dark:text-gray-100 selection:bg-primary selection:text-white dark:selection:bg-primary-dark;
-  }
-
   h1 {
     font-size: clamp(1.5rem, 3vw + 1rem, 3rem);
     @apply font-bold mb-4;

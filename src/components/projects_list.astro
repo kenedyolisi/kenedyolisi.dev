@@ -1,25 +1,11 @@
 ---
 import Project from "@components/project.astro";
-import projectsData, { type Project as IProject } from "@data/projects";
+import { type Project as IProject } from "@data/projects";
 
-let projects: IProject[];
-
-const techCriteria = Astro.url.searchParams.getAll("technologies");
-const categoryCriteria = Astro.url.searchParams.getAll("categories");
-
-const criteria = [...techCriteria, ...categoryCriteria];
-
-if (criteria.length > 0) {
-  projects = projectsData.filter((project: IProject) =>
-    criteria.some(
-      (criterion) =>
-        project.techs.includes(criterion) ||
-        project.categories.includes(criterion)
-    )
-  );
-} else {
-  projects = projectsData;
+interface Props {
+  projects: IProject[];
 }
+const { projects } = Astro.props;
 ---
 
 <ul class="grid gap-5 grid-cols-1 lg:grid-cols-2">

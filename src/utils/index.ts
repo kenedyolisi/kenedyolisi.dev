@@ -26,3 +26,7 @@ export function clickOut(node: Element) {
     },
   };
 }
+
+export function slugify(str: string) {
+  return str.toLowerCase().split(" ").join("-");
+}

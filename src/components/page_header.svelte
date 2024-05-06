@@ -1,5 +1,5 @@
 <script lang="ts">
-  import Logo from "@components/logo.astro";
+  import Logo from "@components/logo.svelte";
   import SiteNav from "@components/site_nav.svelte";
   import ThemeMenu from "@components/theme_menu.svelte";
   import { clickOut } from "src/utils";
@@ -60,6 +60,6 @@
     type="button"
     on:click={() => (isOpen = !isOpen)}
   >
-    <span class="icon icon-menu w-6 h-6"></span>
+    <span class="icon icon-menu"></span>
   </button>
 </header>

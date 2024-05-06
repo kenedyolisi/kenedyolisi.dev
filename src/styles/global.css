@@ -2,17 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 @import "icons.scss";
-
-@font-face {
-  font-family: "Inter";
-  font-style: oblique 0deg 20deg;
-  font-weight: 100 900;
-  font-stretch: 75% 125%;
-  src: url("/fonts/inter_variable_slnt\,wght.woff2") format("woff2-variations");
-  src: url("/fonts/inter_variable_slnt\,wght.woff2") format("woff2")
-    tech("variations");
-  font-display: swap;
-}
+@import "font";
 
 @layer base {
   body {

@@ -1,74 +1,72 @@
-@layer utilities {
-  .icon {
-    display: inline-block;
-    @apply min-w-4 min-h-4 align-middle;
-    mask-size: 100% 100%;
-    mask-repeat: no-repeat;
-    mask-position: center;
-    background-color: currentColor;
-  }
+.icon {
+  display: inline-block;
+  @apply min-w-4 min-h-4 align-middle;
+  mask-size: 100% 100%;
+  mask-repeat: no-repeat;
+  mask-position: center;
+  background-color: currentColor;
+}
 
-  .icon-facebook {
-    mask-image: url(/src/images/facebook.svg);
-  }
+.icon-facebook {
+  mask-image: url(/src/images/facebook.svg);
+}
 
-  .icon-menu {
-    mask-image: url(/src/images/menu.svg);
-  }
+.icon-menu {
+  mask-image: url(/src/images/menu.svg);
+}
 
-  .icon-twitter {
-    mask-image: url(/src/images/twitter.svg);
-  }
+.icon-twitter {
+  mask-image: url(/src/images/twitter.svg);
+}
 
-  .icon-github {
-    mask-image: url(/src/images/github.svg);
-  }
+.icon-github {
+  mask-image: url(/src/images/github.svg);
+}
 
-  .icon-linkedin {
-    mask-image: url(/src/images/linkedin.svg);
-  }
+.icon-linkedin {
+  mask-image: url(/src/images/linkedin.svg);
+}
 
-  .icon-link-external {
-    mask-image: url(/src/images/link_external.svg);
-  }
+.icon-link-external {
+  mask-image: url(/src/images/link_external.svg);
+}
 
-  .icon-arrow-up {
-    mask-image: url(/src/images/arrow_up.svg);
-  }
+.icon-arrow-up {
+  mask-image: url(/src/images/arrow_up.svg);
+}
 
-  .icon-x {
-    mask-image: url(/src/images/x.svg);
-  }
+.icon-x {
+  mask-image: url(/src/images/x.svg);
+}
 
-  .icon-circle-half {
-    mask-image: url(/src/images/circle_half.svg);
-  }
+.icon-circle-half {
+  mask-image: url(/src/images/circle_half.svg);
+}
 
-  .icon-moon-stars {
-    mask-image: url(/src//images/moon_stars.svg);
-  }
+.icon-moon-stars {
+  mask-image: url(/src//images/moon_stars.svg);
+}
 
-  .icon-sun {
-    mask-image: url(/src/images/sun.svg);
-  }
+.icon-sun {
+  mask-image: url(/src/images/sun.svg);
+}
 
-  .icon-caret-down {
-    mask-image: url(/src/images/caret_down.svg);
-  }
+.icon-caret-down {
+  mask-image: url(/src/images/caret_down.svg);
+}
 
-  .icon-whatsapp {
-    mask-image: url(/src/images/whatsapp.svg);
-  }
+.icon-whatsapp {
+  mask-image: url(/src/images/whatsapp.svg);
+}
 
-  .icon-envelope {
-    mask-image: url(/src/images/envelope.svg);
-  }
+.icon-envelope {
+  mask-image: url(/src/images/envelope.svg);
+}
 
-  .icon-telephone {
-    mask-image: url(/src/images/telephone.svg);
-  }
+.icon-telephone {
+  mask-image: url(/src/images/telephone.svg);
+}
 
-  .icon-chevron-right {
-    mask-image: url(/src/images/chevron_right.svg);
-  }
+.icon-chevron-right {
+  mask-image: url(/src/images/chevron_right.svg);
 }

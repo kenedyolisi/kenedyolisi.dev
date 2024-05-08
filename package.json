@@ -7,7 +7,7 @@
   "homepage": "https://kenedyolisi.vercel.app",
   "packageManager": "pnpm@9.0.6",
   "engines": {
-    "node": ">=18.17.1"
+    "node": ">=22.0.0"
   },
   "repository": {
     "type": "git",

@@ -4,8 +4,8 @@
   import ThemeMenu from "@components/theme_menu.svelte";
   import { clickOut } from "src/utils";
 
-  let isOpen = false;
-  let showShadow = false;
+  let isOpen = $state(false);
+  let showShadow = $state(false);
 
   function handleScroll() {
     if (scrollY > 100) {
@@ -16,7 +16,7 @@
   }
 </script>
 
-<svelte:window on:scroll={handleScroll} />
+<svelte:window onscroll={handleScroll} />
 
 <header
   class={`
@@ -41,13 +41,13 @@
     ${!isOpen ? "translate-x-full" : ""}
     `}
     use:clickOut
-    on:clickout={() => (isOpen = false)}
+    onclickout={() => (isOpen = false)}
   >
     <div class="flex justify-between items-center md:hidden">
       <a href="/"><Logo /></a>
       <button
         class="p-2 leading-4 border rounded-md"
-        on:click={() => (isOpen = false)}
+        onclick={() => (isOpen = false)}
       >
         <span class="w-6 h-6 icon icon-x"></span>
       </button>
@@ -58,7 +58,7 @@
   <button
     class="p-2 leading-4 md:hidden border rounded-md"
     type="button"
-    on:click={() => (isOpen = !isOpen)}
+    onclick={() => (isOpen = !isOpen)}
   >
     <span class="icon icon-menu"></span>
   </button>

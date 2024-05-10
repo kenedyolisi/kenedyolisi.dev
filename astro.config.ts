@@ -15,6 +15,7 @@ export default defineConfig({
     svelte(),
     tailwind({
       applyBaseStyles: false,
+      nesting: true,
     }),
     partytown({
       config: {

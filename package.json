@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.1",
   "author": "Kenedy Olisi",
-  "packageManager": "pnpm@9.0.6+sha256.0624e30eff866cdeb363b15061bdb7fd9425b17bc1bb42c22f5f4efdea21f6b3",
+  "packageManager": "pnpm@9.0.0+sha256.bdfc9a7b372b5c462176993e586492603e20da5864d2f8881edc2462482c76fa",
   "type": "module",
   "homepage": "https://kenedyolisi.vercel.app",
   "repository": {

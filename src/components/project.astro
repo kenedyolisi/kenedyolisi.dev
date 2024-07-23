@@ -1,7 +1,8 @@
 ---
-import { Picture } from "astro:assets";
-import { type Project } from "@data/projects";
 import { images } from "@data/images";
+import { type Project } from "@data/projects";
+import { Picture } from "astro:assets";
+import { slugify } from "src/utils";
 
 interface Props {
   project: Project;
@@ -11,9 +12,11 @@ const { image, title } = project;
 ---
 
 <li class="border rounded-lg">
-  <Picture
-    class="rounded-t-lg aspect-video"
-    src={images[image]()}
-    alt={title}
-  />
+  <a href={`showcase/${slugify(project.title)}`}>
+    <Picture
+      class="rounded-t-lg aspect-video"
+      src={images[image]()}
+      alt={title}
+    />
+  </a>
 </li>

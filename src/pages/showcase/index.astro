@@ -11,7 +11,7 @@ const categoryCriteria = Astro.url.searchParams.getAll("categories");
 
 const criteria = [...techCriteria, ...categoryCriteria];
 
-if (criteria.length > 0) {
+if (criteria.length) {
   projects = projectsData.filter((project: Project) =>
     criteria.some(
       (criterion) =>
@@ -27,7 +27,7 @@ if (criteria.length > 0) {
 <Layout pageTitle="Projects" pageDescription="Check out my recent projects">
   <div class="container flex flex-col gap-4 md:flex-row px-8 sm:px-12 md:px-20">
     <aside class="min-w-60 space-y-2">
-      <ProjectsFilterForm transition:persist client:load />
+      <ProjectsFilterForm client:load  transition:persist />
     </aside>
     <main>
       <h1>Projects</h1>

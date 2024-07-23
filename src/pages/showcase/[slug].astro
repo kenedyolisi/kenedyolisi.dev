@@ -4,19 +4,19 @@ import projects from "@data/projects";
 import technologies from "@data/technologies.json";
 import Layout from "@layouts/layout.astro";
 import { Picture } from "astro:assets";
-import { capitalizeStr } from "src/utils";
+import { capitalizeStr, slugify } from "src/utils";
 
-const { id } = Astro.params;
+const { slug } = Astro.params;
 
-if (id === undefined) {
-  throw new Error("Project id is required");
+if (slug === undefined) {
+  throw new Error("Project slug is required");
 }
 
 const project = projects.find((project) => {
-  return project.id === id ? project : null;
+  return slugify(project.title) === slug;
 });
 
-if (project === undefined) {
+if (!project) {
   return Astro.redirect("/404");
 }
 

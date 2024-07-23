@@ -1,5 +1,5 @@
 ---
-import "@styles/global.scss";
+import "@styles/global.css";
 
 import PageFooter from "@components/page_footer.astro";
 import PageHeader from "@components/page_header.svelte";
@@ -81,7 +81,9 @@ const { pageTitle, pageDescription } = Astro.props;
     {/* End of Google tag */}
   </head>
 
-  <body>
+  <body
+    class="bg-white text-dark dark:bg-dark dark:text-gray-100 selection:bg-primary selection:text-white dark:selection:bg-primary-dark"
+  >
     <SkipNavLink />
     <div class="flex flex-col min-h-dvh">
       <PageHeader client:only="svelte" />

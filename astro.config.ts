@@ -1,3 +1,4 @@
+import db from "@astrojs/db";
 import partytown from "@astrojs/partytown";
 import svelte from "@astrojs/svelte";
 import tailwind from "@astrojs/tailwind";
@@ -8,6 +9,7 @@ import { siteConfig } from "./src/site_config";
 
 // https://astro.build/config
 export default defineConfig({
+  site: siteConfig.siteUrl,
   output: "server",
   adapter: vercel({
     imageService: true,
@@ -24,7 +26,7 @@ export default defineConfig({
         forward: ["datalayer.push"],
       },
     }),
+    db(),
     webVitals(),
   ],
-  site: siteConfig.siteUrl,
 });

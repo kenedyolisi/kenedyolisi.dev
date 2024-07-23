@@ -8,6 +8,9 @@ importers:
 
   .:
     dependencies:
+      '@astrojs/db':
+        specifier: ^0.12.0
+        version: 0.12.0
       '@astrojs/partytown':
         specifier: ^2.1.1
         version: 2.1.1

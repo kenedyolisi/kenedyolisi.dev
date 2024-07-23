@@ -17,7 +17,7 @@
     "astro": "astro",
     "build": "astro build",
     "dev": "astro dev",
-    "lint": "eslint --fix src/**/*.{astro,ts,tsx}",
+    "lint": "eslint --fix src/**/*.{astro,svelte,ts,tsx}",
     "preview": "astro preview",
     "start": "astro dev"
   },

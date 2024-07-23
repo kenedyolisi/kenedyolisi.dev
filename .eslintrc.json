@@ -5,29 +5,35 @@
   },
   "extends": [
     "eslint:recommended",
-    "plugin:astro/jsx-a11y-recommended",
-    "plugin:astro/jsx-a11y-strict",
-    "plugin:astro/recommended" // Astro last
+    "plugin:astro/recommended",
+    "plugin:svelte/recommended" // Astro last
   ],
   "overrides": [
     {
       // Define the configuration for `.astro` file.
       "files": ["*.astro"],
-
       // Allows Astro components to be parsed.
       "parser": "astro-eslint-parser",
-
       // Parse the script in `.astro` as TypeScript.
       "parserOptions": {
-        "parser": "@typescript-eslint/parser",
-        "extraFileExtensions": [".astro"]
+        "extraFileExtensions": [".astro"],
+        "parser": "@typescript-eslint/parser"
+      }
+    },
+    {
+      "files": ["*.svelte"],
+      "parser": "svelte-eslint-parser",
+      // Parse the script in `.astro` as TypeScript.
+      "parserOptions": {
+        "extraFileExtensions": [".svelte"],
+        "parser": "@typescript-eslint/parser"
       }
     }
   ],
-
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
     "ecmaVersion": "latest",
+    "project": "/tsconfig.json",
     "sourceType": "module"
   },
   "plugins": [],

@@ -16,13 +16,13 @@ importers:
         version: 5.4.0(astro@4.12.2(sass@1.72.0)(typescript@5.4.5))(svelte@5.0.0-next.136)(typescript@5.4.5)(vite@5.3.4(sass@1.72.0))
       '@astrojs/tailwind':
         specifier: ^5.1.0
-        version: 5.1.0(astro@4.12.2(sass@1.72.0)(typescript@5.4.5))(tailwindcss@3.4.3)
+        version: 5.1.0(astro@4.12.2(sass@1.72.0)(typescript@5.4.5))(tailwindcss@3.4.6)
       '@astrojs/vercel':
         specifier: ^7.6.0
         version: 7.6.0(astro@4.12.2(sass@1.72.0)(typescript@5.4.5))
       '@tailwindcss/forms':
         specifier: ^0.5.7
-        version: 0.5.7(tailwindcss@3.4.3)
+        version: 0.5.7(tailwindcss@3.4.6)
       astro:
         specifier: ^4.12.2
         version: 4.12.2(sass@1.72.0)(typescript@5.4.5)
@@ -30,8 +30,8 @@ importers:
         specifier: 5.0.0-next.136
         version: 5.0.0-next.136
       tailwindcss:
-        specifier: ^3.4.3
-        version: 3.4.3
+        specifier: ^3.4.6
+        version: 3.4.6
     devDependencies:
       '@sindresorhus/slugify':
         specifier: ^2.2.1
@@ -2567,8 +2567,8 @@ packages:
     resolution: {integrity: sha512-7RnqIMq572L8PeEzKeBINYEJDDxpcH8JEgLwUqBd3TkofhFRbkq4QLR0u+36avGAhCRbk2nnmjcW9SE531hPDg==}
     engines: {node: ^14.18.0 || >=16.0.0}
 
-  tailwindcss@3.4.3:
-    resolution: {integrity: sha512-U7sxQk/n397Bmx4JHbJx/iSOOv5G+II3f1kpLpY2QeUv5DcPdcTsYLlusZfq1NthHS1c1cZoyFmmkex1rzke0A==}
+  tailwindcss@3.4.6:
+    resolution: {integrity: sha512-1uRHzPB+Vzu57ocybfZ4jh5Q3SdlH7XW23J5sQoM9LhE9eIOlzxer/3XPSsycvih3rboRsvt0QCmzSrqyOYUIA==}
     engines: {node: '>=14.0.0'}
     hasBin: true
 
@@ -2878,13 +2878,13 @@ snapshots:
       - supports-color
       - vite
 
-  '@astrojs/tailwind@5.1.0(astro@4.12.2(sass@1.72.0)(typescript@5.4.5))(tailwindcss@3.4.3)':
+  '@astrojs/tailwind@5.1.0(astro@4.12.2(sass@1.72.0)(typescript@5.4.5))(tailwindcss@3.4.6)':
     dependencies:
       astro: 4.12.2(sass@1.72.0)(typescript@5.4.5)
       autoprefixer: 10.4.19(postcss@8.4.38)
       postcss: 8.4.38
       postcss-load-config: 4.0.2(postcss@8.4.38)
-      tailwindcss: 3.4.3
+      tailwindcss: 3.4.6
     transitivePeerDependencies:
       - ts-node
 
@@ -3476,10 +3476,10 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@tailwindcss/forms@0.5.7(tailwindcss@3.4.3)':
+  '@tailwindcss/forms@0.5.7(tailwindcss@3.4.6)':
     dependencies:
       mini-svg-data-uri: 1.4.4
-      tailwindcss: 3.4.3
+      tailwindcss: 3.4.6
 
   '@types/babel__core@7.20.5':
     dependencies:
@@ -5644,7 +5644,7 @@ snapshots:
       '@pkgr/core': 0.1.1
       tslib: 2.6.2
 
-  tailwindcss@3.4.3:
+  tailwindcss@3.4.6:
     dependencies:
       '@alloc/quick-lru': 5.2.0
       arg: 5.0.2

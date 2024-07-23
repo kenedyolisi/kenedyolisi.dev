@@ -17,6 +17,7 @@ importers:
       '@astrojs/tailwind':
         specifier: ^5.1.0
         version: 5.1.0(astro@4.12.2(sass@1.72.0)(typescript@5.4.5))(tailwindcss@3.4.6)
+
       '@astrojs/vercel':
         specifier: ^7.6.0
         version: 7.6.0(astro@4.12.2(sass@1.72.0)(typescript@5.4.5))
@@ -2869,8 +2870,8 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
       - vite
-
   '@astrojs/tailwind@5.1.0(astro@4.12.2(sass@1.72.0)(typescript@5.4.5))(tailwindcss@3.4.6)':
+
     dependencies:
       astro: 4.12.2(sass@1.72.0)(typescript@5.4.5)
       autoprefixer: 10.4.19(postcss@8.4.38)

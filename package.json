@@ -31,7 +31,7 @@
     "@astrojs/vercel": "^7.6.0",
     "@tailwindcss/forms": "^0.5.7",
     "astro": "^4.12.2",
-    "svelte": "5.0.0-next.195",
+    "svelte": "5.0.0-next.216",
     "tailwindcss": "^3.4.6"
   },
   "devDependencies": {

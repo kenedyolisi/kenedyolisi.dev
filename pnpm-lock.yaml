@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       '@astrojs/partytown':
-        specifier: ^2.1.1
-        version: 2.1.1
+        specifier: ^2.1.2
+        version: 2.1.2
       '@astrojs/svelte':
         specifier: ^5.7.0
         version: 5.7.0(astro@4.14.5(rollup@4.21.0)(sass@1.72.0)(typescript@5.5.4))(svelte@5.0.0-next.239)(typescript@5.5.4)(vite@5.4.2(sass@1.72.0))
@@ -83,8 +83,8 @@ packages:
   '@astrojs/markdown-remark@5.2.0':
     resolution: {integrity: sha512-vWGM24KZXz11jR3JO+oqYU3T2qpuOi4uGivJ9SQLCAI01+vEkHC60YJMRvHPc+hwd60F7euNs1PeOEixIIiNQw==}
 
-  '@astrojs/partytown@2.1.1':
-    resolution: {integrity: sha512-KvecQuGGgrDrdTjC5awmtoQXqJFinChfeizKBJyr7F5EGQPx62xq8SIWkcXamLr5xZyNw0lryKeLtIzbxRH/zw==}
+  '@astrojs/partytown@2.1.2':
+    resolution: {integrity: sha512-1a9T5lqxtnrw0qLPo1KwliUvaaUzPNPtWucD8VxdwT7zqcpODFk1RzGgAgqVo+YhutFrTu/qclbtnOfXBuskjw==}
 
   '@astrojs/prism@3.1.0':
     resolution: {integrity: sha512-Z9IYjuXSArkAUx3N6xj6+Bnvx8OdUSHA8YoOgyepp3+zJmtVYJIl/I18GozdJVW1p5u/CNpl3Km7/gwTJK85cw==}
@@ -2747,7 +2747,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@astrojs/partytown@2.1.1':
+  '@astrojs/partytown@2.1.2':
     dependencies:
       '@builder.io/partytown': 0.10.2
       mrmime: 2.0.0

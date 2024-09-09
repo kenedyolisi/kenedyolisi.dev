@@ -13,7 +13,7 @@ importers:
         version: 2.1.1
       '@astrojs/svelte':
         specifier: ^5.7.0
-        version: 5.7.0(astro@4.14.5(rollup@4.21.0)(sass@1.72.0)(typescript@5.5.4))(svelte@5.0.0-next.239)(typescript@5.5.4)(vite@5.4.2(sass@1.72.0))
+        version: 5.7.0(astro@4.14.5(rollup@4.21.0)(sass@1.72.0)(typescript@5.5.4))(svelte@5.0.0-next.244)(typescript@5.5.4)(vite@5.4.2(sass@1.72.0))
       '@astrojs/tailwind':
         specifier: ^5.1.0
         version: 5.1.0(astro@4.14.5(rollup@4.21.0)(sass@1.72.0)(typescript@5.5.4))(tailwindcss@3.4.10)
@@ -27,8 +27,8 @@ importers:
         specifier: ^4.14.5
         version: 4.14.5(rollup@4.21.0)(sass@1.72.0)(typescript@5.5.4)
       svelte:
-        specifier: 5.0.0-next.239
-        version: 5.0.0-next.239
+        specifier: 5.0.0-next.244
+        version: 5.0.0-next.244
       tailwindcss:
         specifier: ^3.4.10
         version: 3.4.10
@@ -53,7 +53,7 @@ importers:
         version: 1.2.3(eslint@8.57.0)(typescript@5.5.4)
       eslint-plugin-svelte:
         specifier: ^2.43.0
-        version: 2.43.0(eslint@8.57.0)(svelte@5.0.0-next.239)
+        version: 2.43.0(eslint@8.57.0)(svelte@5.0.0-next.244)
       postcss-html:
         specifier: ^1.7.0
         version: 1.7.0
@@ -2439,8 +2439,8 @@ packages:
       svelte: ^3.55 || ^4.0.0-next.0 || ^4.0 || ^5.0.0-next.0
       typescript: ^4.9.4 || ^5.0.0
 
-  svelte@5.0.0-next.239:
-    resolution: {integrity: sha512-zJJlysnVl4zShMwrs6iIeQPm0bHi7eT0JR0W0U/u2naDb00azue1K5d14cbCoIh+/HA3F+tuawwSFISZsnadww==}
+  svelte@5.0.0-next.244:
+    resolution: {integrity: sha512-whSOcKdpuAFd5xD9J2EhuHeRs4J4nHis6NSUKRXpC3HQoCmsoKhyIldMjiv6QFkQpe6QMsid8lwvgLXkZTSC/A==}
     engines: {node: '>=18'}
 
   synckit@0.9.0:
@@ -2756,12 +2756,12 @@ snapshots:
     dependencies:
       prismjs: 1.29.0
 
-  '@astrojs/svelte@5.7.0(astro@4.14.5(rollup@4.21.0)(sass@1.72.0)(typescript@5.5.4))(svelte@5.0.0-next.239)(typescript@5.5.4)(vite@5.4.2(sass@1.72.0))':
+  '@astrojs/svelte@5.7.0(astro@4.14.5(rollup@4.21.0)(sass@1.72.0)(typescript@5.5.4))(svelte@5.0.0-next.244)(typescript@5.5.4)(vite@5.4.2(sass@1.72.0))':
     dependencies:
-      '@sveltejs/vite-plugin-svelte': 3.1.1(svelte@5.0.0-next.239)(vite@5.4.2(sass@1.72.0))
+      '@sveltejs/vite-plugin-svelte': 3.1.1(svelte@5.0.0-next.244)(vite@5.4.2(sass@1.72.0))
       astro: 4.14.5(rollup@4.21.0)(sass@1.72.0)(typescript@5.5.4)
-      svelte: 5.0.0-next.239
-      svelte2tsx: 0.7.13(svelte@5.0.0-next.239)(typescript@5.5.4)
+      svelte: 5.0.0-next.244
+      svelte2tsx: 0.7.13(svelte@5.0.0-next.244)(typescript@5.5.4)
       typescript: 5.5.4
     transitivePeerDependencies:
       - supports-color
@@ -3259,24 +3259,24 @@ snapshots:
     dependencies:
       escape-string-regexp: 5.0.0
 
-  '@sveltejs/vite-plugin-svelte-inspector@2.1.0(@sveltejs/vite-plugin-svelte@3.1.1(svelte@5.0.0-next.239)(vite@5.4.2(sass@1.72.0)))(svelte@5.0.0-next.239)(vite@5.4.2(sass@1.72.0))':
+  '@sveltejs/vite-plugin-svelte-inspector@2.1.0(@sveltejs/vite-plugin-svelte@3.1.1(svelte@5.0.0-next.244)(vite@5.4.2(sass@1.72.0)))(svelte@5.0.0-next.244)(vite@5.4.2(sass@1.72.0))':
     dependencies:
-      '@sveltejs/vite-plugin-svelte': 3.1.1(svelte@5.0.0-next.239)(vite@5.4.2(sass@1.72.0))
+      '@sveltejs/vite-plugin-svelte': 3.1.1(svelte@5.0.0-next.244)(vite@5.4.2(sass@1.72.0))
       debug: 4.3.6
-      svelte: 5.0.0-next.239
+      svelte: 5.0.0-next.244
       vite: 5.4.2(sass@1.72.0)
     transitivePeerDependencies:
       - supports-color
 
-  '@sveltejs/vite-plugin-svelte@3.1.1(svelte@5.0.0-next.239)(vite@5.4.2(sass@1.72.0))':
+  '@sveltejs/vite-plugin-svelte@3.1.1(svelte@5.0.0-next.244)(vite@5.4.2(sass@1.72.0))':
     dependencies:
-      '@sveltejs/vite-plugin-svelte-inspector': 2.1.0(@sveltejs/vite-plugin-svelte@3.1.1(svelte@5.0.0-next.239)(vite@5.4.2(sass@1.72.0)))(svelte@5.0.0-next.239)(vite@5.4.2(sass@1.72.0))
+      '@sveltejs/vite-plugin-svelte-inspector': 2.1.0(@sveltejs/vite-plugin-svelte@3.1.1(svelte@5.0.0-next.244)(vite@5.4.2(sass@1.72.0)))(svelte@5.0.0-next.244)(vite@5.4.2(sass@1.72.0))
       debug: 4.3.6
       deepmerge: 4.3.1
       kleur: 4.1.5
       magic-string: 0.30.11
-      svelte: 5.0.0-next.239
-      svelte-hmr: 0.16.0(svelte@5.0.0-next.239)
+      svelte: 5.0.0-next.244
+      svelte-hmr: 0.16.0(svelte@5.0.0-next.244)
       vite: 5.4.2(sass@1.72.0)
       vitefu: 0.2.5(vite@5.4.2(sass@1.72.0))
     transitivePeerDependencies:
@@ -3935,7 +3935,7 @@ snapshots:
       - supports-color
       - typescript
 
-  eslint-plugin-svelte@2.43.0(eslint@8.57.0)(svelte@5.0.0-next.239):
+  eslint-plugin-svelte@2.43.0(eslint@8.57.0)(svelte@5.0.0-next.244):
     dependencies:
       '@eslint-community/eslint-utils': 4.4.0(eslint@8.57.0)
       '@jridgewell/sourcemap-codec': 1.5.0
@@ -3948,9 +3948,9 @@ snapshots:
       postcss-safe-parser: 6.0.0(postcss@8.4.39)
       postcss-selector-parser: 6.1.2
       semver: 7.6.3
-      svelte-eslint-parser: 0.41.0(svelte@5.0.0-next.239)
+      svelte-eslint-parser: 0.41.0(svelte@5.0.0-next.244)
     optionalDependencies:
-      svelte: 5.0.0-next.239
+      svelte: 5.0.0-next.244
     transitivePeerDependencies:
       - ts-node
 
@@ -5433,7 +5433,7 @@ snapshots:
 
   supports-preserve-symlinks-flag@1.0.0: {}
 
-  svelte-eslint-parser@0.41.0(svelte@5.0.0-next.239):
+  svelte-eslint-parser@0.41.0(svelte@5.0.0-next.244):
     dependencies:
       eslint-scope: 7.2.2
       eslint-visitor-keys: 3.4.3
@@ -5441,20 +5441,20 @@ snapshots:
       postcss: 8.4.39
       postcss-scss: 4.0.9(postcss@8.4.39)
     optionalDependencies:
-      svelte: 5.0.0-next.239
+      svelte: 5.0.0-next.244
 
-  svelte-hmr@0.16.0(svelte@5.0.0-next.239):
+  svelte-hmr@0.16.0(svelte@5.0.0-next.244):
     dependencies:
-      svelte: 5.0.0-next.239
+      svelte: 5.0.0-next.244
 
-  svelte2tsx@0.7.13(svelte@5.0.0-next.239)(typescript@5.5.4):
+  svelte2tsx@0.7.13(svelte@5.0.0-next.244)(typescript@5.5.4):
     dependencies:
       dedent-js: 1.0.1
       pascal-case: 3.1.2
-      svelte: 5.0.0-next.239
+      svelte: 5.0.0-next.244
       typescript: 5.5.4
 
-  svelte@5.0.0-next.239:
+  svelte@5.0.0-next.244:
     dependencies:
       '@ampproject/remapping': 2.3.0
       '@jridgewell/sourcemap-codec': 1.5.0

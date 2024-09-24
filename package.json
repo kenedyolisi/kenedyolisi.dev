@@ -41,7 +41,7 @@
     "@typescript-eslint/parser": "^8.2.0",
     "eslint": "^9.10.0",
     "eslint-plugin-astro": "^1.2.3",
-    "eslint-plugin-svelte": "^2.43.0",
+    "eslint-plugin-svelte": "^2.44.0",
     "postcss-html": "^1.7.0",
     "typescript": "^5.5.4"
   }

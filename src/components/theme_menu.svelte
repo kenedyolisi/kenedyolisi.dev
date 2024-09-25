@@ -1,103 +1,127 @@
 <script lang="ts">
   import { clickOut } from "src/utils";
+  import { slide } from "svelte/transition";
 
-  const themeIcons = new Map([
+  type Theme = "dark" | "light" | "system";
+
+  let expanded = $state(false);
+  let currentTheme: Theme | null = $state(null);
+  let themeIcons: Map<Theme, string> = new Map([
     ["dark", "moon-stars"],
     ["light", "sun"],
     ["system", "circle-half"],
   ]);
 
-  let menuIsOpen = false;
-  let activeTheme = "system";
-  let darkQuery = window.matchMedia("(prefers-color-scheme: dark)");
+  $effect.pre(() => {
+    // TODO: explore other ways to implement this
+    currentTheme = (localStorage.getItem("theme") as Theme | null) || "system";
+  });
 
-  setTheme(activeTheme);
+  $effect(() => {
+    const darkQuery = window.matchMedia("(prefers-color-scheme: dark)");
 
-  $: {
-    if (activeTheme === "system") {
-      darkQuery.addEventListener("change", handleDarkQuery);
-    }
-  }
+    const handleDarkQueryChange = (event: MediaQueryListEvent) => {
+      const systemTheme = event.matches ? "dark" : "light";
+      setTheme(systemTheme);
+    };
 
-  function handleChange() {
-    menuIsOpen = false;
-    switch (activeTheme) {
-      case "dark":
-      case "light":
-        localStorage.setItem("theme", activeTheme);
-        setTheme(activeTheme);
-        break;
-      case "system":
-        localStorage.removeItem("theme");
-        setTheme(darkQuery.matches ? "dark" : "light");
-        break;
-      default:
-        break;
-    }
-  }
-
-  function setTheme(theme) {
-    if (
-      localStorage.theme === "dark" ||
-      (!("theme" in localStorage) &&
-        window.matchMedia("(prefers-color-scheme: dark)").matches)
-    ) {
-      document.documentElement.classList.add("dark");
+    if (currentTheme === "system") {
+      darkQuery.addEventListener("change", handleDarkQueryChange);
     } else {
-      document.documentElement.classList.remove("dark");
+      darkQuery.removeEventListener("change", handleDarkQueryChange);
     }
+
+    return () => darkQuery.removeEventListener("change", handleDarkQueryChange);
+  });
+
+  function toggleExpanded() {
+    expanded = !expanded;
   }
 
-  function handleDarkQuery(this: MediaQueryList, event: MediaQueryListEvent) {
-    const systemTheme = event.matches ? "dark" : "light";
-    console.log(systemTheme);
+  function handleSelect(theme: Theme) {
+    currentTheme = theme;
+
+    if (theme === "system") {
+      localStorage.removeItem("theme");
+
+      const systemTheme = window.matchMedia("(prefers-color-scheme: dark)")
+        .matches
+        ? "dark"
+        : "light";
+
+      setTheme(systemTheme);
+    } else {
+      localStorage.setItem("theme", theme);
+
+      setTheme(theme);
+    }
+
+    toggleExpanded();
+  }
+
+  function setTheme(theme: Theme) {
+    const documentElement = document.documentElement;
+
+    if (theme === "dark") {
+      documentElement.classList.add("dark");
+    } else {
+      documentElement.classList.remove("dark");
+    }
   }
 </script>
 
-<div class="ms-auto relative">
+<div class="relative" use:clickOut onclickout={() => (expanded = false)}>
   <button
-    class="inline-flex items-center gap-1 p-2 leading-4 border rounded-lg bg-primary dark:bg-primary-dark text-white"
-    on:click={() => {
-      menuIsOpen = !menuIsOpen;
-    }}
+    class="flex items-center gap-1 p-1 rounded-md text-slate-500 active:scale-95"
+    type="button"
+    title="Theme menu"
+    role="combobox"
+    aria-controls="theme-menu"
+    aria-expanded={expanded}
+    onclick={toggleExpanded}
   >
-    <span class={`icon icon-${themeIcons.get(activeTheme)}`}></span>
     <span
-      class={`icon icon-caret-down transition-transform duration-300 ${menuIsOpen ? "rotate-180" : ""}`}
+      class="icon icon-{currentTheme && themeIcons.get(currentTheme)} size-5"
+    ></span>
+
+    <span class="sr-only">{currentTheme}</span>
+    <span
+      class="icon icon-caret-down transition-transform duration-300"
+      class:rotate-180={expanded}
     ></span>
   </button>
-  <div
-    class={`
-    absolute right-0 flex flex-col p-1 mt-1 border rounded-md space-y-2
-    bg-white dark:bg-dark
-    ${!menuIsOpen ? "hidden" : ""}
-   `}
-    use:clickOut
-    on:clickout={handleChange}
-  >
-    {#each themeIcons as [theme, icon] (theme)}
-      <label
-        class="inline-flex justify-between items-center gap-1 p-2 rounded-lg cursor-pointer capitalize hover:bg-gray-300 dark:hover:bg-gray-600"
-      >
-        <span class={`icon icon-${icon}`}></span>
-        {theme}
-        <input
-          class="appearance-none"
-          name="theme"
-          value={theme}
-          type="radio"
-          bind:group={activeTheme}
-          on:change={() => (menuIsOpen = false)}
-        />
-      </label>
-    {/each}
-  </div>
+  {#if expanded}
+    <ul
+      class="absolute top-full right-0 min-w-full p-1 mt-2 space-y-1 rounded-md
+        bg-slate-100 dark:bg-slate-800
+      "
+      id="theme-menu"
+      role="listbox"
+      transition:slide={{ duration: 300 }}
+    >
+      {#each themeIcons as [theme, icon] (theme)}
+        <li role="presentation">
+          <button
+            class="flex items-center gap-2 w-full px-2 py-1 rounded-md
+              text-start capitalize hover:bg-slate-200 dark:hover:bg-slate-700
+              {currentTheme === theme ? 'bg-slate-200 dark:bg-slate-700' : ''}
+            "
+            role="option"
+            aria-selected={currentTheme === theme}
+            onclick={() => handleSelect(theme)}
+          >
+            <span class="icon icon-{icon}"></span>
+            <span class="capitalize">
+              {theme}
+            </span>
+            <span
+              class="icon icon-check ms-auto
+                {theme === currentTheme ? 'visible' : 'invisible'}
+              "
+            ></span>
+          </button>
+        </li>
+      {/each}
+    </ul>
+  {/if}
 </div>
-
-<style lang="scss">
-  .wrapper {
-    &-inner {
-      margin: 0;
-    }
-  }
-</style>

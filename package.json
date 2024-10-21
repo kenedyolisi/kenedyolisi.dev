@@ -38,7 +38,7 @@
     "@sindresorhus/slugify": "^2.2.1",
     "@types/eslint": "^9.6.1",
     "@types/postcss-html": "^1.5.3",
-    "@typescript-eslint/parser": "^8.7.0",
+    "@typescript-eslint/parser": "^8.10.0",
     "eslint": "^9.11.1",
     "eslint-plugin-astro": "^1.2.3",
     "eslint-plugin-svelte": "^2.44.0",
